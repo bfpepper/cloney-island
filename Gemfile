@@ -41,6 +41,7 @@ group :development, :test do
   gem 'byebug'
   gem 'pry'
   gem 'vcr'
+  gem 'simplecov'
 end
 
 group :development do
