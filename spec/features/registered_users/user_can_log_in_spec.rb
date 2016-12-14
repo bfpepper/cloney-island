@@ -11,13 +11,13 @@ describe "a registered user can log back in" do
     click_on "Login"
 
     # enters form credentials
-    fill_in :email, with: user.email
-    fill_in :password, with: user.password
+    fill_in "session[email]", with: user.email
+    fill_in "session[password]", with: user.password
 
     # clicks sign in
     click_on "Sign In"
 
     # redirected to root
-    expect(current_page).to eq(root_path)
+    expect(current_path).to eq(root_path)
   end
 end
