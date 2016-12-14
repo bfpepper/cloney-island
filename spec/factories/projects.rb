@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :project do
-    name "MyText"
-    description "MyText"
-    goal 1
+    name Faker::Superhero.name
+    description Faker::Hipster.paragraph
+    goal Faker::Number.decimal(2)
   end
 end

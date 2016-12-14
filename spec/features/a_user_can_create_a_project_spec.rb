@@ -5,19 +5,18 @@ describe "User created a project" do
   context "visit project create page" do
     scenario "a user fill in fields and clicks submit" do
       #need to add signed in user
+      project = build(:project)
       visit new_project_path
 
-      name = "Ant Lee"
-
-      fill_in :Name, with: name
-      fill_in :Description, with: "fun"
-      fill_in :Goal, with: 500
+      fill_in "Name", with: project.name
+      fill_in "Description", with: project.description
+      fill_in "Goal", with: project.goal
       click_button "Create Project!"
-        save_and_open_page
-      expect(current_path).to eq(project_path(name.parameterize))
-      expect(page).to have_content("Ant Lee")
-      expect(page).to have_content("fun")
-      exepct(page).to have_content(500)
+
+      expect(current_path).to eq(project_path(project.name.parameterize))
+      expect(page).to have_content(project.name)
+      expect(page).to have_content(project.description)
+      expect(page).to have_content(project.goal)
     end
   end
 end
