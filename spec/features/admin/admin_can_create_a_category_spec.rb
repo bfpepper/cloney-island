@@ -4,7 +4,7 @@ describe 'An admin can create a category' do
   context 'authorized admin' do
     scenario 'they visit new_category_path' do
       # Need stub for admin authorization
-      visit admin_new_category_path
+      visit new_admin_category_path
 
       fill_in "Name", with: "Art"
       click_button "Create Category"
