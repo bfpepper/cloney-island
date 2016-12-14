@@ -14,7 +14,7 @@ describe "User created a project" do
       fill_in :Goal, with: 500
       click_button "Create Project!" 
 
-      expect(current_path).to eq(project_path(Project.find_by(name: "Ant Lee")) 
+      expect(current_path).to eq(project_path(name.parameterize))  
       expect(page).to have_content("Ant Lee")
       expect(page).to have_content("fun")
       exepct(page).to have_content(500)
