@@ -24,10 +24,12 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'byebug'
   gem 'pry-rails'
-  gem 'vcr'
-  gem 'simplecov'
-  gem 'webmock'
+end
 
+group :test do
+  gem 'webmock'
+  gem 'simplecov'
+  gem 'vcr'
 end
 
 group :development do
