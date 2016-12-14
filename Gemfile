@@ -30,6 +30,7 @@ group :test do
   gem 'webmock'
   gem 'simplecov'
   gem 'vcr'
+  gem 'shoulda-matchers'
 end
 
 group :development do
