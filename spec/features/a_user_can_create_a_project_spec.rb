@@ -8,7 +8,7 @@ describe "User created a project" do
       visit new_project_path 
 
       fill_in :Name, with: "Ant Lee" 
-      fill_in :Descripition, with: "fun"
+      fill_in :Description, with: "fun"
       fill_in :Goal, with: 500
       click_button "Create Project!" 
 
