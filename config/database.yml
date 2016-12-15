@@ -20,15 +20,10 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: ubuntu
-  password: <%= ENV['CLONEY_ISLAND_DB_PASSWORD'] %>
-
 
 development:
   <<: *default
   database: cloney_island_development
-  username: ubuntu
-  password: <%= ENV['CLONEY_ISLAND_DB_PASSWORD'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -84,10 +79,6 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  adapter: postgresql
-  encoding: unicode
   database: cloney_island_production
-  pool: 5
-  host: localhost
   username: ubuntu
   password: <%= ENV['CLONEY_ISLAND_DB_PASSWORD'] %>
