@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :category do
-    name "MyText"
-    slug "MyString"
+    name Faker::Commerce.department(1)
   end
 end
