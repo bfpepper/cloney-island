@@ -23,8 +23,7 @@ class Admin::CategoriesController < ApplicationController
 
   def update
     @category = Category.find(params[:id])
-    @category.update(category_params)
-    if @category.save
+    if @category.update(category_params)
       flash[:success] = "Successfully updated #{@category.name}"
       redirect_to admin_categories_path
     else
