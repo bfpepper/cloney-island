@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :categories, only: [:index]
+  get 'categories/:category', to: 'categories#show', as: :category
 
   namespace :admin do
     resources :categories, only: [:new, :index, :create, :update]
