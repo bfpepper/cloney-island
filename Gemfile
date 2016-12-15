@@ -14,6 +14,12 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'figaro'
 gem 'faker'
+gem 'capistrano'
+gem 'capistrano-rails'
+gem 'capistrano-bundler'
+gem 'capistrano-rbenv'
+gem 'capistrano3-puma'
+
 
 group :development, :test do
   gem 'rspec-rails'
@@ -34,11 +40,6 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'capistrano'
-  gem 'capistrano3-puma'
-  gem 'capistrano-rails', require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano-rvm'
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
 end
