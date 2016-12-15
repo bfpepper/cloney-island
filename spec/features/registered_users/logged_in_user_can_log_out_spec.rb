@@ -12,7 +12,7 @@ describe "Logged in user can log out" do
     fill_in "session[password]", with: user.password
 
     click_on "Sign In"
-    
+
     click_on "Sign Out"
 
     expect(current_path).to eq(root_path)
