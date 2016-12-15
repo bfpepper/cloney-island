@@ -23,6 +23,7 @@ describe "User creates a project" do
       expect(page).to have_content(project.name)
       expect(page).to have_content(project.description)
       expect(page).to have_content(project.goal)
+      save_and_open_page
       expect(user.projects.first.name).to eq(project.name)
     end
   end

@@ -12,6 +12,7 @@ class ProjectsController < ApplicationController
   def create
     @project = ProjectBuilder.new(project_params).build
     if @project.save
+      @project.users << current_user
       redirect_to project_path(project: @project.slug)
     else
       redirect_to new_project_path
@@ -21,6 +22,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :description, :goal, :slug, :category_id, :user_id)
+    params.require(:project).permit(:name, :description, :goal, :slug, :category_id)
   end
 end
