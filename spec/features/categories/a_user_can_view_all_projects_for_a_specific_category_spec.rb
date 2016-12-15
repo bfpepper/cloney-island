@@ -7,13 +7,12 @@ describe 'As a user' do
       category = create(:category, name: 'Computer Science')
       project1, project2  = create_list(:project, 2, category_id: category.id)
 
-      visit category_path
+      visit categories_path
 
       click_link 'Computer Science'
 
       expect(page).to have_content('Computer Science')
-      expect(page).to have_content(project.first.name)
-
+      expect(page).to have_content(project1.name)
     end
    end
- end 
+ end
