@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: cloney_island_production
-  username: cloney_island
+  username: psql
   password: <%= ENV['CLONEY_ISLAND_DATABASE_PASSWORD'] %>

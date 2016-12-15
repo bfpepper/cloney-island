@@ -1,12 +1,18 @@
 # config valid only for current version of Capistrano
 lock "3.7.0"
 
-lock '3.4.0'
-
 set :application, 'cloney-island'
 set :repo_url, 'git@github.com:bfpepper/cloney-island.git'
 set :user, 'ubuntu'
 set :rbenv_ruby, '2.3.1'
+set :branch, 'aws-dev'
+set :pty, true
+
+set :ssh_options, {
+  forward_agent: true,
+  auth_methods: ["publickey"],
+  keys: ["/Users/noah/.ssh/cloney.pem"]
+}
 
 set :puma_bind, 'tcp://0.0.0.0:9292'
 # Default branch is :master
