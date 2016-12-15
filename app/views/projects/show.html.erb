@@ -3,3 +3,5 @@
 <p><%= @project.name %></p>
 <p><%= @project.description %></p>
 <p><%= number_to_currency(@project.goal) %></p>
+
+<%= link_to "Edit Your Project", edit_project_path(@project.slug) %>

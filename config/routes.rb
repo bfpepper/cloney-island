@@ -2,7 +2,8 @@ Rails.application.routes.draw do
  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'landing#index'
 
-  resources :projects, only: [:new, :create]
+  resources :projects, only: [:new, :create, :update]
+  get "/projects/:project/edit", to: 'projects#edit', as: :edit_project
   get "/projects/:project", to: 'projects#show', as: :project
 
   get '/login', to: 'sessions#new'

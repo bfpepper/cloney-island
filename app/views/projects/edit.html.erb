@@ -1,0 +1,9 @@
+<%= form_for @project do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :goal %> 
+  <%= f.text_field :goal %>
+  <%= f.submit "Update!" %>
+<%end%>

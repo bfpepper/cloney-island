@@ -17,6 +17,20 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def edit
+    @project = Project.find_by(slug: params[:project])
+  end
+
+  def update
+    @project = Project.find_by(slug: params[:id])
+    @project.update(project_params)
+      if @project.update
+      redirect_to project_path(project.slug)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def project_params
