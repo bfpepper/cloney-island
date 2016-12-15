@@ -79,6 +79,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
+  adapter: postgresql
   database: cloney_island_production
   username: ubuntu
   password: <%= ENV['CLONEY_ISLAND_DB_PASSWORD'] %>
