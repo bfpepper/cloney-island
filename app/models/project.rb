@@ -5,6 +5,8 @@ class Project < ApplicationRecord
   validates :description, presence: true
   validates :goal, presence: true
 
+  belongs_to :category
+
   before_validation :generate_slug
 
   def generate_slug
