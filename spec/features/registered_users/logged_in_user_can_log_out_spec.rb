@@ -17,5 +17,6 @@ describe "Logged in user can log out" do
 
     expect(current_path).to eq(root_path)
     expect(page).to have_content("Login")
+
   end
 end
