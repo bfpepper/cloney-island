@@ -1,0 +1,5 @@
+<p>Category Show Page</p>
+<p><%= @category.name %></p>
+<% @category.projects.each do |project| %>
+<%= project.name %>
+<% end  %>
