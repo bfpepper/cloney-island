@@ -1,7 +1,8 @@
 class ProjectBuilder
-  attr_reader :name, :description, :goal, :slug
+  attr_reader :name, :description, :goal, :slug, :user
 
   def initialize(project)
+    @user = project["user_id"]
     @name = project["name"]
     @description = project["description"]
     @goal = project["goal"]
@@ -13,7 +14,7 @@ class ProjectBuilder
   end
 
   def build
-    Project.new(name: name, description: description, goal: goal, slug: slug)
+    Project.new(name: name, description: description, goal: goal, slug: slug, user_id: user)
   end
 
 end
