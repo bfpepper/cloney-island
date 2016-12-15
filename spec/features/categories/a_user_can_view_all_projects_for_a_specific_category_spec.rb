@@ -1,13 +1,19 @@
 require 'rails_helper'
 
 
-describe 'As a user' do 
-  context 'when I visit a category' do 
-    scenario 'I can see all associated projects' do 
-      category = create_list(:category, name: 'Computer Science')
-      projects = create_list(:project, 3, category_id: category.id) 
+describe 'As a user' do
+  context 'when I visit a category' do
+    scenario 'I can see all associated projects' do
+      category = create(:category, name: 'Computer Science')
+      project1, project2  = create_list(:project, 2, category_id: category.id)
 
+      visit category_path
 
-    end 
-   end 
-  end 
+      click_link 'Computer Science'
+
+      expect(page).to have_content('Computer Science')
+      expect(page).to have_content(project.first.name)
+
+    end
+   end
+ end 
