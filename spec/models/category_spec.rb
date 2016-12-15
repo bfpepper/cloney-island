@@ -18,7 +18,15 @@ RSpec.describe Category, type: :model do
       create(:category, name: "Frank")
       category = build(:category, name: "Frank")
 
-      expect(category).to be_invalid 
+      expect(category).to be_invalid
+    end
+  end
+
+  context "Relationships" do
+    it 'has many projects' do
+      category = build(:category)
+
+      expect(category).to respond_to(:projects)
     end
   end
 end
