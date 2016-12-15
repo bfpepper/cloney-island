@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CloneyIsland</title>
+    <title>JumpStart</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <% if current_user %>
+    <%= link_to "Sign Out", logout_path, method: :delete %>
+    <% else %>
+    <%= link_to "Login", login_path %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
