@@ -1,8 +1,0 @@
-<%= form_for [:admin, @category] do |f| %>
-  <%= render partial: "shared/errors", locals: { target: @category } %>
-
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.submit "Create Category" %>
-<% end %>
