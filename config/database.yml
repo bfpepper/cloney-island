@@ -82,4 +82,4 @@ production:
   <<: *default
   database: cloney_island_production
   username: psql
-  password: <%= ENV['CLONEY_ISLAND_DATABASE_PASSWORD'] %>
+  password: <%= ENV['CLONEY_ISLAND_DB_PASSWORD'] %>
