@@ -25,5 +25,11 @@ RSpec.describe Project, type: :model do
 
       expect(project).to be_invalid
     end
+
+    it "is invalid without a category_id" do
+      project = build(:project, category_id: nil)
+
+      expect(project).to be_invalid
+    end 
   end
 end
