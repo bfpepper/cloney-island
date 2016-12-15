@@ -79,6 +79,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
+  <<: *default
   database: cloney_island_production
   username: psql
   password: <%= ENV['CLONEY_ISLAND_DATABASE_PASSWORD'] %>
