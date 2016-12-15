@@ -10,10 +10,7 @@ describe 'An admin can create a category' do
       click_button "Create Category"
 
       expect(current_path).to eq(admin_categories_path)
-      expect(page).to have_content("Art")
-      expect(page).to have_button("Edit")
-      expect(page).to have_button("Delete")
-      expect(page).to have_button("New Category")
+      expect(page).to have_content("Art")    
     end
   end
 end
