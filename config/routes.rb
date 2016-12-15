@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   resources :users, only: [:new, :create, :show]
-  resources :categories, only: [:index, :show]
+
+  resources :categories, only: [:index]
+  get 'categories/:category', to: 'categories#show', as: :category
 
   namespace :admin do
     resources :categories, only: [:new, :index, :create, :update]

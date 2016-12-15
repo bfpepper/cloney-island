@@ -11,6 +11,7 @@ describe 'As a user' do
 
       click_link 'Computer Science'
 
+      expect(current_path).to eq(category_path(category.name.parameterize))
       expect(page).to have_content('Computer Science')
       expect(page).to have_content(project1.name)
     end
