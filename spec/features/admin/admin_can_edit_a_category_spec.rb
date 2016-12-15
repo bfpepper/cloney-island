@@ -11,7 +11,7 @@ describe 'Admin edits category' do
       expect(current_path).to eq(admin_edit_category_path(category.slug))
 
       fill_in 'Name', with: 'Knitting'
-      click_button 'Submit'
+      click_button 'Update'
 
       expect(current_path).to eq(admin_categories_path)
       expect(page).to have_content('Knitting')
