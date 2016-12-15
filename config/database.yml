@@ -81,5 +81,5 @@ test:
 production:
   adapter: postgresql
   database: cloney_island_production
-  username: psql
+  username: ubuntu
   password: <%= ENV['CLONEY_ISLAND_DB_PASSWORD'] %>
