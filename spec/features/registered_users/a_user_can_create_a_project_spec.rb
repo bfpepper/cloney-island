@@ -18,7 +18,7 @@ describe "User creates a project" do
 
       click_button "Create Project!"
 
-      #expect(current_path).to eq(project_path(project.name.parameterize))
+      expect(current_path).to eq(project_path(project.name.parameterize))
       expect(page).to have_content('Computer Science')
       expect(page).to have_content(project.name)
       expect(page).to have_content(project.description)
