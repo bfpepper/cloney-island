@@ -17,6 +17,10 @@ class Admin::CategoriesController < ApplicationController
     @categories = Category.all
   end
 
+  def edit
+    @category = Category.find_by_slug(params[:category])
+  end
+
   private
 
     def category_params
