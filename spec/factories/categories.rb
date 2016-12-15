@@ -1,5 +1,9 @@
 FactoryGirl.define do
   factory :category do
-    name Faker::Commerce.department(1)
+    name
+  end
+
+  sequence :name do |n|
+    "user#{n}"
   end
 end
