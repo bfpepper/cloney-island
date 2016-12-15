@@ -13,6 +13,9 @@ class Admin::CategoriesController < ApplicationController
     end
   end
 
+  def index
+  end
+
   private
 
     def category_params
