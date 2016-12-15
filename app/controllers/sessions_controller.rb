@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       flash[:success] = "You Successfully Logged in!"
       redirect_to root_path
     else
-      flash[:danger] = "Something went wrong!"
+      flash[:danger] = "Email and password don't match"
       redirect_to login_path
     end
   end
