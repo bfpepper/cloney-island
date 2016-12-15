@@ -4,6 +4,6 @@ FactoryGirl.define do
   end
 
   sequence :name do |n|
-    "user#{n}"
+    "category #{n}"
   end
 end
