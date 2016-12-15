@@ -3,6 +3,6 @@ FactoryGirl.define do
     name
     description Faker::Hipster.paragraph
     goal Faker::Number.decimal(2)
-    category
+    category 
   end
 end

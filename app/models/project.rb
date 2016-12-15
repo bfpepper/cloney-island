@@ -4,7 +4,8 @@ class Project < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   validates :goal, presence: true
-
+  validates :category, presence: true
+  
   belongs_to :category
 
   before_validation :generate_slug
