@@ -1,4 +1,4 @@
-<div id="myCarousel" class="carousel slide">
+  <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
         <div class="item active">
           <img src="http://lorempixel.com/1280/1024/technics" alt="">
@@ -31,3 +31,11 @@
       <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
     </div><!-- /.carousel -->
+    <div class="container-fluid">
+
+    <div class="row">
+      <% @projects.first(3).each do |project| %>
+    <div class="col-md-4"><center> <%= project.name %>   </center></div>
+      <% end %>
+  </div>
+</div>
