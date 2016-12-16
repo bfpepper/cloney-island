@@ -28,9 +28,8 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="account">
-                            <p>Email</p>
-                            <p><%= @user.name %></p>
-
+                        </br>
+                          </br>
                             <div class="row">
                                 <div class="col-md-4 col-md-offset-4">
                                     <form class="form-horizontal" role="form">
@@ -57,6 +56,12 @@
                                                 <label class="col-sm-2 control-label" for="textinput">Projects</label>
                                                 <div class="col-sm-10">
                                                     <label class="col-sm-2 control-label" for="textinput"><%= @user.projects.count %></label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="textinput">Backed</label>
+                                                <div class="col-sm-10">
+                                                    <label class="col-sm-2 control-label" for="textinput">Not yet working</label>
                                                 </div>
                                             </div>
                                         </fieldset>
