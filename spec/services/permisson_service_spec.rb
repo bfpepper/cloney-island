@@ -9,7 +9,9 @@ describe 'PermissionService' do
       controller = "admin/categories"
       action = "new"
 
-      guest = PermissionsService.new(user, controller, action).allow?
+      guest = PermissionsService.new(user, controller, action)
+
+      guest.allow?
 
       expect(guest).to eq(false)
     end
