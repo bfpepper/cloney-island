@@ -5,7 +5,7 @@ describe 'As a guest' do
     scenario 'I see a 404' do
       visit new_project_path
 
-      expect(status).to eq(404)
+      expect(status_code).to eq(404)
       expect(page).to have_content("Not found")
     end
   end
