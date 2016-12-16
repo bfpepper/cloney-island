@@ -1,5 +1,6 @@
+Edit Your Project
+
 <%= form_for @project do |f| %>
-  <%= render partial: "shared/errors", locals: {target: @project} %>
   <%= f.label :title %>
   <%= f.text_field :title %>
   <%= f.label :description %>
@@ -7,5 +8,5 @@
   <%= f.label :goal %>
   <%= f.text_field :goal %>
   <%= f.collection_select :category_id, @categories,:id,:name, include_blank: true %>
-  <%= f.submit "Create Project!" %>
+  <%= f.submit "Update!" %>
 <%end%>

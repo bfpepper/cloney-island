@@ -11,7 +11,7 @@ describe "User MUST enter all info" do
 
     visit new_project_path
 
-    fill_in "Name", with: project.name
+    fill_in "Title", with: project.title
     fill_in "Description", with: project.description
     click_button "Create Project!"
 

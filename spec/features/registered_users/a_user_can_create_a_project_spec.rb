@@ -13,19 +13,19 @@ describe "User creates a project" do
       project = build(:project)
       visit new_project_path
 
-      fill_in "Name", with: project.name
+      fill_in "Title", with: project.title
       fill_in "Description", with: project.description
       fill_in "Goal", with: project.goal
       select('Computer Science', from: 'project_category_id')
 
       click_button "Create Project!"
 
-      expect(current_path).to eq(project_path(project.name.parameterize))
+      expect(current_path).to eq(project_path(project.title.parameterize))
       expect(page).to have_content('Computer Science')
-      expect(page).to have_content(project.name)
+      expect(page).to have_content(project.title)
       expect(page).to have_content(project.description)
       expect(page).to have_content(project.goal)
-      expect(user.projects.first.name).to eq(project.name)
+      expect(user.projects.first.title).to eq(project.title)
     end
   end
 end
