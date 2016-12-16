@@ -4,6 +4,9 @@ describe "User edit info" do
   it "an existing user can edit their info" do
 
     user = create(:user)
+    role = Role.create(name: "registered")
+    user.roles << role
+    
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit edit_user_path(user)

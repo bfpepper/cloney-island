@@ -17,27 +17,29 @@
         <li><a href="/categories"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>Explore</a></li>
       </ul>
       <ul class="nav navbar-nav">
-        <li><a href="#">Issues</a></li>
-      </ul>
-      <ul class="nav navbar-nav">
-        <li><a href="#">Gist</a></li>
+      <li>  <%=link_to "Start a Project", new_project_path  %></li>
+        <!-- <li><a href="/projects/new">Start a Project!</a></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
+          <% if logged_in? %>
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= image_tag("default_user.png", size: 28) %>  <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">New repository</a></li>
-            <li><a href="#">Import repository</a></li>
-            <li><a href="#">New gist</a></li>
-            <li><a href="#">New organization</a></li>
+            <li><%= link_to "Account", user_path(current_user.id) %></li>
+            <li><%= link_to "Sign Out", logout_path, method: :delete %></li>
           </ul>
         </li>
           <!-- put the user image here size: 20 -->
           <ul class="nav navbar-nav">
-            <% if current_user %>
-            <li><%= link_to "Sign Out", logout_path, method: :delete %></li>
             <% else %>
             <li><%= link_to "Login", login_path %></li>
+            <li><%= link_to "Sign Up", new_user_path %></li>
+
+            <li class="dropdown">
+              <ul class="dropdown-menu">
+                <li><a href="#">New repository</a></li>
+              </ul>
+            </li>
             <% end %>
           </ul>
         </li>

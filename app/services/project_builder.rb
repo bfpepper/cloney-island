@@ -20,15 +20,16 @@ class ProjectBuilder
   def modify(project, id)
     update_project = Project.find(id)
     this  = update_project.assign_attributes(title: project[:title],
-                              description: project[:description],
-                              goal: project[:goal],
-                              slug: update_slug(project[:title]),
-                              category_id: project[:category_id])
+                                             description: project[:description],
+                                             goal: project[:goal],
+                                             slug: update_slug(project[:title]),
+                                             category_id: project[:category_id])
     return update_project
   end
 
   def update_slug(new_title)
     new_title.parameterize
+    Project.new(name: name, description: description, goal: goal, slug: slug, category_id: category)
   end
 
 end
