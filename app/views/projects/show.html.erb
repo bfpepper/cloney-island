@@ -4,3 +4,5 @@
 <p><%= @project.description %></p>
 <p><%= number_to_currency(@project.goal) %></p>
 <p><%= @project.category.name %></p>
+
+<%= link_to "Edit Your Project", edit_project_path(@project.title.parameterize), method: :get %>

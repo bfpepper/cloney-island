@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root to: 'landing#index'
 
   resources :projects, only: [:new, :create]
-  get "/projects/:project", to: 'projects#show', as: :project
+  get "/projects/:slug", to: 'projects#show', as: :project
+  get '/projects/:slug/edit', to: 'projects#edit', as: :edit_project
+  put '/projects/:slug', to: 'projects#update'
+  patch '/projects/:slug', to: 'projects#update'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
