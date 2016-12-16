@@ -33,7 +33,7 @@ describe "User can edit their project" do
 
     click_on "Edit Your Project"
 
-    expect(current_pathg).to eq(edit_project_path(user.projects.first.title.parameterize))
+    expect(current_path).to eq(edit_project_path(user.projects.first.title.parameterize))
 
     fill_in "project[description]", with: nil
 

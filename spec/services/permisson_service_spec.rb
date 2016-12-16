@@ -3,11 +3,15 @@ require 'rails_helper'
 
 describe 'PermissionService' do
   context '#allow?' do
-    xit "guest returns false for registered and admin" do
-      user = build(:user)
-      controller = ""
+    it "guest returns false for admin" do
+      user = create(:user)
+      user.roles << Role.create(name: "registered")
+      controller = "admin/categories"
+      action = "new"
 
-      guest = PermissionService.new()
+      guest = PermissionsService.new(user, controller, action).allow?
+
+      expect(guest).to eq(false)
     end
   end
 end
