@@ -7,7 +7,7 @@ class PermissionsService
 
   def allow?
     if user.admin?
-      return true if controller == "admin/categories" && action.in?(%w(new edit index create))
+      return true if controller == "admin/categories" && action.in?(%w(new edit index create update))
       return true if controller == "sessions" && action.in?(%w(new create destroy))
     elsif user.registered?
       return true if controller == "projects" && action == "new"
