@@ -5,7 +5,7 @@ RSpec.describe Role, type: :model do
     it 'has many users' do
       role = build(:role)
 
-      expect(role).to respond_to(:user)
+      expect(role).to respond_to(:users)
     end
   end
 end
