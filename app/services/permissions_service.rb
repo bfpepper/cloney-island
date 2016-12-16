@@ -36,6 +36,6 @@ class PermissionsService
       return true if controller == "sessions" && action.in?(%w(new create destroy))
       return true if controller == "projects" && action == "show"
       return true if controller == "users" && action.in?(%(new create))
-      return true if controller == "landing" && action == "index"s
+      return true if controller == "landing" && action == "index"
     end
 end
