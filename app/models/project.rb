@@ -8,11 +8,4 @@ class Project < ApplicationRecord
              :slug, uniqueness: true
 
   belongs_to :category
-
-  before_validation :generate_slug
-
-  def generate_slug
-    self.slug = title.parameterize
-  end
-
 end
