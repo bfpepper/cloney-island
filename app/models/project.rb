@@ -1,13 +1,18 @@
 class Project < ApplicationRecord
-  validates :name, uniqueness: true
-  validates :slug, uniqueness: true
-  validates :name, presence: true
-  validates :description, presence: true
-  validates :goal, presence: true
+  validates :title,
+            :description,
+            :goal,
+            :category_id, presence: true
+
+  validates :title,
+             :slug, uniqueness: true
+
+  belongs_to :category
 
   before_validation :generate_slug
 
   def generate_slug
-    self.slug = name.parameterize
+    self.slug = title.parameterize
   end
+
 end

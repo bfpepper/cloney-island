@@ -8,7 +8,7 @@ describe 'Admin edits category' do
       visit admin_categories_path
 
       click_button 'Edit'
-      expect(current_path).to eq(admin_edit_category_path(category.slug))
+      expect(current_path).to eq(admin_edit_category_path(category.name.parameterize))
 
       fill_in 'Name', with: 'Knitting'
       click_button 'Update'

@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @categories = Category.all
   end
 
   def show
@@ -10,8 +11,9 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    # @project = ProjectBuilder.new(project_params).build
     if @project.save
-      redirect_to project_path(project: @project.slug)
+      redirect_to project_path(project: @project.title.parameterize)
     else
       redirect_to new_project_path
     end
@@ -34,6 +36,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :description, :goal, :slug)
+    params.require(:project).permit(:title, :description, :goal, :slug, :category_id)
   end
 end
