@@ -4,13 +4,28 @@
     <title>JumpStart</title>
     <%= csrf_meta_tags %>
 
-      
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'jumpstart', media: 'all' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
     <%= render partial: 'shared/navbar' %>
+    <div class="container-fluid">
+      <% flash.each do |key, value| %>
+      <div class=<%= "#{key}" %>>
+        <div class= "alert alert-<%= key %> alert-dismissible" role="alert" >
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+          <center><%= sanitize(value) %><center>
+      </div>
+      <% end %>
+      </div>
+      </div>
+
+    <%= render partial: 'shared/footer' %>
     <%= yield %>
+
   </body>
 </html>

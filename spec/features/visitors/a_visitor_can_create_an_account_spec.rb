@@ -16,7 +16,7 @@ describe "Creating an Account" do
     click_on 'Create Account'
 
     expect(page).to have_content("test_email@example.com")
-    expect(page).to have_content("Welcome back Test Bob. What are you going to back today?")
+    #need to add flash message
   end
 
   scenario "a visitor can create an account" do
