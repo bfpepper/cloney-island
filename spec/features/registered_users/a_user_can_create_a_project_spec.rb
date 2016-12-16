@@ -5,6 +5,8 @@ describe "User creates a project" do
   context "visit project create page" do
     scenario "a user fill in fields and clicks submit" do
       user = create(:user)
+      role = Role.create(name: "registered")
+      user.roles << role
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       category = create(:category, name: 'Computer Science')

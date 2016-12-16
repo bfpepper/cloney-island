@@ -10,7 +10,7 @@ class PermissionsService
       return true if controller == "admin/categories" && action.in?(%w(new edit index create update))
       return true if controller == "sessions" && action.in?(%w(new create destroy))
     elsif user.registered?
-      return true if controller == "projects" && action == "new"
+      return true if controller == "projects" && action.in?(%w(new create show))
       return true if controller == "users" && action.in?(%w(show edit))
       return true if controller == "categories" && action.in?(%(show index))
       return true if controller == "sessions" && action.in?(%w(new create destroy))
