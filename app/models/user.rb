@@ -11,4 +11,16 @@ class User < ApplicationRecord
 
   has_many :user_roles
   has_many :roles, through: :user_roles
+
+  def registerd?
+    roles.exists?(name: "registered")
+  end
+
+  def admin?
+    roles.exists?(name: "admin")
+  end 
+
+  def backer?
+    roles.exists?(name: "backer")
+  end
 end
