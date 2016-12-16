@@ -28,8 +28,7 @@ class ProjectBuilder
   end
 
   def update_slug(new_title)
-    new_title.parameterize
-    Project.new(name: name, description: description, goal: goal, slug: slug, category_id: category)
+    @slug = new_title.parameterize
   end
 
 end

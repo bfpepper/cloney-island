@@ -12,6 +12,7 @@ class ProjectsController < ApplicationController
   def create
     @project = ProjectBuilder.new(project_params).build
     if @project.save
+      @project.users << current_user
       redirect_to project_path(slug: @project.title.parameterize)
     else
       redirect_to new_project_path
@@ -27,7 +28,7 @@ class ProjectsController < ApplicationController
     initial_project = Project.find(params[:slug])
     @project = ProjectBuilder.new(initial_project).modify(project_params, initial_project.id)
     if @project.save
-      redirect_to project_path(@project.title.parameterize)
+      redirect_to project_path(slug: @project.title.parameterize)
     else
       @categories = Category.all
       render :edit

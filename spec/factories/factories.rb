@@ -5,6 +5,9 @@ FactoryGirl.define do
     email
     phone
     password "password"
+    factory :user_with_projects do
+      projects {create_list(:project, 2)}
+    end
   end
 
   sequence :email do |n|
