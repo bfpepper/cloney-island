@@ -5,8 +5,10 @@ class Project < ApplicationRecord
   validates :name, uniqueness: true
   validates :slug, uniqueness: true
   validates :category, presence: true
-  
+
   belongs_to :category
+  has_many :user_projects
+  has_many :users, through: :user_projects
 
   before_validation :generate_slug
 

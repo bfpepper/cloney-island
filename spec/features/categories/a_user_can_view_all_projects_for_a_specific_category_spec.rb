@@ -15,5 +15,5 @@ describe 'As a user' do
       expect(page).to have_content('Computer Science')
       expect(page).to have_content(project1.name)
     end
-   end
- end
+  end
+end

@@ -1,10 +1,14 @@
 require 'rails_helper'
 
 
-describe "User created a project" do
+describe "User creates a project" do
   context "visit project create page" do
     scenario "a user fill in fields and clicks submit" do
-      #need to add signed in user
+      user = create(:user)
+      role = Role.create(name: "registered")
+      user.roles << role
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
       category = create(:category, name: 'Computer Science')
       project = build(:project)
       visit new_project_path
@@ -21,6 +25,8 @@ describe "User created a project" do
       expect(page).to have_content(project.name)
       expect(page).to have_content(project.description)
       expect(page).to have_content(project.goal)
+      save_and_open_page
+      expect(user.projects.first.name).to eq(project.name)
     end
   end
 end

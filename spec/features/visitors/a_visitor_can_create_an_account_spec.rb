@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe "Creating an Account" do
   scenario "a visitor can create an account" do
+    Role.create(name: 'registered', id: 1)
 
     visit new_user_path
 
