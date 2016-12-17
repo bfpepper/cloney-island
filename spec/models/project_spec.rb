@@ -12,4 +12,24 @@ RSpec.describe Project, type: :model do
     it { should validate_presence_of(:description)}
     it { should validate_presence_of(:goal)}
   end
+  
+  context "relationships" do
+    it 'has many backers' do
+      project = create(:project)
+
+      expect(project).to respond_to(:backers)
+    end
+  end
+
+  context "#funding_received" do
+    it 'returns current funding recieved' do
+      project = create(:project, goal: 100)
+      expect(project.funding_received).to eq(0)
+
+      user = create(:user)
+      backer = create(:backer, user: user, project: project, amount_give: 20)
+
+      expect(project.funding_received).to eq(20)
+    end
+  end
 end
