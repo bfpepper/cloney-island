@@ -15,16 +15,6 @@ ActiveRecord::Schema.define(version: 20161217215527) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "backers", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "project_id"
-    t.integer  "amount_given"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["project_id"], name: "index_backers_on_project_id", using: :btree
-    t.index ["user_id"], name: "index_backers_on_user_id", using: :btree
-  end
-
   create_table "categories", force: :cascade do |t|
     t.text     "name"
     t.string   "slug"
@@ -87,8 +77,6 @@ ActiveRecord::Schema.define(version: 20161217215527) do
     t.string   "email_confirmation"
   end
 
-  add_foreign_key "backers", "projects"
-  add_foreign_key "backers", "users"
   add_foreign_key "pledges", "projects"
   add_foreign_key "pledges", "users"
   add_foreign_key "projects", "categories"
