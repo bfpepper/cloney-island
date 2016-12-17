@@ -1,0 +1,6 @@
+<%= @project.title %>
+<%= form_for [:project, @pledge], url: projects_path(@project) do |f|%>
+  <%= f.label :amount  %>
+  <%= f.text_field :amount_given %>
+  <%= f.submit "Back project!" %>
+<% end %>
