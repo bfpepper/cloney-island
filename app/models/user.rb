@@ -6,14 +6,14 @@ class User < ApplicationRecord
   validates :name, :email, :phone, presence: true
   validates :email, :phone, uniqueness: true
 
+  has_many :pledges
+  has_many :projects, through: :pledges
+
   has_many :user_projects
   has_many :projects, through: :user_projects
 
   has_many :user_roles
   has_many :roles, through: :user_roles
-
-  has_many :pledges
-  has_many :projects, through: :pledges
 
   def registered?
     roles.exists?(name: "registered")
