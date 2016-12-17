@@ -27,9 +27,13 @@ RSpec.describe Project, type: :model do
       expect(project.funding_received).to eq(0)
 
       user = create(:user)
-      backer = create(:backer, user: user, project: project, amount_give: 20)
+      pledge = create(:pledge, user: user, project: project, amount_given: 20)
 
       expect(project.funding_received).to eq(20)
+
+      pledge = create(:pledge, user: user, project: project, amount_given: 20)
+
+      expect(project.funding_received).to eq(40)
     end
   end
 end
