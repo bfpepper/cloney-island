@@ -30,22 +30,22 @@
           <!-- Nav tabs -->
           <ul class="nav nav-tabs" role="tablist">
               <li role="presentation" class="active">
-                  <a href="#description" aria-controls="overview" role="tab" data-toggle="tab">
+                  <a href="#description" aria-controls="description" role="tab" data-toggle="tab">
                       <span class="span-tabs">Description</span>
                   </a>
               </li>
               <li role="presentation">
-                  <a href="#edit" aria-controls="stars" role="tab" data-toggle="tab">
+                  <a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">
                       <span class="span-tabs">Comments</span>
                   </a>
               </li>
               <li role="presentation">
-                  <a href="#projects" aria-controls="repositories" role="tab" data-toggle="tab">
+                  <a href="#backers" aria-controls="backers" role="tab" data-toggle="tab">
                       <span class="span-tabs">Backers</span>
                   </a>
               </li>
               <li role="presentation">
-                  <a href="#backed" aria-controls="stars" role="tab" data-toggle="tab">
+                  <a href="#other_projects" aria-controls="other_projects" role="tab" data-toggle="tab">
                       <span class="span-tabs">Other Projects</span>
                   </a>
               </li>
@@ -54,20 +54,19 @@
           <!-- Tab panes -->
           <div class="tab-content">
               <div role="tabpanel" class="tab-pane active" id="description">
-              </br>
-                </br>
                 <%= @project.description %>
-                  </div>
-
-              <div role="tabpanel" class="tab-pane" id="projects">
-                  Info about projects go here
               </div>
 
-              <div role="tabpanel" class="tab-pane" id="backed">
+              <div role="tabpanel" class="tab-pane" id="comments">
+                hi
+              </div>
+
+              <div role="tabpanel" class="tab-pane" id="backers">
                   all users who backed there page
               </div>
-              <div role="tabpanel" class="tab-pane" id="edit">
-                hi
+
+              <div role="tabpanel" class="tab-pane" id="other_projects">
+                Info about projects go here
               </div>
           </div>
       </div>
@@ -75,9 +74,5 @@
 
 
 </div>
-
-
-
-
 
 <%= link_to "Edit Your Project", edit_project_path(@project.title.parameterize), method: :get %>
