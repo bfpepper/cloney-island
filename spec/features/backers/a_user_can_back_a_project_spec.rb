@@ -7,24 +7,20 @@ describe "As a user" do
       user = create(:user)
       role = Role.create(name: "registered")
       user.roles << role
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit project_path(project.slug)
 
       expect(find('div.progress-bar')['aria-valuenow']).to eq('0')
+      expect(page).to have_content('Only backers of How to find a Job can post comments.')
 
-      click_on "Comments"
+      click_on "Back project!"
 
-      within('div.tab-pane.active') do
-        expect(page).to have_content("Only backers can post comments.")
-      end
-
-      click_on "Back Project"
-
-      expect(current_path).to eq(projects_new_backer_path(project.slug))
+      expect(current_path).to eq(projects_new_pledge_path(project.slug))
       expect(page).to have_content("How to find a Job")
 
       fill_in :amount, with: 50
-      click_on "Back Project"
+      click_on "Back project!"
 
       expect(current_path).to eq(project_path(project.slug))
       expect(find('div.progress-bar')['aria-valuenow']).to eq('10')
