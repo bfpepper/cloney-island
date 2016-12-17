@@ -31,6 +31,7 @@ class PermissionsService
       return true if controller == "landing" && action == "index"
       return true if controller == "sessions" && action.in?(%w(new create destroy))
       return true if controller == "about" && action == "index"
+      return true if controller == "projects/pledges" && action == "new"
     end
 
     def guest_permissions
