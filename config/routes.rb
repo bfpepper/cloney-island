@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: 'landing#index'
   get '/about', to: 'about#index'
 
-
+  namespace :projects do
+    get '/:slug/backers/new', to: 'backers#new', as: :new_backer
+  end
   resources :projects, only: [:new, :create]
   get "/projects/:slug", to: 'projects#show', as: :project
   get '/projects/:slug/edit', to: 'projects#edit', as: :edit_project
