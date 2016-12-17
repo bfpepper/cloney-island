@@ -4,7 +4,9 @@ describe "user show page" do
   context "as a signed in user" do
     scenario "I can see my show page" do
       user = create(:user)
-      
+      role = Role.create(name: "registered")
+      user.roles << role
+            
       visit root_path
       click_on "Login"
 
@@ -13,12 +15,12 @@ describe "user show page" do
 
       click_on "Sign In"
 
-      click_on "Account"
-      
+      click_link "Account"
+
       expect(page).to have_content(user.email)
       expect(page).to have_content(user.phone)
       expect(page).to have_content("Backed Projects")
-      expect(page).to have_content("Current Projects")
+      expect(page).to have_content("Created Projects")
       expect(page).to have_content("Edit Profile")
     end
   end
