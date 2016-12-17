@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   get '/about', to: 'about#index'
 
   namespace :projects do
-    get '/:slug/backers/new', to: 'backers#new', as: :new_backer
+    get '/:slug/pledges/new', to: 'pledges#new', as: :new_pledge
   end
+  
   resources :projects, only: [:new, :create]
   get "/projects/:slug", to: 'projects#show', as: :project
   get '/projects/:slug/edit', to: 'projects#edit', as: :edit_project
