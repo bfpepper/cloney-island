@@ -1,5 +1,5 @@
 <p>Category Show Page</p>
 <p><%= @category.name %></p>
 <% @category.projects.each do |project| %>
-<%= project.title %>
+<%= link_to project.title, project_path(slug: project.title.parameterize) %>
 <% end  %>
