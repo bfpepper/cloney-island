@@ -3,7 +3,7 @@ require "rails_helper"
 describe "A user can reset password" do
   it "User can reset password using Twillo 2FA" do
 
-    user = create(:user)
+    user = create(:user, password: "7203230072")
 
     visit login_path
     click_on "Forgot Password?"
