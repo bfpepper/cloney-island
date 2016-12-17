@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   root to: 'landing#index'
   get '/about', to: 'about#index'
 
+  get '/reset_password', to: 'password#edit', as: :pass_reset
 
   resources :projects, only: [:new, :create]
   get "/projects/:slug", to: 'projects#show', as: :project
   get '/projects/:slug/edit', to: 'projects#edit', as: :edit_project
   put '/projects/:slug', to: 'projects#update'
   patch '/projects/:slug', to: 'projects#update'
+
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
