@@ -12,6 +12,9 @@ class User < ApplicationRecord
   has_many :user_roles
   has_many :roles, through: :user_roles
 
+  has_many :pledges
+  has_many :projects, through: :pledges
+
   def registered?
     roles.exists?(name: "registered")
   end
