@@ -13,4 +13,8 @@ class Project < ApplicationRecord
              :slug, uniqueness: true
 
   belongs_to :category
+
+  def funding_received
+    
+  end
 end
