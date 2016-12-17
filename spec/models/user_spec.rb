@@ -9,7 +9,7 @@ describe User, type: :model do
     it { should validate_confirmation_of(:password)}
   end
 
-  context "Uniquness" do
+  context "Uniqueness" do
     it { should validate_uniqueness_of(:phone)}
     it { should validate_uniqueness_of(:email)}
   end

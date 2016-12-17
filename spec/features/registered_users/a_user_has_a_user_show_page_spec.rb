@@ -24,11 +24,17 @@ describe "user show page" do
       expect(page).to have_content("Edit Profile")
     end
   end
+  
+  context "as a guest user" do
+    scenario "I can't see a user's full show page" do
+      user = create(:user)
+      role = Role.create(name: "registered")
+      user.roles << role
+            
+      visit user_path(user.id)
+      
+      expect(page).to have_content("The page you were looking for doesn't exist (404)")
+    end
+  end
+
 end
- 
-# as a signed in user
-# when i visit root
-# I click on user image
-# I am directed to user show page
-# I can can see my email and phone number
-# i can see tabs to backed projects, current projects, edit profile
