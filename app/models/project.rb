@@ -6,6 +6,9 @@ class Project < ApplicationRecord
 
   belongs_to :category
 
+  has_many :pledges
+  has_many :users, through: :pledges
+
   has_many :user_projects
   has_many :users, through: :user_projects
 
@@ -14,10 +17,8 @@ class Project < ApplicationRecord
 
   belongs_to :category
 
-  has_many :pledges
-  has_many :users, through: :pledges
 
   def funding_received
-
+    pledges.empty? ? 0 : pledges.sum(:amount_given)
   end
 end
