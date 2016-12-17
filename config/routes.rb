@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'landing#index'
+  get '/about', to: 'about#index'
+
 
   resources :projects, only: [:new, :create]
   get "/projects/:slug", to: 'projects#show', as: :project

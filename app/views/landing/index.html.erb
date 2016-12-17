@@ -42,7 +42,7 @@
         <img src="http://placehold.it/320x150" alt="">
         <div class="caption">
             <h4 class="pull-right">Amount Raised!</h4>
-            <h4><a href="#"> <%= project.name %>  </a>
+            <h4><a href="#"> <%= link_to project.title, project_path(slug: project.title.parameterize) %>  </a>
             </h4>
             <p>Can put progress bar here maybe?</p>
         </div>
