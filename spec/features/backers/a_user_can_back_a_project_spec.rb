@@ -19,7 +19,7 @@ describe "As a user" do
       expect(current_path).to eq(projects_new_pledge_path(project.slug))
       expect(page).to have_content("How to find a Job")
 
-      fill_in :amount, with: 50
+      fill_in :pledge_amount_given, with: 50
       click_on "Back project!"
 
       expect(current_path).to eq(project_path(project.slug))
