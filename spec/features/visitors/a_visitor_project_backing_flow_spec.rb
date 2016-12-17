@@ -3,12 +3,10 @@ require 'rails_helper'
 describe "guest visits project site" do
   context "guest tries to back a project" do
     scenario "I must sign up before I can back a project" do
-      project = create(:project, title: "MooseWatch", slug: "moosewatch")
-      role = Role.create(name: "registered")
+      project = create(:project, title: "MooseWatch")
 
-      visit root_path
-      visit project_path(project)
-      click_on "Back Project"
+      visit project_path(project.slug)
+      click_button "Back this project!"
       
       expect(page).to have_content("Email")
       expect(page).to have_content("Password")
