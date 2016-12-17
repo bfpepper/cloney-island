@@ -14,7 +14,10 @@ class Project < ApplicationRecord
 
   belongs_to :category
 
+  has_many :pledges
+  has_many :users, through: :pledges
+
   def funding_received
-    
+
   end
 end
