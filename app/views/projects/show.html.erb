@@ -12,15 +12,16 @@
       </p>
       <div class="progress">
   <div class="progress-bar progress-bar-striped active" role="successbar"
-  aria-valuenow="#{ <%= @project.funding_received %> }" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+  aria-valuenow="<%= @project.funding_received %>" aria-valuemin="0" aria-valuemax="100" style="width:50%">
     40%
   </div>
 </div>
     <p>Project created on: <%= @project.created_at.to_date.strftime("%B %d, %Y") %> </p>
     <p>Backers: 0</p>
     <p>Days to go: 0</p>
-    <button type="button" class="btn btn-primary btn-block">Back this project!</button>
      </div>
+     <%= button_to "Back project!", projects_new_pledge_path(@project.slug), class: "btn btn-primary btn-block", method: :get %>
+    </div>
     </div>
   </div>
   <!-- Nav tabs -->
@@ -58,7 +59,11 @@
               </div>
 
               <div role="tabpanel" class="tab-pane" id="comments">
-                hi
+                <% if @project.pledges.include?(current_user.id) %>
+                <%= button_to "Post Your Comment", new %>
+                <% else %>
+                <%= "Only backers of #{@project.title} can post comments." %>
+                <% end %>
               </div>
 
               <div role="tabpanel" class="tab-pane" id="backers">
