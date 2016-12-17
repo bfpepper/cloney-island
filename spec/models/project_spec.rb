@@ -12,12 +12,12 @@ RSpec.describe Project, type: :model do
     it { should validate_presence_of(:description)}
     it { should validate_presence_of(:goal)}
   end
-  
+
   context "relationships" do
-    it 'has many backers' do
+    it 'has many pledges' do
       project = create(:project)
 
-      expect(project).to respond_to(:backers)
+      expect(project).to respond_to(:pledges)
     end
   end
 
