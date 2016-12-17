@@ -3,12 +3,12 @@ require 'rails_helper'
 describe "As a user" do
  context "when I visit a projects show page" do
   scenario "I can back(give money) to a project" do
-      project = create(:project, name: "How to find a Job", goal: 100)
+      project = create(:project, title: "How to find a Job", goal: 100)
       user = create(:user)
       role = Role.create(name: "registered")
       user.roles << role
 
-      visit project_path(project)
+      visit project_path(project.slug)
 
       expect(find('div.progress-bar')['aria-valuenow']).to eq('0')
 
