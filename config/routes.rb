@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   namespace :projects do
     get '/:slug/pledges/new', to: 'pledges#new', as: :new_pledge
-    post '/:slug/pledges', to: 'pledges#create'
+    post '/:slug/pledges', to: 'pledges#create', as: :pledge
   end
 
   resources :projects, only: [:new, :create]
