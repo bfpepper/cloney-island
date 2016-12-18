@@ -11,9 +11,9 @@
       Pleged a goal of <%= number_to_currency(@project.goal) %>
       </p>
       <div class="progress">
-  <div class="progress-bar progress-bar-striped active" role="successbar"
-  aria-valuenow="<%= @project.funding_received %>" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-    40%
+  <div class="progress-bar progress-bar-striped" role="successbar"
+  aria-valuenow="<%= @project.funding_received %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= @project.funding_received %>%">
+    <%= @project.funding_received %>%
   </div>
 </div>
     <p>Project created on: <%= @project.created_at.to_date.strftime("%B %d, %Y") %> </p>
@@ -59,8 +59,8 @@
               </div>
 
               <div role="tabpanel" class="tab-pane" id="comments">
-                <% if @project.pledges.include?(current_user.id) %>
-                <%= button_to "Post Your Comment", new %>
+                <% if @project.backers.include?(current_user) %>
+                <%= button_to "Post Your Comment", "#" %>
                 <% else %>
                 <%= "Only backers of #{@project.title} can post comments." %>
                 <% end %>
