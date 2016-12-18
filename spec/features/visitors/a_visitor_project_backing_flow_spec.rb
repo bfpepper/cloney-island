@@ -59,7 +59,6 @@ describe "guest visits project site" do
       fill_in "user[password_confirmation]", with: "hunter42"
 
       click_on 'Create Account'
-      save_and_open_page
       
       visit project_path(project.slug)
       click_button "Back project!"
