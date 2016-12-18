@@ -1,8 +1,7 @@
 require "rails_helper"
 
 describe "A user can reset password" do
-  it "User can reset password using Twillo 2FA" do
-
+  it "User can reset password using Twillo 2FA", :vcr do
     code = rand(100000...999999)
 
     user = create(:user, phone: "+17203230072")

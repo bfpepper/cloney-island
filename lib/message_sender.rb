@@ -3,9 +3,10 @@ module MessageSender
     sid = ENV['twillo_sid']
     token = ENV['twillo_token']
     client = Twilio::REST::Client.new(sid, token)
+    from_number = ENV['twillo_number']
 
     message = client.messages.create({
-      from: ENV['twillo_number'],
+      from: from_number,
       to:   phone_number,
       body: code
     })
