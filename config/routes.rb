@@ -3,7 +3,13 @@ Rails.application.routes.draw do
   root to: 'landing#index'
   get '/about', to: 'about#index'
 
-  get '/reset_password', to: 'password#edit', as: :pass_reset
+  get '/reset_password', to: 'password#confirm', as: :confirm_id
+  get '/identity_confirmed', to: 'password#edit', as: :password_reset
+
+  namespace :projects do
+    get '/:slug/pledges/new', to: 'pledges#new', as: :new_pledge
+    post '/:slug/pledges', to: 'pledges#create', as: :pledge
+  end
 
   resources :projects, only: [:new, :create]
   get "/projects/:slug", to: 'projects#show', as: :project
@@ -15,6 +21,8 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+
+  get '/guest_login', to: 'sessions#guest'
 
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :categories, only: [:index]

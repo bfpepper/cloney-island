@@ -1,7 +1,7 @@
 class PasswordController < ApplicationController
 
-  def edit
-    
+  def confirm
+
   end
 
 end

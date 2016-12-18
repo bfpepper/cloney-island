@@ -14,6 +14,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'figaro'
 gem 'faker'
+gem 'twilio-ruby'
 
 group :development, :test do
   gem 'rspec-rails'

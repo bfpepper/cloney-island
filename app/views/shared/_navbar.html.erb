@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default no-padding">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -14,34 +14,24 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/categories"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>Explore</a></li>
+        <li><a href="/categories"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Explore</a></li>
       </ul>
+
       <ul class="nav navbar-nav">
-      <li><%=link_to "Start a Project", new_project_path  %></li>
+        <li><%=link_to "Start a Project", new_project_path  %></li>
       </ul>
+
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
+        <ul class="nav navbar-nav">
           <% if logged_in? %>
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= image_tag("default_user.png", size: 28) %>  <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to "Account", user_path(current_user.id) %></li>
+            <li class="avatar" ><%= "Hello, #{current_user.name}!" %></li>
+            <li><%= link_to image_tag("default_user.png", size: 28), user_path(current_user.id), class: "avatar", id: "Account" %></li>
             <li><%= link_to "Sign Out", logout_path, method: :delete %></li>
-          </ul>
-        </li>
-          <!-- put the user image here size: 20 -->
-          <ul class="nav navbar-nav">
-            <% else %>
+          <% else %>
             <li><%= link_to "Login", login_path %></li>
             <li><%= link_to "Sign Up", new_user_path %></li>
-
-            <li class="dropdown">
-              <ul class="dropdown-menu">
-                <li><a href="#">New repository</a></li>
-              </ul>
-            </li>
-            <% end %>
-          </ul>
-        </li>
+          <% end %>
+        </ul>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

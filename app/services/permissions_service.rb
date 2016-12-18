@@ -31,14 +31,16 @@ class PermissionsService
       return true if controller == "landing" && action == "index"
       return true if controller == "sessions" && action.in?(%w(new create destroy))
       return true if controller == "about" && action == "index"
+      return true if controller == "projects/pledges" && action.in?(%w(new create))
     end
 
     def guest_permissions
       return true if controller == "categories" && action.in?(%(show index))
-      return true if controller == "sessions" && action.in?(%w(new create destroy))
+      return true if controller == "sessions" && action.in?(%w(new create destroy guest))
       return true if controller == "projects" && action == "show"
       return true if controller == "users" && action.in?(%(new create))
       return true if controller == "landing" && action == "index"
       return true if controller == "about" && action == "index"
+      return true if controller == "password" && action == "confirm"
     end
 end

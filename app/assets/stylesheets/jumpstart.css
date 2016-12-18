@@ -79,6 +79,8 @@ img {
 
 .avatar {
   border-radius: 6px;
+  padding-top: 1em !important;
+  padding-bottom: 0 !important;
 }
 
 div.col-md-3.left {
@@ -201,4 +203,9 @@ body {
 
 .img-center {
 	margin: 0 auto;
+}
+
+.no-padding {
+  margin: 0;
+  
 }

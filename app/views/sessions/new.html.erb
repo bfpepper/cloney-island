@@ -1,9 +1,9 @@
 <%= form_for :session, url: login_path do |f| %>
-<%= f.label :email %>
-<%= f.text_field :email %>
-<%= f.label :password %>
-<%= f.password_field :password %>
-<%= f.submit "Sign In" %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <%= f.submit "Sign In" %> or <%= link_to "create an account", new_user_path %>!
 <% end %>
 
-<%= link_to "Forgot Password?", pass_reset_path %>
+<%= link_to "Forgot Password?", confirm_id_path %>
