@@ -3,6 +3,14 @@ Rails.application.routes.draw do
   root to: 'landing#index'
   get '/about', to: 'about#index'
   
+  namespace :api do
+    namespace :v1 do
+      namespace :comments do
+        get '', to: 'comments#index'
+      end
+    end
+  end
+
   namespace :projects do
     get '/:slug/pledges/new', to: 'pledges#new', as: :new_pledge
     post '/:slug/pledges', to: 'pledges#create', as: :pledge
