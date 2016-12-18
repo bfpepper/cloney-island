@@ -9,8 +9,14 @@ describe 'As a guest' do
     end
   end
 
-  context 'When a visitor clicks on Start a Project!'
+  context 'When a visitor clicks on Start a Project!' do
     scenario 'page does not exist' do
+
+      visit root_path
+      click_link "Start a Project!"
+
+      expect(current_path).to eq(login_path)
+      expect(page).to have_content("You need to login or create an account to do that.")
     end
-  end 
+  end
 end
