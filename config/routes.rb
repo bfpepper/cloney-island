@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   root to: 'landing#index'
   get '/about', to: 'about#index'
 
+  namespace :projects do
+    get '/:slug/pledges/new', to: 'pledges#new', as: :new_pledge
+    post '/:slug/pledges', to: 'pledges#create', as: :pledge
+  end
 
   resources :projects, only: [:new, :create]
   get "/projects/:slug", to: 'projects#show', as: :project
