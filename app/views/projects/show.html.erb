@@ -19,9 +19,13 @@
     <p>Project created on: <%= @project.created_at.to_date.strftime("%B %d, %Y") %> </p>
     <p>Backers: 0</p>
     <p>Days to go: 0</p>
-     </div>
-     <%= button_to "Back project!", projects_new_pledge_path(@project.slug), class: "btn btn-primary btn-block", method: :get %>
     </div>
+    <% if current_user.nil? %>
+      <%= button_to "Back project!", login_path, class: "btn btn-primary btn-block", method: :get %>
+    <% else %>
+      <%= button_to "Back project!", projects_new_pledge_path(@project.slug), class: "btn btn-primary btn-block", method: :get %>
+    </div>
+    <% end %>
     </div>
   </div>
   <!-- Nav tabs -->
@@ -67,11 +71,11 @@
               </div>
 
               <div role="tabpanel" class="tab-pane" id="backers">
-                  all users who backed there page
+                All users who have backed the project.
               </div>
 
               <div role="tabpanel" class="tab-pane" id="other_projects">
-                Info about projects go here
+                All info about projects.
               </div>
           </div>
       </div>
