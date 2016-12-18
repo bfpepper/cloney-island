@@ -1,16 +1,24 @@
 class Project < ApplicationRecord
-  validates :name, uniqueness: true
-  validates :slug, uniqueness: true
-  validates :name, presence: true
-  validates :description, presence: true
-  validates :goal, presence: true
-  validates :category, presence: true
-  
+  validates :title,
+            :description,
+            :goal,
+            :category_id, presence: true
+
   belongs_to :category
 
-  before_validation :generate_slug
+  has_many :pledges
+  has_many :backers, through: :pledges, source: :user
 
-  def generate_slug
-    self.slug = name.parameterize
+  has_many :user_projects
+  has_many :users, through: :user_projects
+
+  validates :title,
+             :slug, uniqueness: true
+
+  belongs_to :category
+
+
+  def funding_received
+    pledges.empty? ? 0 : ((pledges.sum(:amount_given) / goal.to_f) * 100).round
   end
 end

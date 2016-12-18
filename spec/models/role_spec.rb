@@ -1,0 +1,8 @@
+require 'rails_helper'
+
+RSpec.describe Role, type: :model do
+  context 'Relationships' do
+    it { should have_many(:user_roles)}
+    it { should have_many(:users).through(:user_roles)}
+  end
+end

@@ -1,5 +1,5 @@
 <h1>Categories</h1>
 <% @categories.each do |category| %>
   <%= category.name %>
-  <%= button_to "Edit", admin_edit_category_path(category.slug), method: :get %>
+  <%= button_to "Edit", admin_edit_category_path(category.name.parameterize), method: :get %>
 <% end %>
