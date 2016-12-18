@@ -15,9 +15,15 @@ RSpec.describe Project, type: :model do
 
   context "relationships" do
     it 'has many pledges' do
-      project = create(:project)
+      project = build(:project)
 
       expect(project).to respond_to(:pledges)
+    end
+
+    it 'has many backers' do
+      project = build(:project)
+
+      expect(project).to respond_to(:backers)
     end
   end
 
