@@ -2,5 +2,7 @@
 <%= form_for [:project, @pledge], url: projects_pledge_path(@project.slug) do |f|%>
   <%= f.label :amount  %>
   <%= f.text_field :amount_given %>
+  <%= label_tag :password %>
+  <%= text_field_tag :password %>
   <%= f.submit "Back project!" %>
 <% end %>
