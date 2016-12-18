@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   validates :name, :email, :phone, presence: true
   validates :email, :phone, uniqueness: true
+  validates :api_key, uniqueness: true
 
   has_many :pledges
   has_many :backed_projects, through: :pledges, source: :project
@@ -25,5 +26,11 @@ class User < ApplicationRecord
 
   def backer?
     roles.exists?(name: "backer")
+  end
+
+  before_validation :generate_api_key
+
+  def generate_api_key
+    self.api_key = SecureRandom.hex
   end
 end
