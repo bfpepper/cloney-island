@@ -6,6 +6,7 @@ describe 'As registered user' do
       project = create(:project, title: "How to find a Job", goal: 100)
       user = create(:user)
       registered = Role.create(name: "registered")
+      backer = Role.create(name: "backer")
       user.roles << registered
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
@@ -16,7 +17,7 @@ describe 'As registered user' do
       click_on "Back project!"
 
       expect(current_path).to eq(projects_new_pledge_path(project.slug))
-      expect(page).to have_content("You need to enter a password to back the project")
+      expect(page).to have_content("Must fill out all fields")
     end
   end
 end
