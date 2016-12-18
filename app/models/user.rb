@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :email, :phone, uniqueness: true
 
   has_many :pledges
-  has_many :projects, through: :pledges
+  has_many :backed_projects, through: :pledges, source: :project
 
   has_many :user_projects
   has_many :projects, through: :user_projects
