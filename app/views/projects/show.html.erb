@@ -21,7 +21,7 @@
     <p>Days to go: 0</p>
     </div>
     <% if current_user.nil? %>
-      <%= button_to "Back project!", login_path, class: "btn btn-primary btn-block", method: :get %>
+      <%= button_to "Back project!", guest_login_path, class: "btn btn-primary btn-block", method: :get %>
     <% else %>
       <%= button_to "Back project!", projects_new_pledge_path(@project.slug), class: "btn btn-primary btn-block", method: :get %>
     </div>
