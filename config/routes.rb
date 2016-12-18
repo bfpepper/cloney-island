@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/about', to: 'about#index'
 
   get '/reset_password', to: 'password#confirm', as: :confirm_id
+  post '/reset_password', to: 'password#find_user'
   get '/identity_confirmed', to: 'password#edit', as: :password_reset
 
   namespace :projects do

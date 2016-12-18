@@ -41,6 +41,6 @@ class PermissionsService
       return true if controller == "users" && action.in?(%(new create))
       return true if controller == "landing" && action == "index"
       return true if controller == "about" && action == "index"
-      return true if controller == "password" && action == "confirm"
+      return true if controller == "password" && action.in?(%(confirm find_user))
     end
 end

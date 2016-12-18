@@ -12,10 +12,10 @@ describe "A user can reset password" do
 
     expect(current_path).to eq(confirm_id_path)
 
-    save_and_open_page
     fill_in "password[email]", with: user.email
     click_on "Request confirmation code"
-    expect(current_path).to eq(pass_reset_path)
+
+    expect(current_path).to eq(password_reset_path)
 
     fill_in 'twilio_response_code', with: code
     fill_in "Password", with: "Turing1510"
