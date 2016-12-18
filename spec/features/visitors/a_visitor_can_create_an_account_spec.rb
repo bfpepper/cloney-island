@@ -14,7 +14,6 @@ describe "Creating an Account" do
     fill_in "user[password_confirmation]", with: "123"
 
     click_on "Create Account"
-    save_and_open_page
     expect(page).to have_content("test_email@example.com")
   end
 
