@@ -3,10 +3,8 @@ require "rails_helper"
 describe "A user can reset password" do
   it "User can reset password using Twillo 2FA", :vcr do
     code = rand(100000...999999)
-    binding.pry
 
-    user = create(:user, phone: "+17203230072")
-
+    user = create(:user, phone: "+17203230072", verification_code: code)
     visit login_path
     click_on "Forgot Password?"
 
@@ -15,11 +13,15 @@ describe "A user can reset password" do
     fill_in "password[email]", with: user.email
     click_on "Request confirmation code"
 
-    expect(current_path).to eq(password_reset_path)
+    new_code = rand(100000...999999).to_s
 
-    fill_in 'twilio_response_code', with: code
-    fill_in "Password", with: "Turing1510"
-    fill_in "Password_confirmation", with: "Turing1510"
+    user.verification_code << new_code
+
+    expect(current_path).to eq(password_reset_path)
+save_and_open_page
+    fill_in 'password[twilio_response_code]', with: new_code
+    fill_in "password[password]", with: "Turing1510"
+    fill_in "password[password_confirmation]", with: "Turing1510"
     click_on "Update Password"
 
     expect(current_path).to eq(login_path)

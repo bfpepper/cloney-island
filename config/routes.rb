@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/reset_password', to: 'password#confirm', as: :confirm_id
   post '/reset_password', to: 'password#find_user'
   get '/identity_confirmed', to: 'password#edit', as: :password_reset
+  post '/identity_confirmed', to: 'password#update', as: :update_password
 
   namespace :projects do
     get '/:slug/pledges/new', to: 'pledges#new', as: :new_pledge
