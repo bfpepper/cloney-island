@@ -1,7 +1,11 @@
-<%= form_for :session, url: login_path do |f| %>
-<%= f.label :email %>
-<%= f.text_field :email %>
-<%= f.label :password %>
-<%= f.password_field :password %>
-<%= f.submit "Sign In" %>
-<% end %>
+<div class="login-page">
+  <div class="form">
+    <%= form_for :session, url: login_path do |f| %>
+      <%= f.label :email %>
+      <%= f.text_field :email, placeholder: "Email"%>
+      <%= f.label :Password %>
+      <%= f.password_field :password, placeholder: "Password"%>
+      <%= f.submit "Sign In" %> or <%= link_to "create an account", new_user_path %>!
+  </div>
+  <% end %>
+</div>

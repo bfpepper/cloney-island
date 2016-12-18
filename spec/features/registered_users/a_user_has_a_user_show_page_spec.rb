@@ -13,10 +13,9 @@ describe "user show page" do
       fill_in "session[email]", with: user.email
       fill_in "session[password]", with: user.password
 
-      require "pry"; binding.pry
-      click_link "Sign In"
+      click_on "Sign In"
 
-      click_link "Account"
+      click_on "Account"
 
       expect(page).to have_content(user.email)
       expect(page).to have_content(user.phone)
