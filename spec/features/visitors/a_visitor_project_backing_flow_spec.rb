@@ -6,7 +6,7 @@ describe "guest visits project site" do
       project = create(:project, title: "MooseWatch")
 
       visit project_path(project.slug)
-      click_button "Back this project!"
+      click_button "Back project!"
       
       expect(page).to have_content("Email")
       expect(page).to have_content("Password")
