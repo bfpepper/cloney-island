@@ -204,3 +204,8 @@ body {
 .img-center {
 	margin: 0 auto;
 }
+
+.no-padding {
+  margin: 0;
+  
+}
