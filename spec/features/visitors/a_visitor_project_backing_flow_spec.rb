@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "guest visits project site" do
   context "guest tries to back a project" do
     scenario "I must sign up or login before I can back a project" do
-      project = create(:project, title: "MooseWatch")
+      project = create(:project, title: "Manhattan")
 
       visit project_path(project.slug)
       click_button "Back project!"
@@ -11,11 +11,11 @@ describe "guest visits project site" do
       expect(page).to have_content("Email")
       expect(page).to have_content("Password")
       expect(page).to have_content("or create an account!")
-      # expect(page).to have_content("You need to login or sign up to do that.")
+      expect(page).to have_content("You need to login or create an account to do that.")
     end
     
     scenario "I must login before I can back a project" do
-      project = create(:project, title: "MooseWatch")
+      project = create(:project, title: "The Mars Project")
       user = create(:user)
       registered = Role.create(name: "registered")
       user.roles << registered
@@ -40,7 +40,7 @@ describe "guest visits project site" do
     end
     
     scenario "I must sign up before I can back a project" do
-      project = create(:project, title: "MooseWatch")
+      project = create(:project, title: "You're Just Projecting")
       registered = Role.create(name: "registered", id: 1)
       backer = Role.create(name: "backer")
       

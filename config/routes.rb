@@ -2,7 +2,7 @@ Rails.application.routes.draw do
  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'landing#index'
   get '/about', to: 'about#index'
-
+  
   namespace :projects do
     get '/:slug/pledges/new', to: 'pledges#new', as: :new_pledge
     post '/:slug/pledges', to: 'pledges#create', as: :pledge
@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  get '/guest_login', to: 'sessions#guest'
+  
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :categories, only: [:index]
   get 'categories/:category', to: 'categories#show', as: :category
