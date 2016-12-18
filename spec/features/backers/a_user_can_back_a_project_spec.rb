@@ -5,8 +5,9 @@ describe "As a user" do
   scenario "I can back(give money) to a project" do
       project = create(:project, title: "How to find a Job", goal: 100)
       user = create(:user)
-      role = Role.create(name: "registered")
-      user.roles << role
+      registered = Role.create(name: "registered")
+      backer = Role.create(name: "backer")
+      user.roles << registered
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit project_path(project.slug)
@@ -23,13 +24,9 @@ describe "As a user" do
       click_on "Back project!"
 
       expect(current_path).to eq(project_path(project.slug))
-      expect(find('div.progress-bar')['aria-valuenow']).to eq('10')
+      expect(find('div.progress-bar')['aria-valuenow']).to eq('50')
 
-      click_on "comments"
-
-      within('div.tab-pane.active') do
-        expect(page).to have_button("Post Your Comment")
-      end
+      expect(page).to have_button("Post Your Comment")
     end
   end
 end
