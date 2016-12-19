@@ -21,6 +21,7 @@ describe "As a user" do
       expect(page).to have_content("How to find a Job")
 
       fill_in :pledge_amount_given, with: 50
+      fill_in :password, with: user.password
       click_on "Back project!"
 
       expect(current_path).to eq(project_path(project.slug))

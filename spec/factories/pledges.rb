@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :pledge do
-    user nil
-    project nil
+    user
+    project
     amount_given 1
   end
 end
