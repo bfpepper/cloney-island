@@ -24,5 +24,17 @@ describe User, type: :model do
 
       expect(user).to respond_to(:backed_projects)
     end
+
+    it 'has many comments' do
+      user = build(:user)
+
+      expect(user).to respond_to(:comments)
+    end
+
+    it 'has many commented projects' do
+      user = build(:user)
+
+      expect(user).to respond_to(:commented_projects)
+    end
   end
 end
