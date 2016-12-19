@@ -17,5 +17,14 @@ class PasswordController < ApplicationController
   end
 
   def update
+    if params[:password][:password] == params[:password][:password_confirmation]
+      user = User.find_by(verification_code: params[:password][:twilio_response_code])
+      user.update(password: params[:password][:password])
+      binding.pry
+      redirect_to login_path
+    else
+      flash[:danger] = "Your passswords do not match. Please try again."
+      render :edit
+    end
   end
 end
