@@ -22,4 +22,12 @@ describe "comments endpoint" do
       expect(comments.last['comment_body']).to eq('I wish you all the best of luck')
     end
   end
+
+  context "Get /api/v1/comments without api_key" do
+    it 'returns 401' do
+      get '/api/v1/comments'
+
+      expect(response).to have_http_status(401)
+    end
+  end
 end
