@@ -6,7 +6,7 @@ class Api::V1::Comments::CommentsController < ApplicationController
     if project
       render json: project.comments
     else  
-      render json: {error: 'project not found'}
+      render json: {error: 'project not found'}, status: 404
     end
   end
 
