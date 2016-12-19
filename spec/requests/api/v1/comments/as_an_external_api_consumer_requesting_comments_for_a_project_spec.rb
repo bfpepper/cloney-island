@@ -44,4 +44,18 @@ describe "comments endpoint" do
       expect(result).to eq({'error' => 'project not found'}) 
     end
   end
+
+  context "Get /api/v1/comments for a project that a user is not a backer of" do
+    xit 'returns 401' do
+      user = create(:user)
+      user2 = create(:user)
+      project = create(:project, title: 'How to Find a Job')
+      commenter1 = create(:user)
+      commenter2 = create(:user)
+      comment1 = create(:comment, user: commenter1, project: project, comment_body: "What a fantastic project!")
+      comment2 = create(:comment, user: commenter2, project: project, comment_body: "I wish you all the best of luck")
+
+      get "/api/v1/comments?api_key=#{user2.api_key}&project"
+    end
+  end
 end
