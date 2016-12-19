@@ -10,7 +10,7 @@ describe "comments endpoint" do
       comment1 = create(:comment, user: commenter1, project: project, comment_body: "What a fantastic project!")
       comment2 = create(:comment, user: commenter2, project: project, comment_body: "I wish you all the best of luck")
 
-      get "/api/v1/comments?api_key=#{user.api_key}&project=#{project.title.parameterize}"
+      get "/api/v1/comments?api_key=#{user.api_key}&project=#{project.slug}"
 
       comments = JSON.parse(response.body)
 
@@ -28,6 +28,20 @@ describe "comments endpoint" do
       get '/api/v1/comments'
 
       expect(response).to have_http_status(401)
+    end
+  end
+
+  context "Get /api/v1/comments no project found" do
+    it 'returns no project found' do
+      user = create(:user)
+      nonexistent_project_slug = "blah-blah-blah"
+
+      get "/api/v1/comments?api_key=#{user.api_key}&project=#{nonexistent_project_slug}"
+
+      result = JSON.parse(response.body)
+      
+      expect(response).to have_http_status(404)
+      expect(result).to eq({'error' => 'project not found'}) 
     end
   end
 end
