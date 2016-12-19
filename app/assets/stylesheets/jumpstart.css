@@ -1,16 +1,6 @@
 .navbar {
-  height: 49px;
-  min-height: 49px;
-}
-
-.navbar-brand {
-  padding-top: 11px;
-  padding-right: 10px;
-}
-
-.navbar-form .form-control {
-  width: 355px;
-  height: 26px;
+  height: 5rem;
+  min-height: 5rem;
 }
 
 .navbar-form {
@@ -20,6 +10,10 @@
   margin-top: 12px;
 }
 
+.navbar-container-override {
+  margin: 0px;
+  padding: 0px;
+}
 .form-control {
   border-radius: 3px;
 }
@@ -58,7 +52,6 @@ img {
 .dropdown-menu {
   width: 180px;
 }
-
 
 .navbar-nav > li > .dropdown-menu {
   border-radius: 3px;
@@ -138,13 +131,9 @@ body {
    }
 
    .carousel-control {
-     height: 80px;
-     margin-top: 0;
      font-size: 120px;
      text-shadow: 0 1px 1px rgba(0,0,0,.4);
-     background-color: transparent;
-     border: 0;
-     z-index: 10;
+     z-index: 10;     
    }
 
    .carousel .item {
@@ -183,7 +172,8 @@ body {
  }
 
 
-/*css for feattured project*/
+/*css for featured project*/
+
 .featured {
   color: grey;
    width: 55%;
