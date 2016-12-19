@@ -25,6 +25,18 @@ RSpec.describe Project, type: :model do
 
       expect(project).to respond_to(:backers)
     end
+    
+    it 'has many comments' do
+      project = build(:project)
+
+      expect(project).to respond_to(:comments)
+    end
+
+    it 'has many commenters' do
+      project = build(:project)
+
+      expect(project).to respond_to(:commenters)
+    end
   end
 
   context "#funding_received" do
