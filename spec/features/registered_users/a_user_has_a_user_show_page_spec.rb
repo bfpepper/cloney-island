@@ -6,7 +6,7 @@ describe "user show page" do
       user = create(:user)
       role = Role.create(name: "registered")
       user.roles << role
-            
+
       visit root_path
       click_on "Login"
 
@@ -15,7 +15,7 @@ describe "user show page" do
 
       click_on "Sign In"
 
-      click_link "Account"
+      click_on "Account"
 
       expect(page).to have_content(user.email)
       expect(page).to have_content(user.phone)
@@ -24,15 +24,15 @@ describe "user show page" do
       expect(page).to have_content("Edit Profile")
     end
   end
-  
+
   context "as a guest user" do
     scenario "I can't see a user's full show page" do
       user = create(:user)
       role = Role.create(name: "registered")
       user.roles << role
-            
+
       visit user_path(user.id)
-      
+
       expect(page).to have_content("The page you were looking for doesn't exist (404)")
     end
   end

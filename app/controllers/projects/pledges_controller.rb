@@ -6,12 +6,13 @@ class Projects::PledgesController < ApplicationController
 
   def create
     @pledge = Pledge.create(pledge_params)
-    if @pledge.save
+    if @pledge.save && current_user.authenticate(params[:password])
       current_user.roles << Role.find_by(name: "backer")
       flash[:success] = "You've successfully backed #{@pledge.project.title}!"
       redirect_to project_path(@pledge.project.slug)
     else
-      render :new
+      flash[:failure] = "Must fill out all fields"
+      redirect_to projects_new_pledge_path(@pledge.project.slug)
     end
   end
 

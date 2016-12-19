@@ -1,15 +1,15 @@
-<%= form_for @user do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
-<%= f.label :phone %>
-<%= f.text_field :phone %>
-<%= f.label :email %>
-<%= f.text_field :email %>
-<%= f.label :email_confirmation %>
-<%= f.text_field :email_confirmation %>
-<%= f.label :password %>
-<%= f.password_field :password %>
-<%= f.label :password_confirmation %>
-<%= f.password_field :password_confirmation %>
-<%= f.submit "Create Account" %>
-<% end %>
+<div class="login-page">
+  <%= form_for @user do |f| %>
+  <div class="form">
+    <form class="register-form">
+      <%= f.text_field :name, placeholder: "name" %>
+      <%= f.text_field :phone, placeholder: "phone" %>
+      <%= f.text_field :email, placeholder: "email" %>
+      <%= f.text_field :email_confirmation, placeholder: "email confirmation" %>
+      <%= f.password_field :password, placeholder: "password" %>
+      <%= f.password_field :password_confirmation, placeholder: "password confirmation" %>
+    </form>
+    <%= f.submit "Create Account" %>
+  </div>
+  <% end %>
+</div>
