@@ -74,4 +74,20 @@ describe "comments endpoint" do
       expect(second_result.count).to eq(2)
     end
   end
+
+  context "POST /api/v1/projects/:project/comments with no wrong api_key" do
+    it 'returns unauthorized' do
+      not_a_key = '357893754nfds74'
+      project = create(:project, title: 'How to Find a Job')
+      data = { comment: 'What a great day!!!' }
+      post "/api/v1/projects/#{project.slug}/comments?api_key=#{not_a_key}", data.to_json, { 'CONTENT_TYPE' => 'application/json'}
+
+      error = JSON.parse(response.body)
+
+      expect(response).to have_http_status(401)
+      expect(error).to eq({'error' => 'unauthorized'})
+    end
+  end
+  #sad path... user not backer
+
 end
