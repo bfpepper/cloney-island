@@ -2,7 +2,12 @@ class Api::V1::Comments::CommentsController < ApplicationController
   before_filter :restrict_access
   
   def index
-    render json: Project.find_by_slug(params[:project]).comments
+    project = Project.find_by_slug(params[:project])
+    if project
+      render json: project.comments
+    else  
+      render json: {error: 'project not found'}
+    end
   end
 
   private
