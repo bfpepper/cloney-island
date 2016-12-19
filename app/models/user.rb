@@ -1,5 +1,12 @@
 class User < ApplicationRecord
   has_secure_password
+  
+  has_attached_file :avatar
+  
+  validates_attachment_content_type :avatar, content_type: /\Aimage/
+  # Validate filename
+  validates_attachment_file_name :avatar, matches: [/png\z/, /jpe?g\z/]
+  # Explicitly do not validate
 
   validates_confirmation_of :password
 

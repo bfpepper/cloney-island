@@ -15,6 +15,8 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'figaro'
 gem 'faker'
 gem 'twilio-ruby'
+gem "paperclip", "~> 5.0.0"
+gem 'aws-sdk', '~> 2.3.0'
 
 group :development, :test do
   gem 'rspec-rails'
