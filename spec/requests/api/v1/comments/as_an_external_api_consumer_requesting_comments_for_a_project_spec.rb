@@ -39,9 +39,9 @@ describe "comments endpoint" do
       get "/api/v1/comments?api_key=#{user.api_key}&project=#{nonexistent_project_slug}"
 
       result = JSON.parse(response.body)
-      
+
       expect(response).to have_http_status(404)
-      expect(result).to eq({'error' => 'project not found'}) 
+      expect(result).to eq({'error' => 'project not found'})
     end
   end
 

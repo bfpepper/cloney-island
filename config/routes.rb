@@ -2,12 +2,10 @@ Rails.application.routes.draw do
  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'landing#index'
   get '/about', to: 'about#index'
-  
+
   namespace :api do
     namespace :v1 do
-      namespace :comments do
-        get '', to: 'comments#index'
-      end
+      get 'comments', to: 'comments#index'
     end
   end
 
@@ -27,7 +25,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   get '/guest_login', to: 'sessions#guest'
-  
+
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :categories, only: [:index]
   get 'categories/:category', to: 'categories#show', as: :category
