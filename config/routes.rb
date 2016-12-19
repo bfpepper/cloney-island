@@ -2,7 +2,12 @@ Rails.application.routes.draw do
  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'landing#index'
   get '/about', to: 'about#index'
-  
+
+  get '/reset_password', to: 'password#confirm', as: :confirm_id
+  post '/reset_password', to: 'password#find_user'
+  get '/identity_confirmed', to: 'password#edit', as: :password_reset
+  post '/identity_confirmed', to: 'password#update', as: :update_password
+
   namespace :api do
     namespace :v1 do
       namespace :comments do
@@ -22,12 +27,13 @@ Rails.application.routes.draw do
   put '/projects/:slug', to: 'projects#update'
   patch '/projects/:slug', to: 'projects#update'
 
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
   get '/guest_login', to: 'sessions#guest'
-  
+
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :categories, only: [:index]
   get 'categories/:category', to: 'categories#show', as: :category

@@ -1,0 +1,7 @@
+Enter your email for your account below
+
+<%= form_for :password, url: confirm_id_path do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.submit "Request confirmation code" %>
+<% end %>

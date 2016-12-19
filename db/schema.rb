@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20161218232302) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "email_confirmation"
+    t.string   "verification_code"
     t.string   "api_key"
   end
 
