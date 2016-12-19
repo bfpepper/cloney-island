@@ -1,7 +1,9 @@
 class User < ApplicationRecord
   has_secure_password
   
-  has_attached_file :avatar
+  has_attached_file :avatar,
+                    :storage => :s3,
+                    :s3_credentials => Proc.new{ |a| a.instance.s3_credentials }
   
   validates_attachment_content_type :avatar, content_type: /\Aimage/
   # Validate filename
@@ -37,10 +39,15 @@ class User < ApplicationRecord
   def backer?
     roles.exists?(name: "backer")
   end
+  
+  def s3_credentials
+    {:bucket => "vicarious-cloney-bucket", :access_key_id => "#{ENV['AWS_ACCESS_KEY_ID']}", :secret_access_key => "#{ENV['AWS_SECRET_ACCESS_KEY']}"}
+  end
 
   before_validation :generate_api_key
 
   def generate_api_key
     self.api_key = SecureRandom.hex
   end
+
 end
