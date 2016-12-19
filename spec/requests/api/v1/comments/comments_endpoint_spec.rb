@@ -45,17 +45,31 @@ describe "comments endpoint" do
     end
   end
 
-  context "Get /api/v1/comments for a project that a user is not a backer of" do
-    xit 'returns 401' do
+  context "POST /api/v1/comments as a backer of the project" do
+    it 'creates a new comment' do
       user = create(:user)
-      user2 = create(:user)
       project = create(:project, title: 'How to Find a Job')
-      commenter1 = create(:user)
-      commenter2 = create(:user)
-      comment1 = create(:comment, user: commenter1, project: project, comment_body: "What a fantastic project!")
-      comment2 = create(:comment, user: commenter2, project: project, comment_body: "I wish you all the best of luck")
+      create(:pledge, user: user, project: project)
+      comment = create(:comment, user: user, project: project, comment_body: "What a fantastic project!")
 
-      get "/api/v1/comments?api_key=#{user2.api_key}&project"
+      get "/api/v1/comments?api_key=#{user.api_key}&project=#{project.slug}"
+
+      first_result = JSON.parse(response.body)
+
+      expect(first_result.count).to eq(1)
+
+      data = { comment: 'What a great day!!!'}
+      post "/api/v1/comments?api_key=#{user.api_key}&project=#{project.slug}", data.to_json, {'CONTENT_TYPE' => 'application/json'}
+
+      post_result = JSON.parse(reponse.body)
+
+      expect(response).to have_http_status(201)
+
+      get "/api/v1/comments?api_key=#{user.api_key}&project=#{project.slug}"
+
+      second_result = JSON.parse(response.body)
+
+      expect(second_result.count).to eq(2)
     end
   end
 end
