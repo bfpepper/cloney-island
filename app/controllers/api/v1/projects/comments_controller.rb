@@ -17,6 +17,8 @@ class Api::V1::Projects::CommentsController < ApplicationController
     if project.backers.include?(user)
       comment = Comment.create(comment_body: params[:comment], user: user, project: project)
       render json: comment, status: 201
+    else
+      render json: {error: 'you are not backer of this project'}, status: 401
     end
   end
 
