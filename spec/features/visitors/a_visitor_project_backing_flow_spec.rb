@@ -35,8 +35,8 @@ describe "guest visits project site" do
       click_button "Back project!"
 
       fill_in :pledge_amount_given, with: 50
+      fill_in :password, with: user.password
       click_on "Back project!"
-
       expect(page).to have_button("Post Your Comment")
     end
 
@@ -64,6 +64,7 @@ describe "guest visits project site" do
       visit project_path(project.slug)
       click_button "Back project!"
       fill_in :pledge_amount_given, with: 50
+      fill_in :password, with: "hunter42"
       click_on "Back project!"
 
       expect(page).to have_button("Post Your Comment")
