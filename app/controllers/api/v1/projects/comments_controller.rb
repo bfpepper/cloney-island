@@ -1,4 +1,4 @@
-class Api::V1::CommentsController < ApplicationController
+class Api::V1::Projects::CommentsController < ApplicationController
   protect_from_forgery with: :null_session
   before_filter :restrict_access
 
@@ -16,7 +16,7 @@ class Api::V1::CommentsController < ApplicationController
     user = User.find_by_api_key(params[:api_key])
     if project.backers.include?(user)
       comment = Comment.create(comment_body: params[:comment], user: user, project: project)
-      render json: comment, status: 201 
+      render json: comment, status: 201
     end
   end
 
