@@ -58,17 +58,17 @@ describe "comments endpoint" do
 
       expect(first_result.count).to eq(1)
 
-      data = { comment: 'What a great day!!!'}
-      post "/api/v1/comments?api_key=#{user.api_key}&project=#{project.slug}", data.to_json, {'CONTENT_TYPE' => 'application/json'}
+      data = { comment: 'What a great day!!!' }
+      post "/api/v1/comments?api_key=#{user.api_key}&project=#{project.slug}", data.to_json, { 'CONTENT_TYPE' => 'application/json'}
 
-      post_result = JSON.parse(reponse.body)
+      post_result = JSON.parse(response.body)
 
       expect(response).to have_http_status(201)
 
       get "/api/v1/comments?api_key=#{user.api_key}&project=#{project.slug}"
 
       second_result = JSON.parse(response.body)
-
+      require "pry"; binding.pry 
       expect(second_result.count).to eq(2)
     end
   end
