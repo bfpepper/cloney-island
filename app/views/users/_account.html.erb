@@ -3,7 +3,7 @@
         <% if @user.avatar_file_name.nil? %>
           <td><%= image_tag 'missing.png', size: 200 %></td>
         <% else %>
-          <td><%= image_tag @item.avatar.url(:square), class: "image-styles" %></td>
+          <td><%= image_tag @user.avatar.url(:square), size: 200 %></td>
         <% end %>
     </div>
         <div class="col-md-8">

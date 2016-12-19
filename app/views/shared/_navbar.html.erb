@@ -29,7 +29,11 @@
         <ul class="nav navbar-nav">
           <% if logged_in? %>
             <li class="avatar" ><%= "Hello, #{current_user.name}!" %></li>
-            <li><%= link_to image_tag("default_user.png", size: 28), user_path(current_user.id), class: "avatar", id: "Account" %></li>
+            <% if @user.avatar_file_name.nil? %>
+              <li><%= link_to image_tag("missing.png", size: 28), user_path(current_user.id), class: "avatar", id: "Account" %></li>
+            <% else %>
+              <li><%= link_to image_tag(@user.avatar.url(:square), size: 28), user_path(current_user.id), class: "avatar", id: "Account" %></li>
+            <% end %>
             <li><%= link_to "Sign Out", logout_path, method: :delete %></li>
           <% else %>
             <li><%= link_to "Login", login_path %></li>
