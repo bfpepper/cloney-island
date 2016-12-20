@@ -13,7 +13,7 @@ describe "Admin modifys users" do
     visit admin_users_path
 
     within('div#1') do
-      click_on "Take Offline"
+      click_on "Change Status"
     end
 
     expect(current_path).to eq(admin_edit_user_path(user1))
@@ -39,7 +39,7 @@ describe "Admin modifys users" do
     visit admin_users_path
 
     within('div#2') do
-      click_on "Take Offline"
+      click_on "Change Status"
     end
 
     expect(current_path).to eq(admin_edit_user_path(user1))

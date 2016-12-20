@@ -8,6 +8,8 @@ class PermissionsService
   def allow?
     if user.admin?
       admin_permissions
+    elsif user.banned?
+      banned_permissions
     elsif user.registered?
       registered_user_permissions
     else
@@ -41,6 +43,15 @@ class PermissionsService
       return true if controller == "about" && action == "index"
       return true if controller == "projects/pledges" && action.in?(%w(new create))
       return true if controller == "api/v1/projects/comments" && action.in?(%w(index create))
+    end
+
+    def banned_permissions
+      return true if controller == "projects" && action.in?(%w(show))
+      return true if controller == "users" && action.in?(%w(show edit update))
+      return true if controller == "categories" && action.in?(%(show index))
+      return true if controller == "landing" && action == "index"
+      return true if controller == "sessions" && action.in?(%w(new create destroy))
+      return true if controller == "about" && action == "index"
     end
 
     def guest_permissions
