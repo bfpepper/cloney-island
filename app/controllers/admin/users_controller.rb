@@ -12,11 +12,19 @@ class Admin::UsersController < ApplicationController
     user = User.find(params[:id])
     if user.active?
       user.banned!
+      user_status_message(user, "taken off line")
     else
       user.active!
+      user_status_message(user, "resurrected")
     end
-    redirect_to admin_users_path
-    flash[:success] = "#{user.name} has been taken off line. Reason: #{user.reason_for_status_change}"
   end
+
+  private
+
+  def user_status_message(user, status)
+    redirect_to admin_users_path
+    flash[:success] = "#{user.name} has been #{status}. Reason: #{user.reason_for_status_change}"
+  end
+
 
 end
