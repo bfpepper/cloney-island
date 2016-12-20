@@ -12,7 +12,7 @@ describe "Admin modifys users" do
 
     visit admin_users_path
 
-    within(div something) do
+    within('#1') do
       click_on "Take Offline"
     end
 
