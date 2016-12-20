@@ -1,5 +1,21 @@
-<p>Category Show Page</p>
-<p><%= @category.name %></p>
-<% @category.projects.each do |project| %>
-<%= project.name %>
-<% end  %>
+<h1><%= @category.name %></h1>
+g
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <% @category.projects.each do |project| %>
+    <div class="col-sm-4 col-lg-4 col-md-4">
+      <div class="thumbnail">
+        <img src="http://placehold.it/320x150" alt="">
+        <div class="caption">
+          <h4 class="pull-right">Amount Raised!</h4>
+          <h4><a href="#"> <%= link_to project.title, project_path(slug: project.title.parameterize) %>  </a>
+          </h4>
+          <p>Can put progress bar here maybe?</p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+</br>

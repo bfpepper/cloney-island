@@ -1,0 +1,55 @@
+<div id="myCarousel" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="https://source.unsplash.com/category/technology" alt="">
+     <div class="container">
+        <div class="carousel-caption">
+          <h1>Maybe put project or just cool picture here</h1>
+          <a class="btn btn-large btn-primary" href="#">Check out Project</a>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="https://source.unsplash.com/category/nature" alt="">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Maybe put project or just cool picture here</h1>
+          <a class="btn btn-large btn-primary" href="#">Check out Project</a>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="https://source.unsplash.com/category/buildings" alt="">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Maybe put project or just cool picture here</h1>
+          <a class="btn btn-large btn-primary" href="#">Check out Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+</div><!-- /.carousel -->
+
+<center><h2 class="featured"><span>Featured Projects</span></h2></center>
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <% @projects.first(3).each do |project| %>
+  <div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <img src="http://placehold.it/320x150" alt="">
+        <div class="caption">
+            <h4 class="pull-right">Amount Raised!</h4>
+            <h4><a href="#"> <%= link_to project.title, project_path(slug: project.title.parameterize) %>  </a>
+            </h4>
+            <p>Can put progress bar here maybe?</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+</br>
+</br>

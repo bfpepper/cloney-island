@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      @user.roles << Role.find_by_name("registered")
       flash[:success] = "Logged in as #{@user.name}"
       session[:user_id] = @user.id
       redirect_to user_path(@user)
@@ -18,6 +19,16 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    user = current_user
+    user.update(user_params)
+    redirect_to user_path(user)
   end
 
 
