@@ -41,5 +41,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :categories, only: [:new, :index, :create, :update]
     get "/categories/:category/edit", to: 'categories#edit', as: :edit_category
+    resources :users, only: [:index]
   end
 end
