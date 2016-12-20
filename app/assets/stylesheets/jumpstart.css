@@ -540,5 +540,38 @@ comments ---------------------------*/
 }
 
 .thumbnail {
-  border: 0px
+  border: 0px;
+  margin-bottom: 0px;
+}
+
+/*for categories index page */
+
+
+.container-fluid.project {
+    height: 450px;
+    background-image: url("http://cdn.playbuzz.com/cdn/db4c11e6-8227-4eda-8755-2bf1b071f0ad/1d3bf27f-7b4a-4a69-8697-b80d321e8689.jpg");
+    position: relative;
+}
+
+.apple {
+  position: absolute;
+      bottom: 0;
+      left: 0;
+}
+
+.project-img {
+  height: 10%;
+  width: 50%;
+}
+
+#category-title {
+  color: white;
+}
+#category-list{
+    display: inline-block;
+    padding-top: 330px;
+ }
+
+.category-row {
+  text-align: center;
 }
