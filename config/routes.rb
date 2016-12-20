@@ -10,8 +10,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      namespace :comments do
-        get '', to: 'comments#index'
+      namespace :projects do
+        get '/:project/comments', to: 'comments#index'
+        post '/:project/comments', to: 'comments#create'
       end
     end
   end
