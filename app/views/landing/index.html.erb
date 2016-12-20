@@ -39,7 +39,11 @@
     <% @projects.first(3).each do |project| %>
   <div class="col-sm-4 col-lg-4 col-md-4">
     <div class="thumbnail">
-        <img src="http://placehold.it/320x150" alt="">
+      <% if project.banner_image_file_name.nil? %>
+        <%= image_tag 'missing.png', size: 320 %>
+      <% else %>
+        <%= image_tag project.banner_image.url(:small) %>
+      <% end %>
         <div class="caption">
             <h4 class="pull-right">Amount Raised!</h4>
             <h4><a href="#"> <%= link_to project.title, project_path(slug: project.title.parameterize) %>  </a>
