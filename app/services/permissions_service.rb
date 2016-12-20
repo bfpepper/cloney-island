@@ -22,6 +22,14 @@ class PermissionsService
       return true if controller == "admin/categories" && action.in?(%w(new edit index create update))
       return true if controller == "sessions" && action.in?(%w(new create destroy))
       return true if controller == "about" && action == "index"
+      return true if controller == "categories" && action.in?(%(show index))
+      return true if controller == "landing" && action == "index"
+      return true if controller == "sessions" && action.in?(%w(new create destroy))
+      return true if controller == "about" && action == "index"
+      return true if controller == "projects/pledges" && action.in?(%w(new create))
+      return true if controller == "users" && action.in?(%(show))
+      return true if controller == "admin/users" && action.in?(%(index))
+      return true if controller == "projects" && action.in?(%w(new create show edit update))
     end
 
     def registered_user_permissions
