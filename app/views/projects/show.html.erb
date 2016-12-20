@@ -63,11 +63,7 @@
               </div>
 
               <div role="tabpanel" class="tab-pane" id="comments">
-                <% if @project.backers.include?(current_user) %>
-                <%= button_to "Post Your Comment", "#" %>
-                <% else %>
-                <%= "Only backers of #{@project.title} can post comments." %>
-                <% end %>
+                <%= render partial: 'comments' %>
               </div>
 
               <div role="tabpanel" class="tab-pane" id="backers">

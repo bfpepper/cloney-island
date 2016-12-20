@@ -7,6 +7,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find_by_slug(params[:slug])
+    @project_comments = Project.find_by_slug(params[:slug]).comments.order(:created_at)
   end
 
   def create
