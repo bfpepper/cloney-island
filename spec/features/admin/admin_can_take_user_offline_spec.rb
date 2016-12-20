@@ -23,6 +23,6 @@ describe "Admin modifys users" do
     click_on("Change Status")
 
     expect(current_path).to eq(admin_users_path)
-    expect(page).to have_content("#{user1.name} has been taken off line #{insert path to reason here}")
+    expect(page).to have_content("#{user1.name} has been taken off line. Reason: #{user1.reason_for_status_change}")
   end
 end

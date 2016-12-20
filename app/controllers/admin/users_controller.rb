@@ -9,7 +9,14 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
-     binding.pry
+    user = User.find(params[:id])
+    if user.active?
+      user.banned!
+    else
+      user.active!
+    end
+    redirect_to admin_users_path
+    flash[:success] = "#{user.name} has been taken off line. Reason: #{user.reason_for_status_change}"
   end
 
 end
