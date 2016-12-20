@@ -28,7 +28,7 @@ class PermissionsService
       return true if controller == "about" && action == "index"
       return true if controller == "projects/pledges" && action.in?(%w(new create))
       return true if controller == "users" && action.in?(%(show))
-      return true if controller == "admin/users" && action.in?(%(index edit))
+      return true if controller == "admin/users" && action.in?(%(index edit update))
       return true if controller == "projects" && action.in?(%w(new create show edit update))
     end
 
