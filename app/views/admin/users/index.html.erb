@@ -1,5 +1,5 @@
 <% @users.each_with_index do |user, index| %>
-<div id="index" >
+<div id=<%= "#{index}" %> >
   <%= link_to user.name, user_path(user) %>
   <%= link_to "Take Offline", admin_edit_user_path(user) %>
 </div>

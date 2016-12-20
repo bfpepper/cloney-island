@@ -44,5 +44,6 @@ Rails.application.routes.draw do
     get "/categories/:category/edit", to: 'categories#edit', as: :edit_category
     resources :users, only: [:index]
     get "/admin/users/:id/edit", to: 'users#edit', as: :edit_user
+    put "/admin/users/:id/edit", to: 'users#update'
   end
 end

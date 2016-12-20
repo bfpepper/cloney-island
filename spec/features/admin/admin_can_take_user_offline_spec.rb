@@ -12,17 +12,15 @@ describe "Admin modifys users" do
 
     visit admin_users_path
 
-    within('#1') do
+    within('div#1') do
       click_on "Take Offline"
     end
 
-    expect(current_path).to eq(admin_users_edit_path(user1))
+    expect(current_path).to eq(admin_edit_user_path(user1))
 
-    click_on("input[checkbox]")
+    fill_in "user[reason_for_status_change]", with: "Because we said so!"
 
-    fill_in "Reason Why", with: "Because we said so!"
-
-    click_on("Update")
+    click_on("Change Status")
 
     expect(current_path).to eq(admin_users_path)
     expect(page).to have_content("#{user1.name} has been taken off line #{insert path to reason here}")

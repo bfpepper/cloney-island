@@ -4,4 +4,12 @@ class Admin::UsersController < ApplicationController
     @users = User.all
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+     binding.pry
+  end
+
 end
