@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161219224929) do
+ActiveRecord::Schema.define(version: 20161220002854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,10 +46,14 @@ ActiveRecord::Schema.define(version: 20161219224929) do
     t.text     "title"
     t.text     "description"
     t.integer  "goal"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.string   "slug"
     t.integer  "category_id"
+    t.string   "banner_image_file_name"
+    t.string   "banner_image_content_type"
+    t.integer  "banner_image_file_size"
+    t.datetime "banner_image_updated_at"
     t.index ["category_id"], name: "index_projects_on_category_id", using: :btree
   end
 
