@@ -8,6 +8,7 @@ describe "As a user" do
       registered = Role.create(name: "registered")
       backer = Role.create(name: "backer")
       user.roles << registered
+      
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit project_path(project.slug)

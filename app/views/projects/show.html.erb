@@ -75,17 +75,17 @@
                 <br>
                 <div class="container-fluid">
                   <div class="row">
-                    <% current_user.projects.each do |project| %>
+                    <%# @project.users.first.projects.each do |project| %>
                   <div class="col-sm-4 col-lg-4 col-md-4">
                     <div class="thumbnail">
                         <img src="http://placehold.it/320x150" alt="">
                         <div class="caption">
-                            <h4> <%= project.title %>
+                            <h4> <%#= project.title %>
                             </h4>
                         </div>
                       </div>
                     </div>
-                  <% end %>
+                  <%# end %>
                   </div>
                 </div>
               </div>

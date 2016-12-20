@@ -41,8 +41,10 @@ describe "guest visits project site" do
     end
 
     scenario "I must sign up before I can back a project" do
+      user = create(:user)
       project = create(:project, title: "You're Just Projecting")
-      registered = Role.create(name: "registered", id: 1)
+      user.projects << project
+      registered = Role.create(name: "registered")
       backer = Role.create(name: "backer")
 
       visit project_path(project.slug)

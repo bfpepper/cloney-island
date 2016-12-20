@@ -3,7 +3,6 @@ class Api::V1::Projects::CommentsController < ApplicationController
   before_filter :restrict_access
 
   def index
-    byebug
     project = Project.find_by_slug(params[:project])
     if project
       render json: project.comments
@@ -13,7 +12,6 @@ class Api::V1::Projects::CommentsController < ApplicationController
   end
 
   def create
-    byebug
     project = Project.find_by_slug(params[:project])
     user = User.find_by_api_key(params[:api_key])
     if project.backers.include?(user)
