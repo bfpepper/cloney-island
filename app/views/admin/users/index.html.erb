@@ -1,3 +1,4 @@
 <% @users.each do |user| %>
 <%= link_to user.name, user_path(user) %>
+<%= link_to "Take Offline", admin_edit_user_path(user) %>
 <% end %>
