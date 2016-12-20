@@ -411,8 +411,7 @@ body {
 	clear: both;
 }
 /**
- * Caja del Comentario
- ---------------------------*/
+comments ---------------------------*/
 .comments-list .comment-box {
 	width: 680px;
 	float: right;
@@ -538,4 +537,8 @@ body {
 /*testing testing one two pink*/
 .pink {
   color: pink;
+}
+
+.thumbnail {
+  border: 0px
 }
