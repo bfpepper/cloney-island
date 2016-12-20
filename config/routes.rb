@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   root to: 'landing#index'
   get '/about', to: 'about#index'
 
+  get '/reset_password', to: 'password#confirm', as: :confirm_id
+  post '/reset_password', to: 'password#find_user'
+  get '/identity_confirmed', to: 'password#edit', as: :password_reset
+  post '/identity_confirmed', to: 'password#update', as: :update_password
+
   namespace :api do
     namespace :v1 do
       namespace :projects do
@@ -23,6 +28,7 @@ Rails.application.routes.draw do
   put '/projects/:slug', to: 'projects#update'
   patch '/projects/:slug', to: 'projects#update'
 
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
@@ -36,5 +42,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :categories, only: [:new, :index, :create, :update]
     get "/categories/:category/edit", to: 'categories#edit', as: :edit_category
+    resources :users, only: [:index]
   end
 end

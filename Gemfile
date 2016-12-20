@@ -15,6 +15,7 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'figaro'
 gem 'faker'
 gem 'unicorn'
+gem 'twilio-ruby'
 
 group :development, :test do
   gem 'rspec-rails'

@@ -6,6 +6,7 @@ class Seed
     seed.create_registered_users
     seed.create_admin
     seed.create_platform_admin
+    seed.create_projects
   end
 
   def create_roles
@@ -19,6 +20,26 @@ class Seed
     (%w(Art Crafts Design Fashion Film Food Games Music Photography Journalism Technology)).each do |category|
       category = Category.create!(name: category)
       puts "Creating category: #{category.name}"
+    end
+  end
+
+  def create_projects
+    offsetable_categories = Category.count - 1
+    offsetable_users = User.count - 1
+    1000.times do |i|
+      user = User.offset(rand(0..offsetable_users)).limit(1).first
+      category = Category.offset(rand(0..offsetable_categories)).limit(1).first
+      title = Faker::Commerce.product_name + " #{i}"
+      slug = title.parameterize
+      project = Project.create!(title: title,
+                             description: Faker::Hipster.paragraph,
+                             goal: Faker::Number.decimal(2),
+                             slug: slug,
+                             category_id: category.id,
+                             )
+      add_user(project)
+      puts "project #{i}: Project #{project.title} created, with Category #{project.category.name}
+            with a creator of #{project.users.first.name}."
     end
   end
 
@@ -51,6 +72,16 @@ class Seed
     clancey.roles << Role.find_by(name: 'platform admin')
     puts "Created #{clancey.name} as platform admin"
   end
+
+  private
+
+  def add_user(project)
+    available_users = Role.find_by(name: "registered").users
+    number = rand(1..User.count)
+    user = User.find(number)
+    project.users << user
+  end
+
 end
 
 Seed.start
