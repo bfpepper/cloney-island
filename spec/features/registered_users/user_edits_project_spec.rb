@@ -3,15 +3,19 @@ require "rails_helper"
 describe "User can edit their project" do
   it "User is able to edit their project" do
 
-    user = create(:user_with_projects)
+    user = create(:user)
+    project = create(:project)
+    user_projects = create(:user_project, project: project, user: user)
     role = Role.create(name: "registered")
     user.roles << role
+
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     project = user.projects.first.title.parameterize
 
-    visit project_path(project)
+    visit user_path(user)
 
-    click_on "Edit Your Project"
+    click_on "Created Projects"
+    click_on "Edit"
 
     expect(current_path).to eq(edit_project_path(project))
     fill_in "project[title]", with: "The New Hotness"
@@ -24,14 +28,19 @@ describe "User can edit their project" do
 
   it "User MUST have all info to edit their project" do
 
-    user = create(:user_with_projects)
+    user = create(:user)
+    project = create(:project)
+    user_projects = create(:user_project, project: project, user: user)
     role = Role.create(name: "registered")
     user.roles << role
+
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    project = user.projects.first.title.parameterize
 
-    visit project_path(user.projects.first.title.parameterize)
+    visit user_path(user)
 
-    click_on "Edit Your Project"
+    click_on "Created Projects"
+    click_on "Edit"
 
     expect(current_path).to eq(edit_project_path(user.projects.first.title.parameterize))
 

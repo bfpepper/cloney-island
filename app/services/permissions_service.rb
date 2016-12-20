@@ -40,6 +40,7 @@ class PermissionsService
       return true if controller == "sessions" && action.in?(%w(new create destroy))
       return true if controller == "about" && action == "index"
       return true if controller == "projects/pledges" && action.in?(%w(new create))
+      return true if controller == "api/v1/projects/comments" && action.in?(%w(index create))
     end
 
     def guest_permissions
@@ -49,7 +50,7 @@ class PermissionsService
       return true if controller == "users" && action.in?(%(new create))
       return true if controller == "landing" && action == "index"
       return true if controller == "about" && action == "index"
+      return true if controller == "api/v1/projects/comments" && action.in?(%w(index create))
       return true if controller == "password" && action.in?(%(confirm find_user edit update))
-      return true if controller == "api/v1/comments/comments" && action == 'index'
     end
 end

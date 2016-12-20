@@ -33,4 +33,8 @@ class Project < ApplicationRecord
   def funding_received
     pledges.empty? ? 0 : ((pledges.sum(:amount_given) / goal.to_f) * 100).round
   end
+
+  def comments_reverse_chronological
+    comments.order(created_at: :desc)
+  end
 end
