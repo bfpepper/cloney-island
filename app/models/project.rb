@@ -7,12 +7,9 @@ class Project < ApplicationRecord
                                  hero: '1280x600>'
                                 }
 
- # # Validate the attached image is image/jpg, image/png, etc
-  # validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
- #  
-  validates_attachment_content_type :banner_image, content_type: /\Aimage/
+  validates_attachment_content_type :banner_image, :content_type => /\Aimage\/.*\Z/
 
-  validates_confirmation_of :password
+  validates_attachment_content_type :banner_image, content_type: /\Aimage/
 
   validates :title,
             :description,

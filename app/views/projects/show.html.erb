@@ -1,16 +1,15 @@
 <div class="container" id="product-section">
   <div class="row">
    <div class="col-md-6">
-     <%=image_tag("default_user.png", size: 350)%>
+     <% if @project.banner_image_file_name.nil? %>
+       <td><%= image_tag 'missing.png', size: 300 %></td>
+     <% else %>
+       <td><%= image_tag @project.banner_image.url(:small) %></td>
+     <% end %>
    </div>
    <div class="col-md-6">
      <div class="col-md-12">
        <h1><%= @project.title %></h1>
-       <% if @project.banner_image_file_name.nil? %>
-         <td><%= image_tag 'missing.png', size: 400 %></td>
-       <% else %>
-         <td><%= image_tag @project.banner_image.url(:medium) %></td>
-       <% end %>
        <span class="label label-primary">Category:<%= @project.category.name %> </span>
       <p class="description">
       Pleged a goal of <%= number_to_currency(@project.goal) %>
