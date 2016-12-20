@@ -67,11 +67,27 @@
               </div>
 
               <div role="tabpanel" class="tab-pane" id="backers">
-                All users who have backed the project.
+                <%= render partial: 'backer' %>
               </div>
 
               <div role="tabpanel" class="tab-pane" id="other_projects">
-                All info about projects.
+                <br>
+                <br>
+                <div class="container-fluid">
+                  <div class="row">
+                    <% current_user.projects.each do |project| %>
+                  <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <img src="http://placehold.it/320x150" alt="">
+                        <div class="caption">
+                            <h4> <%= project.title %>
+                            </h4>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>
+                  </div>
+                </div>
               </div>
           </div>
       </div>
@@ -79,5 +95,3 @@
 
 
 </div>
-
- 

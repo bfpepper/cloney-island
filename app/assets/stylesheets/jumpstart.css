@@ -50,6 +50,7 @@ img {
   color: #000000;
 }
 
+
 .dropdown-logged-in-notice {
   color: #767676;
   padding-left: 20px;
@@ -532,4 +533,9 @@ body {
 	.reply-list .comment-box {
 		width: 320px;
 	}
+}
+
+/*testing testing one two pink*/
+.pink {
+  color: pink;
 }
