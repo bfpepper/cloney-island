@@ -1,4 +1,19 @@
 class Project < ApplicationRecord
+  
+  has_attached_file :banner_image,
+                    :styles => {
+                                 card: '320x150>',
+                                 small: '640x300>',
+                                 hero: '1280x600>'
+                                }
+
+ # # Validate the attached image is image/jpg, image/png, etc
+  # validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+ #  
+  validates_attachment_content_type :banner_image, content_type: /\Aimage/
+
+  validates_confirmation_of :password
+
   validates :title,
             :description,
             :goal,
