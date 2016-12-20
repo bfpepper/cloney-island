@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_secure_password
   
   has_attached_file :avatar,
-                    :styles => {
+                    :styles => { comment: '65x65',
                                  thumb: '100x100>',
                                  square: '200x200>',
                                  medium: '300x300>'
