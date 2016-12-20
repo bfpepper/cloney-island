@@ -542,3 +542,11 @@ comments ---------------------------*/
 .thumbnail {
   border: 0px
 }
+
+/*for categories index page */
+
+.container-fluid.project {
+   background-image: url("http://cdn.playbuzz.com/cdn/db4c11e6-8227-4eda-8755-2bf1b071f0ad/1d3bf27f-7b4a-4a69-8697-b80d321e8689.jpg");
+   height: 450px;
+
+}
