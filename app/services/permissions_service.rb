@@ -22,7 +22,8 @@ class PermissionsService
 
     def admin_permissions
       return true if controller == "admin/categories" && action.in?(%w(new edit index create update))
-      return true if controller == "sessions" && action.in?(%w(new create destroy))
+			return true if controller == "admin/comments" && action == "destroy"
+			return true if controller == "sessions" && action.in?(%w(new create destroy))
       return true if controller == "about" && action == "index"
       return true if controller == "categories" && action.in?(%(show index))
       return true if controller == "landing" && action == "index"
