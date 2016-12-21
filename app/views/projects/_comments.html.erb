@@ -12,7 +12,7 @@
             </div>
           <div class="comment-box">
             <div class="comment-head">
-              <h6 class="comment-name by-author"><%= comment.user.name %>| <%= time_ago_in_words(comment.created_at) %> </h6>
+              <h6 class="comment-name by-author"><%= comment.user.name %> | posted <%= time_ago_in_words(comment.created_at) %> ago </h6>
             </div>
             <div class="comment-content">
               <%= comment.comment_body %>
