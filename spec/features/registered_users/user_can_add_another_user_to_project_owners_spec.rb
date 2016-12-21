@@ -3,6 +3,7 @@ require "rails_helper"
 describe "User adding user to project owner" do
   scenario "A project owner can add another user as project owner" do
     user1 = create(:user_with_projects)
+    user1.roles << Role.create(name: "registered")
     user2 = create(:user)
     project = user1.projects.first
 
@@ -11,14 +12,13 @@ describe "User adding user to project owner" do
     visit project_path(project.slug)
 
     expect(page).to have_link("Add Someone Else As An Owner")
-
     click_on("Add Someone Else As An Owner")
 
-    expect(current_path).to eq(edit_project_path(project.slug))
+    expect(current_path).to eq(add_user_owner_path(project.slug))
 
-    fill_in "Person's Name", with: "#{user2.name}"
+    fill_in "Person's Name", with: "#{user2.email}"
 
-    click_on "That This Person"
+    click_on "Add This Person"
 
     expect(current_path).to eq(project_path(project.slug))
     expect(page).to have_content("#{user2.name}")

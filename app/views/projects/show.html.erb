@@ -26,6 +26,11 @@
       <%= button_to "Back project!", projects_new_pledge_path(@project.slug), class: "btn btn-primary btn-block", method: :get %>
     </div>
     <% end %>
+      <div>
+        <% if @project.users.first == current_user %>
+        <%= link_to "Add Someone Else As An Owner", edit_project_path(@project.slug) %>
+        <% end %>
+      </div>
     </div>
   </div>
   <!-- Nav tabs -->
