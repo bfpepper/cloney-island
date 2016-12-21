@@ -1,5 +1,4 @@
-<h1><%= @category.name %></h1>
-g
+<center><h1><%= @category.name %></h1></center>
 <br>
 <div class="container-fluid">
   <div class="row">
@@ -12,12 +11,15 @@ g
           <%= image_tag project.banner_image.url(:small) %>
         <% end %>
         <div class="caption">
-          <h4 class="pull-right">Amount Raised!</h4>
-          <h4><a href="#"> <%= link_to project.title, project_path(slug: project.title.parameterize) %>  </a>
+          <h4><a href="#"> <%= link_to project.title, project_path(slug: project.title.parameterize) %> </a>
           </h4>
-          <p>Can put progress bar here maybe?</p>
         </div>
       </div>
+      <div class="progress">
+  <div class="progress-bar progress-bar-striped" role="successbar" aria-valuenow="<%= project.funding_received %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= project.funding_received %>%">
+    <%= project.funding_received %>%
+  </div>
+</div>
     </div>
     <% end %>
   </div>

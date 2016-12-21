@@ -10,8 +10,8 @@ describe 'As a user' do
       visit categories_path
 
       expect(page).to have_content("Categories")
-      expect(page).to have_content(first.name)
-      expect(page).to have_content(last.name)
+      expect(page).to have_button(first.name)
+      expect(page).to have_button(last.name)
     end
   end
 end

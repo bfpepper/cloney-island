@@ -43,5 +43,7 @@ Rails.application.routes.draw do
     resources :categories, only: [:new, :index, :create, :update]
     get "/categories/:category/edit", to: 'categories#edit', as: :edit_category
     resources :users, only: [:index]
+    get "/users/:id/edit", to: 'users#edit', as: :edit_user
+    put "/users/:id", to: 'users#update', as: :user
   end
 end

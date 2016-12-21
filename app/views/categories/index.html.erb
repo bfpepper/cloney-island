@@ -1,5 +1,22 @@
-<h1>Categories</h1>
 
-<% @categories.each do |category| %>
-  <%= link_to category.name, category_path(category.slug) %>
-<% end %>
+<div class="container-fluid project">
+  <div class="row category-row">
+    <h1 id="category-title">Categories</h1>
+    <% @categories.each do |category| %>
+      <li id="category-list"><%= button_to category.name, category_path(category.slug), class: "btn btn-primary custom-button-width", method: :get %></li>
+    <% end %>
+  </div>
+</div>
+
+<div>
+  <p>
+    Our website name has @categories.joins(:projects).count created projects
+  </p>
+
+</div>
+<div>
+  <p>
+    Dispay how much pleged money we have give
+  </p>
+
+</div>

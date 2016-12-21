@@ -49,4 +49,5 @@ class User < ApplicationRecord
     self.api_key = SecureRandom.hex
   end
 
+  enum status: [:banned, :active]
 end
