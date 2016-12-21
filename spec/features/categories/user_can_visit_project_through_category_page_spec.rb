@@ -3,9 +3,10 @@ require "rails_helper"
 describe "user sees project via category" do
   it "A user can visit a given project through the category page" do
     category = create(:category_with_projects)
-    project = category.projects.first
+    user = create(:user_with_projects)
+    project = user.projects.first
 
-    visit category_path(category.slug)
+    visit category_path(project.category.slug)
 
     click_on "#{project.title}"
 
