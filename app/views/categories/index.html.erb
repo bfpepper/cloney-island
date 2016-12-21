@@ -7,16 +7,83 @@
     <% end %>
   </div>
 </div>
-
-<div>
-  <p>
-    Our website name has @categories.joins(:projects).count created projects
-  </p>
-
+<br>
+<br>
+<div class="container category-stats">
+  <div class="row">
+    <div class="col-sm-8">
+      <h3 class="cat-description">Viciarious.li has given the opporunity to millions of people to raise money and awaress for products they are passionate about</h3>
+      <h3>Viciarious.li project backers have funded thounds of projects</h3>
+    </div>
+    <div class="col-sm-4">
+      <center><h3 class="category-count"><%=@categories.joins(:projects).count %><br> </h3></center>
+      <center><p>Projects Created</p></center>
+      <center><h3 class="category-count"><%=number_to_currency(@pledges)%> </h3></center>
+    </div>
+  </div>
 </div>
-<div>
-  <p>
-    Dispay how much pleged money we have give
-  </p>
+<hr>
 
-</div>
+<div class="container test" style="padding-top:30px">
+    <h1 class="text-center">Testimonials</h1>
+	<div class="row">
+		<div class="col-sm-6">
+            <div id="tb-testimonial" class="testimonial testimonial-success">
+                <div class="testimonial-section">
+                    Denim you probably haven't heard of. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.
+            	</div>
+                <div class="testimonial-desc">
+                    <img src="https://placeholdit.imgix.net/~text?txtsize=9&txt=100%C3%97100&w=100&h=100" alt="" />
+                    <div class="testimonial-writer">
+                    	<div class="testimonial-writer-name">User name</div>
+                    	<div class="testimonial-writer-designation">Backer</div>
+                    </div>
+                </div>
+            </div>
+		</div>
+        <div class="col-sm-6">
+            <div id="tb-testimonial" class="testimonial testimonial-primary">
+                <div class="testimonial-section">
+                    Denim you probably haven't heard of. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.
+                </div>
+                <div class="testimonial-desc">
+                    <img src="https://placeholdit.imgix.net/~text?txtsize=9&txt=100%C3%97100&w=100&h=100" alt="" />
+                    <div class="testimonial-writer">
+                    	<div class="testimonial-writer-name">username</div>
+                    	<div class="testimonial-writer-designation">backer</div>
+                    </div>
+                </div>
+            </div>
+		</div>
+        <div class="col-sm-6">
+            <div id="tb-testimonial" class="testimonial testimonial-info">
+                <div class="testimonial-section">
+                    Denim you probably haven't heard of. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.
+                </div>
+                <div class="testimonial-desc">
+                    <img src="https://placeholdit.imgix.net/~text?txtsize=9&txt=100%C3%97100&w=100&h=100" alt="" />
+                    <div class="testimonial-writer">
+                    	<div class="testimonial-writer-name">username</div>
+                    	<div class="testimonial-writer-designation">backer</div>
+                    </div>
+                </div>
+            </div>
+		</div>
+        <div class="col-sm-6">
+            <div id="tb-testimonial" class="testimonial testimonial-warning">
+                <div class="testimonial-section">
+                    Denim you probably haven't heard of. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.
+                </div>
+                <div class="testimonial-desc">
+                    <img src="https://placeholdit.imgix.net/~text?txtsize=9&txt=100%C3%97100&w=100&h=100" alt="" />
+                    <div class="testimonial-writer">
+                    	<div class="testimonial-writer-name">username</div>
+                    	<div class="testimonial-writer-designation">backer</div>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+  </div>
+  <br>
+  <br>
