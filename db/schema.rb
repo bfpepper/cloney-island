@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161218232302) do
+ActiveRecord::Schema.define(version: 20161220212219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,11 +82,13 @@ ActiveRecord::Schema.define(version: 20161218232302) do
     t.string   "email"
     t.string   "phone"
     t.string   "password_digest"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.string   "email_confirmation"
     t.string   "verification_code"
     t.string   "api_key"
+    t.integer  "status",                   default: 1
+    t.text     "reason_for_status_change"
   end
 
   add_foreign_key "comments", "projects"
