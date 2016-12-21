@@ -20,8 +20,12 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    @project = Project.find_by(slug: params[:slug])
-    @categories = Category.all
+    @project = Project.find_by_slug(params[:slug])
+    if @project.users.include?(current_user)
+      @categories = Category.all
+    else
+      render file: "/public/404.html"
+    end
   end
 
   def update
