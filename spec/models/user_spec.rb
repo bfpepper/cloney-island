@@ -15,26 +15,12 @@ describe User, type: :model do
   end
 
   context "Relationships" do
-    it { should have_many(:user_projects)}
-    it { should have_many(:projects).through(:user_projects)}
+    it { should have_many(:comments) }
     it { should have_many(:user_roles)}
+    it { should have_many(:user_projects)}
     it { should have_many(:roles).through(:user_roles)}
-    it 'has many backed projects' do
-      user = build(:user)
-
-      expect(user).to respond_to(:backed_projects)
-    end
-
-    it 'has many comments' do
-      user = build(:user)
-
-      expect(user).to respond_to(:comments)
-    end
-
-    it 'has many commented projects' do
-      user = build(:user)
-
-      expect(user).to respond_to(:commented_projects)
-    end
+    it { should have_many(:projects).through(:user_projects)}
+    it { should have_many(:backed_projects).through(:pledges)}
+    it { should have_many(:commented_projects).through(:comments)}
   end
 end
