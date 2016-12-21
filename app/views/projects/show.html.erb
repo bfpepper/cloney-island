@@ -23,6 +23,11 @@
       <p>Project created on: <%= @project.created_at.to_date.strftime("%B %d, %Y") %> </p>
       <p>Backers: 0</p>
       <p>Days to go: 0</p>
+      <p >
+        <% @project.users.each do |user| %>
+        <%= user.name %> Owns this project! </br>
+        <% end %>
+      </p>
     </div>
     <% if current_user.nil? %>
     <%= button_to "Back project!", guest_login_path, class: "btn btn-primary btn-block", method: :get %>

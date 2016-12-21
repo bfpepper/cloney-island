@@ -16,6 +16,6 @@ Edit Your Project
 <%= form_for :add_user, url: add_user_owner_path(@project.slug), method: :put do |f| %>
 <%= f.label :new_owner_email %>
 <%= f.text_field :new_owner_email %>
-<%= f.hidden_field :project_id, value: @project.id %>
+<%= f.hidden_field :project_slug, value: @project.slug %>
 <%= f.submit "Add This Person" %>
 <% end %>

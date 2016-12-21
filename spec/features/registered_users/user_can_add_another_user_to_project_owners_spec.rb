@@ -18,10 +18,9 @@ describe "User adding user to project owner" do
 
     fill_in "add_user[new_owner_email]", with: "#{user2.email}"
 
-    save_and_open_page
     click_on "Add This Person"
-binding.pry
-    expect(current_path).to eq(add_user_owner_path(project.slug))
+save_and_open_page
+    expect(current_path).to eq(project_path(project.slug))
     expect(page).to have_content("#{user2.name} Owns this project!")
   end
 end
