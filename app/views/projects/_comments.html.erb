@@ -3,10 +3,16 @@
     <% @project.comments_reverse_chronological.each do |comment| %>
       <li class='blah'>
         <div class="comment-main-level">
-          <div class="comment-avatar"> <%= image_tag("lee.png.jpeg") %></div>
+            <div class="comment-avatar">
+            <% if comment.user.avatar_file_name.nil? %>
+              <td><%= image_tag 'missing.png', size: 65 %></td>
+            <% else %>
+              <td><%= image_tag comment.user.avatar.url(:comment) %></td>
+            <% end %>
+            </div>
           <div class="comment-box">
             <div class="comment-head">
-              <h6 class="comment-name by-author"><%= comment.user.name %>| <%= time_ago_in_words(comment.created_at) %> </h6>
+              <h6 class="comment-name by-author"><%= comment.user.name %> | posted <%= time_ago_in_words(comment.created_at) %> ago </h6>
             </div>
             <div class="comment-content">
               <%= comment.comment_body %>

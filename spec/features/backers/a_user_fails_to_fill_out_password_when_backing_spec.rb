@@ -3,8 +3,8 @@ require 'rails_helper'
 describe 'As registered user' do
   context 'failing to fill in password on projects_new_pledge' do
     scenario 'I am back on the projects_new_pledge rather than project_path and I see error' do
-      project = create(:project, title: "How to find a Job", goal: 100)
-      user = create(:user)
+      user = create(:user_with_projects)
+      project = user.projects.first
       registered = Role.create(name: "registered")
       backer = Role.create(name: "backer")
       user.roles << registered
