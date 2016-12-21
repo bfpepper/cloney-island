@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top navbar-fixed-margin-fix">
+<nav class="navbar navbar-default navbar-fixed-top navbar-fixed-margin-fix nav-text-edit">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -13,12 +13,14 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/categories"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Explore</a></li>
+        <li><a href="/categories">🌎 Explore</a></li>
+        
         <% if current_user.nil? %>
-        <li><%= link_to "Start a Project!", guest_login_path%></li>
+          <li><%= link_to "Start a Project", guest_login_path%></li>
         <% else %>
-        <li><%= link_to "Start a Project!", new_project_path %></li>
-      <% end %>
+          <li><%= link_to "Start a Project", new_project_path %></li>
+        <% end %>
+      
       </ul>
 
       <ul class="nav navbar-nav hand-rolled-navbar-right">

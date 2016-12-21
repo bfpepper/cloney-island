@@ -2,19 +2,35 @@ body {
   margin-top: 8rem;
 }
 
+.landing {
+  margin-bottom: 10px;
+}
+
 .navbar {
   height: 5rem;
   min-height: 5rem;
+  background-color: #fff;
+  border-bottom: 0px;
 }
 
-.navbar-fixed-margin-fix {
-  position: fixed;
+.navbar-brand {
+  font-weight: bold;
+  color: #000;
+  font-size: 3rem;
+}
+
+.navbar-brand > a:hover {
+  color: #4078C0 !important;
 }
 
 .form-control {
   border-radius: 3px;
 }
 
+.nav-text-edit {
+  margin-top: 1rem;
+  font-family: sans-serif, Helvetica;
+}
 .hand-rolled-navbar-right {
   float: right;
   margin-right: 1rem;
@@ -24,7 +40,7 @@ body {
   padding-left: 8px;
   padding-right: 8px;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 2.5rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
