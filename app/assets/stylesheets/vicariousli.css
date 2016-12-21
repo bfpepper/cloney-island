@@ -86,10 +86,18 @@ img {
   margin-right: 141px;
 }
 
+.logged-in-greeting {
+  padding-left: 8px;
+  padding-right: 8px;
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  font-family: sans-serif, Helvetica;
+}
+
 .avatar {
-  border-radius: 6px;
-  padding-top: 1em !important;
-  padding-bottom: 0 !important;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 div.col-md-3.left {
