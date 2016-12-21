@@ -22,14 +22,12 @@ $(document).ready(function(){
 
 
   $('.comment-button').on('click', function(){
-    $('.comment-button').addClass('pink');
-
     var slug = $('.var').data('url');
     var api_key = $('.var').data('key');
     var dataParams = { comment: $('#comment-body').val(),
                        api_key: api_key
                      }
-                     
+
     $.ajax({
       type: "POST",
       url: "http://localhost:3000/api/v1/projects/" + slug + "/comments",
