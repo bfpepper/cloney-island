@@ -94,7 +94,6 @@ describe "comments endpoint" do
 
   context "POST /api/v1/projects/:project/comments as user who is not a backer" do
     it 'returns unauthorized' do
-      not_a_key = '357893754nfds74'
       user = create(:user)
       project = create(:project, title: 'How to Find a Job')
 
