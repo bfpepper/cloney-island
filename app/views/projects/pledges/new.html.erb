@@ -1,8 +1,12 @@
-<%= @project.title %>
-<%= form_for [:project, @pledge], url: projects_pledge_path(@project.slug) do |f|%>
-  <%= f.label :amount  %>
-  <%= f.text_field :amount_given %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <%= f.submit "Back project!" %>
-<% end %>
+<div class="login-page">
+  <div class="form">
+  <h3>Back <%=@project.title%>!</h3> 
+    <%= form_for [:project, @pledge], url: projects_pledge_path(@project.slug) do |f|%>
+    <%= f.label :amount  %>
+    <%= f.text_field :amount_given %>
+    <%= label_tag :password %>
+    <%= text_field_tag :password %>
+    <%= f.submit "Back project!" %>
+  </div>
+  <% end %>
+</div>
