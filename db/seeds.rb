@@ -33,7 +33,7 @@ class Seed
       slug = title.parameterize
       project = Project.create!(title: title,
                              description: Faker::Hipster.paragraph,
-                             goal: Faker::Number.decimal(2),
+                             goal: Faker::Number.decimal(6),
                              slug: slug,
                              category_id: category.id,
                              )
