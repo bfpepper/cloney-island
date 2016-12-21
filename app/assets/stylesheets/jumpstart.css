@@ -576,9 +576,9 @@ comments ---------------------------*/
 }
 
 .category-count {
+  font-family: sans-serif, Helvetica;
+  font-weight: bold;
   font-size: 50px;
-  font-family: fantasy;
-  color: blue;
 }
 
 .cat-description {

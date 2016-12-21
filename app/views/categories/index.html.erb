@@ -12,13 +12,15 @@
 <div class="container category-stats">
   <div class="row">
     <div class="col-sm-8">
-      <h3 class="cat-description">Viciarious.li has given the opporunity to millions of people to raise money and awaress for products they are passionate about</h3>
-      <h3>Viciarious.li project backers have funded thounds of projects</h3>
+      <h3 class="cat-description">Vicarious.li is:</h3>
+      <h3 class="cat-description">...a world-wide community, passionate about making amazing things.</h3>
+      <h3 class="cat-description">...revolutionizing the way you make your dreams a reality.</h3>
+      <h3 class="cat-description">...helping you find the next big thing.</h3>
     </div>
     <div class="col-sm-4">
+      <center><h3 class="category-count">Projects Created:<br> </h3></center>
       <center><h3 class="category-count"><%=@categories.joins(:projects).count %><br> </h3></center>
-      <center><p>Projects Created</p></center>
-      <center><h3 class="category-count"><%=number_to_currency(@pledges)%> </h3></center>
+      <center><h3 class="category-count">Funds raised: <%= number_to_currency(@pledges) %> </h3></center>
     </div>
   </div>
 </div>
