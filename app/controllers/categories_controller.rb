@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all
+    @pledges = Pledge.all.sum(:amount_given) 
   end
 
    def show
