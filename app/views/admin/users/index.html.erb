@@ -1,3 +1,6 @@
-<% @users.each do |user| %>
-<%= link_to user.name, user_path(user) %>
+<% @users.each_with_index do |user, index| %>
+<div id=<%= "#{index}" %> >
+  <%= link_to user.name, user_path(user) %>
+  <%= link_to "Change Status", admin_edit_user_path(user) %>
+</div>
 <% end %>

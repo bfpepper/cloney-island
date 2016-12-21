@@ -1,7 +1,11 @@
 <div class="container" id="product-section">
   <div class="row">
    <div class="col-md-6">
-     <%=image_tag("default_user.png", size: 350)%>
+     <% if @project.banner_image_file_name.nil? %>
+       <td><%= image_tag 'missing.png', size: 300 %></td>
+     <% else %>
+       <td><%= image_tag @project.banner_image.url(:small) %></td>
+     <% end %>
    </div>
    <div class="col-md-6">
      <div class="col-md-12">
@@ -59,7 +63,7 @@
           <!-- Tab panes -->
           <div class="tab-content">
               <div role="tabpanel" class="tab-pane active" id="description">
-                <%= @project.description %>
+                <p class="project-description"><%= @project.description %></p>
               </div>
 
               <div role="tabpanel" class="tab-pane" id="comments">

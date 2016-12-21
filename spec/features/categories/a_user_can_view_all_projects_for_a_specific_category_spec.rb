@@ -12,7 +12,7 @@ describe 'As a user' do
 
       visit categories_path
 
-      click_link 'Computer Science'
+      click_button 'Computer Science'
 
       expect(current_path).to eq(category_path(category.name.parameterize))
       expect(page).to have_content('Computer Science')

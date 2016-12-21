@@ -40,6 +40,7 @@ class UsersController < ApplicationController
                                  :phone,
                                  :email_confirmation,
                                  :password,
-                                 :password_confirmation)
+                                 :password_confirmation,
+                                 :avatar)
   end
 end
