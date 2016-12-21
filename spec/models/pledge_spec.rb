@@ -2,11 +2,14 @@ require 'rails_helper'
 
 RSpec.describe Pledge, type: :model do
   context "Relationships" do
-    it 'belongs to a user' do
-      pledge = build(:pledge)
+    it { should belong_to(:user) }
 
-      expect(pledge).to respond_to(:user)
-    end
+
+    # it 'belongs to a user' do
+    #   pledge = build(:pledge)
+    #
+    #   expect(pledge).to respond_to(:user)
+    # end
 
     it 'belongs to a project' do
       pledge = build(:pledge)
