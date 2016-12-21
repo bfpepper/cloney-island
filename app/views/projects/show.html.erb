@@ -14,16 +14,6 @@
         <p class="description">
           Pleged a goal of <%= number_to_currency(@project.goal) %>
         </p>
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped" role="successbar"
-          aria-valuenow="<%= @project.funding_received %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= @project.funding_received %>%">
-          <%= @project.funding_received %>%
-        </div>
-      </div>
-      <p>Project created on: <%= @project.created_at.to_date.strftime("%B %d, %Y") %> </p>
-      <p>Backers: 0</p>
-      <p>Days to go: 0</p>
-      <p >
         <% @project.users.each do |user| %>
         <%= user.name %> Owns this project! </br>
         <% end %>
@@ -117,5 +107,4 @@
                 </div>
               </div>
             </div>
-            <% end %>
-          </div>
+</div>
