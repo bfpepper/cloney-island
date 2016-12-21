@@ -17,6 +17,9 @@
 //= require turbolinks
 //= require_tree .
 $(document).ready(function(){
+  setTimeout(function(){
+  $('.alert-dismissible').fadeOut();
+},  2000);
 
   jQuery("time.timeago").timeago();
 
@@ -41,5 +44,5 @@ $(document).ready(function(){
       });
     });
 
-    
+
   });
