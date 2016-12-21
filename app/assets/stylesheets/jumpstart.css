@@ -1,34 +1,14 @@
 .navbar {
-  height: 49px;
-  min-height: 49px;
+  height: 5rem;
+  min-height: 5rem;
 }
 
-.navbar-brand {
-  padding-top: 11px;
-  padding-right: 10px;
-}
-
-.navbar-form .form-control {
-  width: 355px;
-  height: 26px;
-}
-
-.navbar-form {
-  padding: 0;
-  padding-right: 8px;
-  margin-left: 0;
-  margin-top: 12px;
+.navbar-fixed-margin-fix {
+  position: fixed;
 }
 
 .form-control {
   border-radius: 3px;
-}
-
-.navbar-default {
-  background-color: #f5f5f5;
-  border-bottom: 1px solid #e5e5e5;
-  background-image: none;
-  box-shadow: none;
 }
 
 .nav > li > a {
@@ -50,16 +30,16 @@ img {
   color: #000000;
 }
 
-
-.dropdown-logged-in-notice {
+/*.dropdown-logged-in-notice {
   color: #767676;
   padding-left: 20px;
 }
 
 .dropdown-menu {
-  width: 180px;
-}
-
+  background-color: rgba(0, 0, 0, 0.2);
+  float: right;
+  color: #fff !important;
+}*/
 
 .navbar-nav > li > .dropdown-menu {
   border-radius: 3px;
@@ -128,9 +108,17 @@ body {
 }
 
 /*landing page*/
+.carousel-inner {
+  background-image: url(https://source.unsplash.com/collection/388793/1920x1080);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover !important;
+  background-color: transparent;
+}
 
 .carousel {
-     margin-bottom: 60px;
+     margin-bottom: 10rem;
    }
 
    .carousel .container {
@@ -139,42 +127,42 @@ body {
    }
 
    .carousel-control {
-     height: 80px;
-     margin-top: 0;
      font-size: 120px;
-     text-shadow: 0 1px 1px rgba(0,0,0,.4);
-     background-color: transparent;
-     border: 0;
-     z-index: 10;
    }
 
    .carousel .item {
-     height: 500px;
+     height: 50rem;
    }
+
    .carousel img {
-     position: absolute;
-     top: 0;
-     left: 0;
-     min-width: 100%;
-     height: 500px;
+      position: fixed;
+      height:auto;
+      display: block;
    }
 
    .carousel-caption {
-     background-color: transparent;
      position: static;
-     max-width: 550px;
+     min-width: auto;
+     max-width: 50rem;
      padding: 0 0px;
      margin-top: 200px;
+     padding-bottom: 10px;
+     border-radius: 5px;
+     background-color: rgba(0,0,0,.5);
    }
+   
    .carousel-caption h1,
    .carousel-caption .lead {
      margin: 0;
      line-height: 1.25;
+     font-family: sans-serif, Helvetica;
+     font-weight: bold;
      color: #fff;
-     text-shadow: 0 1px 1px rgba(0,0,0,.4);
    }
+   
+   
    .carousel-caption .btn {
-     margin-top: 10px;
+     margin-top: 2.5rem;
    }
 
  .account-img {
@@ -183,8 +171,8 @@ body {
    justify-content: center;
  }
 
+/*css for featured project*/
 
-/*css for feattured project*/
 .featured {
   color: grey;
    width: 55%;

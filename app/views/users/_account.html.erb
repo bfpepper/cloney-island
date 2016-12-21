@@ -1,7 +1,10 @@
     <div class="row">
       <div class="col-md-4 account-img">
-
-    <%= image_tag("default_user.png", size: 200) %>
+        <% if current_user.avatar_file_name.nil? %>
+          <td><%= image_tag 'missing.png', size: 200 %></td>
+        <% else %>
+          <td><%= image_tag current_user.avatar.url(:medium) %></td>
+        <% end %>
     </div>
         <div class="col-md-8">
             <form class="form-horizontal" role="form">
