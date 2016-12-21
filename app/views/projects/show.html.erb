@@ -27,7 +27,16 @@
         <% @project.users.each do |user| %>
         <%= user.name %> Owns this project! </br>
         <% end %>
-      </p>
+    
+ <div class="progress">
+  <div class="progress-bar progress-bar-striped" role="successbar"
+  aria-valuenow="<%= @project.funding_received %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= number_to_currency(@project.funding_received) %>%">
+    <%= @project.funding_received %>%
+  </div>
+</div>
+    <p>Project created on: <%= @project.created_at.to_date.strftime("%B %d, %Y") %> </p>
+    <p>Backers: 0</p>
+    <p>Days to go: 0</p>
     </div>
     <% if current_user.nil? %>
     <%= button_to "Back project!", guest_login_path, class: "btn btn-primary btn-block", method: :get %>
@@ -41,7 +50,7 @@
     <% end %>
   </div>
 </div>
-</div>
+
 <!-- Nav tabs -->
 <div class="col-lg-12 center">
   <div>
@@ -84,34 +93,29 @@
         <%= render partial: 'backer' %>
       </div>
 
-      <div role="tabpanel" class="tab-pane" id="other_projects">
-        <br>
-        <br>
-        <div class="container-fluid">
-          <div class="row">
-            <% @project.users.first.projects.each do |project| %>
-            <div class="col-sm-4 col-lg-4 col-md-4">
-              <div class="thumbnail">
-                <% if project.banner_image_file_name.nil? %>
-                <%= image_tag 'https://source.unsplash.com/collection/410325/400x200' %>
-                <% else %>
-                <%= image_tag project.banner_image.url(:small) %>
-                <% end %>
-                <div class="caption">
-                  <h4 class="pull-right">Amount Raised!</h4>
-                  <h4><a href="#"> <%= link_to project.title, project_path(project.slug) %>  </a>
-                  </h4>
-                  <p><%= link_to "Edit", edit_project_path(project.slug) %></p>
+              <div role="tabpanel" class="tab-pane" id="other_projects">
+                <br>
+                <br>
+                <div class="container-fluid">
+                  <div class="row">
+                    <% @project.users.first.projects.each do |project| %>
+                      <div class="col-sm-4 col-lg-4 col-md-4 font-size-fix">
+                        <div class="thumbnail">
+                          <% if project.banner_image_file_name.nil? %>
+                            <%= image_tag 'https://source.unsplash.com/collection/410325/400x200' %>
+                          <% else %>
+                            <%= image_tag project.banner_image.url(:card) %>
+                          <% end %>        
+                          <div class="caption">
+                                <h4><%= link_to project.title, project_path(project.slug) %></h4>
+                                <h4>Amount Raised: <%= number_to_currency(project.funding_received) %> </h4>
+                          </div>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             </div>
             <% end %>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-</div>
