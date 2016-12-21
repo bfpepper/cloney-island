@@ -1,14 +1,31 @@
-Edit Your Project
-
-<%= form_for @project do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :banner_image %>
-  <%= f.file_field :banner_image %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :goal %>
-  <%= f.text_field :goal %>
-  <%= f.collection_select :category_id, @categories,:id,:name, include_blank: true %>
-  <%= f.submit "Update!" %>
-<%end%>
+<div class="container-fluid">
+  <div class="row">
+      <h3 class="header-new-project">Edit Project!</h3>
+          <%= form_for @project do |f| %>
+          <div class="form">
+            <form class="register-form">
+              <div class="form-group">
+                <%= f.label :title %>
+                <%= f.text_field :title, size: "50x10" %>
+              </div>
+              <div class="form-group">
+                <%= f.label :image %>
+                <%= f.file_field :banner_image %>
+              </div>
+              <div class="form-group">
+                <%= f.label :goal %>
+                <%= f.text_field :goal, size: "50x10" %>
+              </div>
+              <div class="form-group">
+                <%= f.label :description %>
+                <%= f.text_area :description, size: "36x10" %>
+              </div>
+              <div class="form-group">
+                <%= f.collection_select :category_id, @categories,:id,:name, include_blank: true %>
+              </div>
+            </form>
+              <%= f.submit %>
+            </div>
+          <%end%>
+  </div>
+</div>

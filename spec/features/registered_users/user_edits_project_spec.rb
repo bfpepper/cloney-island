@@ -48,6 +48,6 @@ describe "User can edit their project" do
 
     click_on "Update"
 
-    expect(page).to have_content("Edit Your Project")
+    expect(page).to have_content("Edit Project!")
   end
 end
