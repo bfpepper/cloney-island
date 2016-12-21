@@ -1,16 +1,6 @@
 .navbar {
-  height: 49px;
-  min-height: 49px;
-}
-
-.navbar-brand {
-  padding-top: 11px;
-  padding-right: 10px;
-}
-
-.navbar-form .form-control {
-  width: 355px;
-  height: 26px;
+  height: 5rem;
+  min-height: 5rem;
 }
 
 .navbar-form {
@@ -20,6 +10,10 @@
   margin-top: 12px;
 }
 
+.navbar-container-override {
+  margin: 0px;
+  padding: 0px;
+}
 .form-control {
   border-radius: 3px;
 }
@@ -57,9 +51,10 @@ img {
 }
 
 .dropdown-menu {
-  width: 180px;
+  background-color: rgba(0, 0, 0, 0.2);
+  float: right;
+  color: #fff !important;
 }
-
 
 .navbar-nav > li > .dropdown-menu {
   border-radius: 3px;
@@ -130,7 +125,7 @@ body {
 /*landing page*/
 
 .carousel {
-     margin-bottom: 60px;
+     margin-bottom: 20rem;
    }
 
    .carousel .container {
@@ -139,24 +134,19 @@ body {
    }
 
    .carousel-control {
-     height: 80px;
-     margin-top: 0;
      font-size: 120px;
      text-shadow: 0 1px 1px rgba(0,0,0,.4);
-     background-color: transparent;
-     border: 0;
-     z-index: 10;
+     z-index: 10;     
    }
 
    .carousel .item {
      height: 500px;
    }
+
    .carousel img {
-     position: absolute;
-     top: 0;
-     left: 0;
-     min-width: 100%;
-     height: 500px;
+      position: fixed;
+      max-width: 100%;
+      max-height: 100
    }
 
    .carousel-caption {
@@ -184,7 +174,8 @@ body {
  }
 
 
-/*css for feattured project*/
+/*css for featured project*/
+
 .featured {
   color: grey;
    width: 55%;
