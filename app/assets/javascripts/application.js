@@ -29,7 +29,7 @@ $(document).ready(function(){
     var dataParams = { comment: $('#comment-body').val(),
                        api_key: api_key
                      }
-                     
+
     $.ajax({
       type: "POST",
       url: "http://localhost:3000/api/v1/projects/" + slug + "/comments",
@@ -40,4 +40,6 @@ $(document).ready(function(){
       }
       });
     });
+
+    
   });
