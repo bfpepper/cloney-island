@@ -5,7 +5,11 @@
     <% @category.projects.each do |project| %>
     <div class="col-sm-4 col-lg-4 col-md-4">
       <div class="thumbnail">
-        <%= image_tag('default_user.png') %>
+        <% if project.banner_image_file_name.nil? %>
+          <%= image_tag 'https://source.unsplash.com/collection/410325/400x200' %>
+        <% else %>
+          <%= image_tag project.banner_image.url(:small) %>
+        <% end %>        
         <div class="caption">
           <h4><a href="#"> <%= link_to project.title, project_path(slug: project.title.parameterize) %> </a>
           </h4>

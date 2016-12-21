@@ -46,10 +46,14 @@ ActiveRecord::Schema.define(version: 20161220212219) do
     t.text     "title"
     t.text     "description"
     t.integer  "goal"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.string   "slug"
     t.integer  "category_id"
+    t.string   "banner_image_file_name"
+    t.string   "banner_image_content_type"
+    t.integer  "banner_image_file_size"
+    t.datetime "banner_image_updated_at"
     t.index ["category_id"], name: "index_projects_on_category_id", using: :btree
   end
 
@@ -87,6 +91,10 @@ ActiveRecord::Schema.define(version: 20161220212219) do
     t.string   "email_confirmation"
     t.string   "verification_code"
     t.string   "api_key"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.integer  "status",                   default: 1
     t.text     "reason_for_status_change"
   end
