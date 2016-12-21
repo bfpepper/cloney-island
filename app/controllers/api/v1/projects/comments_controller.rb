@@ -1,5 +1,5 @@
-class Api::V1::Projects::CommentsController < ApplicationController
-  protect_from_forgery with: :null_session
+class Api::V1::Projects::CommentsController < ActionController::API
+  # protect_from_forgery with: :null_session
   before_action :restrict_access
 
   def index
