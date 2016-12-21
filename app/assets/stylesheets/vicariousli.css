@@ -209,6 +209,17 @@ body {
    justify-content: center;
  }
  
+/* css for user page */
+.project-cards {
+  margin: 10px;
+  display: inline-block;
+}
+
+.project-cards-page {
+  display: flex;
+  justify-content: center;
+}
+ 
 /* css for new project page */ 
 
 .header-new-project {
