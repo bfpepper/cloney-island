@@ -29,7 +29,10 @@ describe "comments endpoint" do
 
       get "/api/v1/projects/#{project.slug}/comments"
 
+      result = JSON.parse(response.body)
+
       expect(response).to have_http_status(401)
+      expect(result).to eq({'error' => 'unauthorized'})
     end
   end
 
@@ -89,7 +92,7 @@ describe "comments endpoint" do
     end
   end
 
-  context "POST /api/v1/projects/:project/comments with user not a backer" do
+  context "POST /api/v1/projects/:project/comments as user who is not a backer" do
     it 'returns unauthorized' do
       not_a_key = '357893754nfds74'
       user = create(:user)
