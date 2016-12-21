@@ -1,6 +1,7 @@
 <div class="container-fluid">
   <div class="row">
-      <h3 class="header-new-project">Edit Project!</h3>
+      <div class="col-sm-6 col-lg-6 col-md-6">
+        <h3 class="header-new-project">Edit Project!</h3>
           <%= form_for @project do |f| %>
           <div class="form">
             <form class="register-form">
@@ -27,5 +28,25 @@
               <%= f.submit %>
             </div>
           <%end%>
+  </div>
+
+  <div class="col-sm-6 col-lg-6 col-md-6">
+    <h3 class="header-new-project">Add a Contributor!</h3>
+
+  <%= form_for :add_user, url: add_user_owner_path(@project.slug), method: :put do |f| %>
+        <div class="form">
+          <form class="register-form">
+            <div class="form-group">
+              <%= f.label :new_owner_email %>
+              <%= f.text_field :new_owner_email %>
+            </div>
+            <%= f.hidden_field :project_slug, value: @project.slug %>
+
+          </form>
+          <%= f.submit "Add This Person" %>
+          </div>
+      <%end%>
+    </div>
+
   </div>
 </div>
