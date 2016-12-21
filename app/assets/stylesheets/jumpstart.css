@@ -109,7 +109,7 @@ body {
 
 /*landing page*/
 .carousel-inner {
-  background-image: url(https://source.unsplash.com/random);
+  background-image: url(https://source.unsplash.com/collection/388793/1920x1080);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -128,7 +128,6 @@ body {
 
    .carousel-control {
      font-size: 120px;
-     text-shadow: 0 1px 1px rgba(0,0,0,.4);
    }
 
    .carousel .item {
@@ -143,19 +142,27 @@ body {
 
    .carousel-caption {
      position: static;
-     max-width: 550px;
+     min-width: auto;
+     max-width: 50rem;
      padding: 0 0px;
      margin-top: 200px;
+     padding-bottom: 10px;
+     border-radius: 5px;
+     background-color: rgba(0,0,0,.5);
    }
+   
    .carousel-caption h1,
    .carousel-caption .lead {
      margin: 0;
      line-height: 1.25;
+     font-family: sans-serif, Helvetica;
+     font-weight: bold;
      color: #fff;
-     text-shadow: 0 1px 1px rgba(0,0,0,.4);
    }
+   
+   
    .carousel-caption .btn {
-     margin-top: 10px;
+     margin-top: 2.5rem;
    }
 
  .account-img {
