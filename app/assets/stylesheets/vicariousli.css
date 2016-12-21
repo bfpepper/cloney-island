@@ -186,7 +186,7 @@ body {
      border-radius: 5px;
      background-color: rgba(0,0,0,.5);
    }
-   
+
    .carousel-caption h1,
    .carousel-caption .lead {
      margin: 0;
@@ -195,8 +195,8 @@ body {
      font-weight: bold;
      color: #fff;
    }
-   
-   
+
+
    .carousel-caption .btn {
      margin-top: 2.5rem;
    }
@@ -206,8 +206,8 @@ body {
    display: flex;
    justify-content: center;
  }
- 
-/* css for new project page */ 
+
+/* css for new project page */
 
 .header-new-project {
   text-align: center;
@@ -346,6 +346,7 @@ body {
 .comments-list {
 	margin-top: 30px;
 	position: relative;
+  padding-bottom: 30px;
 }
 
 /**
