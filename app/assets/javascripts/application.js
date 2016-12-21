@@ -17,6 +17,10 @@
 //= require turbolinks
 //= require_tree .
 $(document).ready(function(){
+  setTimeout(function(){
+  $('.alert-dismissible').fadeOut();
+    },
+   2000);
 
   jQuery("time.timeago").timeago();
 
@@ -29,7 +33,7 @@ $(document).ready(function(){
     var dataParams = { comment: $('#comment-body').val(),
                        api_key: api_key
                      }
-                     
+
     $.ajax({
       type: "POST",
       url: "http://localhost:3000/api/v1/projects/" + slug + "/comments",
@@ -40,4 +44,6 @@ $(document).ready(function(){
       }
       });
     });
+
+
   });
