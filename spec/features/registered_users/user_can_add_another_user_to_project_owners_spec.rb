@@ -14,13 +14,14 @@ describe "User adding user to project owner" do
     expect(page).to have_link("Add Someone Else As An Owner")
     click_on("Add Someone Else As An Owner")
 
-    expect(current_path).to eq(add_user_owner_path(project.slug))
+    expect(current_path).to eq(edit_project_path(project.slug))
 
-    fill_in "Person's Name", with: "#{user2.email}"
+    fill_in "add_user[new_owner_email]", with: "#{user2.email}"
 
+    save_and_open_page
     click_on "Add This Person"
-
-    expect(current_path).to eq(project_path(project.slug))
-    expect(page).to have_content("#{user2.name}")
+binding.pry
+    expect(current_path).to eq(add_user_owner_path(project.slug))
+    expect(page).to have_content("#{user2.name} Owns this project!")
   end
 end

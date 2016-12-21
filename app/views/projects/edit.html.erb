@@ -1,14 +1,21 @@
 Edit Your Project
 
 <%= form_for @project do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :banner_image %>
-  <%= f.file_field :banner_image %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :goal %>
-  <%= f.text_field :goal %>
-  <%= f.collection_select :category_id, @categories,:id,:name, include_blank: true %>
-  <%= f.submit "Update!" %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.label :banner_image %>
+<%= f.file_field :banner_image %>
+<%= f.label :description %>
+<%= f.text_field :description %>
+<%= f.label :goal %>
+<%= f.text_field :goal %>
+<%= f.collection_select :category_id, @categories,:id,:name, include_blank: true %>
+<%= f.submit "Update!" %>
 <%end%>
+
+<%= form_for :add_user, url: add_user_owner_path(@project.slug), method: :put do |f| %>
+<%= f.label :new_owner_email %>
+<%= f.text_field :new_owner_email %>
+<%= f.hidden_field :project_id, value: @project.id %>
+<%= f.submit "Add This Person" %>
+<% end %>

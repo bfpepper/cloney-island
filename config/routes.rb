@@ -27,8 +27,8 @@ Rails.application.routes.draw do
   get '/projects/:slug/edit', to: 'projects#edit', as: :edit_project
   put '/projects/:slug', to: 'projects#update'
   patch '/projects/:slug', to: 'projects#update'
-  get '/projects/:sulg/add_user', to: 'users/add_user#update', as: :add_user_owner
-  put '/projects/:sulg/add_user', to: 'users/add_user#update'
+  get '/projects/:slug/add_user', to: 'users/add_user#update', as: :add_user_owner
+  put '/projects/:slug/add_user', to: 'users/add_user#update'#, as: :add_user_owner
 
 
   get '/login', to: 'sessions#new'

@@ -36,6 +36,7 @@ class PermissionsService
 
     def registered_user_permissions
       return true if controller == "projects" && action.in?(%w(new create show edit update))
+      return true if controller == "users/add_user" && action == "update"
       return true if controller == "users" && action.in?(%w(show edit update))
       return true if controller == "categories" && action.in?(%(show index))
       return true if controller == "landing" && action == "index"
