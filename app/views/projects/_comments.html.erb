@@ -1,0 +1,32 @@
+<div class="comments-container">
+   <ul id="comments-list" class="comments-list">
+     <li>
+       <% @project.comments_reverse_chronological.each do |comment| %>
+       <div class="comment-main-level">
+         <div class="comment-avatar"> <%= image_tag(comment.avatar[:comment]) %></div>
+         <div class="comment-box">
+           <div class="comment-head">
+             <h6 class="comment-name by-author"><%= comment.user.name %>| <%= time_ago_in_words(comment.created_at) %> </h6>
+             <i class="fa fa-reply"></i>
+             <i class="fa fa-heart"></i>
+           </div>
+           <div class="comment-content">
+             <%= comment.comment_body %>
+           </div>
+         </div>
+       </div>
+       <% end %>
+       <div class="comment-main-level">
+         <form class="" action="index.html" method="post">
+           <input type="text-area" name="comment-body" value="put your comment here">
+           <% if @project.backers.include?(current_user) %>
+              <input type="button" class="comment-button" value="Post Your Comment">
+           <%#= button_to "Button!!!", project_path, :class => 'comment-button', :disabled => true %>
+           <% else %>
+           <%= "Only backers of #{@project.title} can post comments." %>
+           <% end %>
+         </form>
+       </div>
+    </li>
+  </ul>
+</div>

@@ -1,6 +1,8 @@
 <%= form_for @user do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
+<%= f.label :avatar %>
+<%= f.file_field :avatar %>
 <%= f.label :phone %>
 <%= f.text_field :phone %>
 <%= f.label :email %>

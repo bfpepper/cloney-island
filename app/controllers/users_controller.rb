@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      @user.roles << Role.find_by_name("registered")
       flash[:success] = "Logged in as #{@user.name}"
       session[:user_id] = @user.id
       redirect_to user_path(@user)
@@ -39,6 +40,7 @@ class UsersController < ApplicationController
                                  :phone,
                                  :email_confirmation,
                                  :password,
-                                 :password_confirmation)
+                                 :password_confirmation,
+                                 :avatar)
   end
 end

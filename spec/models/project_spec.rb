@@ -3,42 +3,55 @@ require 'rails_helper'
 RSpec.describe Project, type: :model do
 
   context "Uniqueness" do
-    it { should validate_uniqueness_of(:name)}
+    it { should validate_uniqueness_of(:title)}
     it { should validate_uniqueness_of(:slug)}
   end
 
   context "validations" do
-    it { should validate_presence_of(:name)}
+    it { should validate_presence_of(:title)}
     it { should validate_presence_of(:description)}
     it { should validate_presence_of(:goal)}
-    it "is valid with all attributes" do
-      project = build(:project, slug: "slug")
+  end
 
-      expect(project).to be_valid
+  context "relationships" do
+    it 'has many pledges' do
+      project = build(:project)
+
+      expect(project).to respond_to(:pledges)
     end
 
-    xit "is invalid without a name" do
-      project = build(:project, name: nil, slug: "slug")
+    it 'has many backers' do
+      project = build(:project)
 
-      expect(project).to be_invalid
+      expect(project).to respond_to(:backers)
+    end
+    
+    it 'has many comments' do
+      project = build(:project)
+
+      expect(project).to respond_to(:comments)
     end
 
-    it "is invalid without a description" do
-      project = build(:project, description: nil, slug: "slug")
+    it 'has many commenters' do
+      project = build(:project)
 
-      expect(project).to be_invalid
+      expect(project).to respond_to(:commenters)
     end
+  end
 
-    it "is invalid without a goal" do
-      project = build(:project, goal: nil, slug: "slug")
+  context "#funding_received" do
+    it 'returns current funding recieved' do
+      project = create(:project, goal: 100)
+      expect(project.funding_received).to eq(0)
 
-      expect(project).to be_invalid
-    end
+      user = create(:user)
+      pledge = create(:pledge, user: user, project: project, amount_given: 20)
 
-    it "is invalid without a category_id" do
-      project = build(:project, category: nil)
+      expect(project.funding_received).to eq(20)
 
-      expect(project).to be_invalid
+      pledge = create(:pledge, user: user, project: project, amount_given: 20)
+
+      expect(project.funding_received).to eq(40)
     end
   end
 end

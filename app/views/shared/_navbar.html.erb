@@ -1,5 +1,4 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
+<nav class="navbar navbar-default navbar-fixed-top navbar-fixed-margin-fix">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -8,39 +7,40 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><%#= image_tag('mark-github.svg', size: 28) %></a>
+      <a class="nav navbar navbar-brand" href="/">Vicarious.li</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/categories"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>Explore</a></li>
+        <li><a href="/categories"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Explore</a></li>
       </ul>
+
       <ul class="nav navbar-nav">
-        <li><a href="#">Issues</a></li>
+        <% if current_user.nil? %>
+        <li><%= link_to "Start a Project!", guest_login_path%></li>
+        <% else %>
+        <li><%= link_to "Start a Project!", new_project_path %></li>
+      <% end %>
       </ul>
-      <ul class="nav navbar-nav">
-        <li><a href="#">Gist</a></li>
-      </ul>
+
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= image_tag("default_user.png", size: 28) %>  <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">New repository</a></li>
-            <li><a href="#">Import repository</a></li>
-            <li><a href="#">New gist</a></li>
-            <li><a href="#">New organization</a></li>
-          </ul>
-        </li>
-          <!-- put the user image here size: 20 -->
-          <ul class="nav navbar-nav">
-            <% if current_user %>
+        <% if logged_in? %>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="avatar" ><%= "Hello, #{current_user.name}!" %></li>
+          <% if current_user.avatar_file_name.nil? %>
+            <li><%= link_to image_tag("missing.png", size: 28), user_path(current_user.id), class: "avatar", id: "Account" %></li>
+          <% else %>
+            <li><%= link_to image_tag(current_user.avatar.url(:thumb), size: 28), user_path(current_user.id), class: "avatar", id: "Account" %></li>
+          <% end %>
             <li><%= link_to "Sign Out", logout_path, method: :delete %></li>
-            <% else %>
-            <li><%= link_to "Login", login_path %></li>
-            <% end %>
           </ul>
-        </li>
+        <% else %>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Login", login_path %></li>
+            <li><%= link_to "Sign Up", new_user_path %></li>
+          </ul>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

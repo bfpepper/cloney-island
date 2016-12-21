@@ -1,0 +1,18 @@
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <% @user.projects.each do |project| %>
+  <div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <img src="http://placehold.it/320x150" alt="">
+        <div class="caption">
+            <h4 class="pull-right">Amount Raised!</h4>
+            <h4><a href="#"> <%= link_to project.title, project_path(project.slug) %>  </a>
+            </h4>
+            <p><%= link_to "Edit", edit_project_path(project.slug) %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>

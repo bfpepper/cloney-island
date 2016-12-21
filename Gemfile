@@ -14,12 +14,10 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'figaro'
 gem 'faker'
-gem 'capistrano'
-gem 'capistrano-rails'
-gem 'capistrano-bundler'
-gem 'capistrano-rbenv'
-gem 'capistrano3-puma'
-
+gem 'unicorn'
+gem 'twilio-ruby'
+gem "paperclip", "~> 5.0.0"
+gem 'aws-sdk', '~> 2.3'
 
 group :development, :test do
   gem 'rspec-rails'

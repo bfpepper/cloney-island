@@ -10,8 +10,23 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require bootstrap-sprockets
 //= require jquery
+//= require bootstrap
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).ready(function(){
+  $('.comment-button').on('click', function(){
+    $('.comment-button').addClass('pink');
+    $.ajax({
+      url: "http://localhost:8080/api/v1/projects/harry-potter/comments",
+      contentType: "application/json",
+      type: "GET",
+      dataType: "json",
+      headers: { "api_key": "650c51969893f9f6bae6e7589f5741cd"},
+      success: function(data) { alert("ajax worked"); },
+      error: function(data) { debugger; },
+      done: function(data){ alert(data); }
+      });
+    });
+  });

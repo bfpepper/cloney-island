@@ -1,0 +1,959 @@
+.navbar {
+  height: 5rem;
+  min-height: 5rem;
+}
+
+.navbar-fixed-margin-fix {
+  position: fixed;
+}
+
+.form-control {
+  border-radius: 3px;
+}
+
+.nav > li > a {
+  padding-left: 8px;
+  padding-right: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+img {
+  border-radius: 3px;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #4078C0;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #000000;
+}
+
+/*.dropdown-logged-in-notice {
+  color: #767676;
+  padding-left: 20px;
+}
+
+.dropdown-menu {
+  background-color: rgba(0, 0, 0, 0.2);
+  float: right;
+  color: #fff !important;
+}*/
+
+.navbar-nav > li > .dropdown-menu {
+  border-radius: 3px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.custom-container.main {
+  margin-left: 146px;
+  margin-right: 141px;
+}
+
+.avatar {
+  border-radius: 6px;
+  padding-top: 1em !important;
+  padding-bottom: 0 !important;
+}
+
+div.col-md-3.left {
+  padding-left: 0;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: 2px solid #c9510c;
+}
+
+.nav-tabs{
+  display: flex;
+  justify-content: center;
+}
+
+.span-tabs {
+  font-size: 25px;
+  display: inline-block;
+  margin-right: 10px;
+  padding: 15px;
+}
+
+
+/*footer*/
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
+
+/*landing page*/
+.carousel-inner {
+  background-image: url(https://source.unsplash.com/collection/388793/1920x1080);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover !important;
+  background-color: transparent;
+}
+
+.carousel {
+     margin-bottom: 10rem;
+   }
+
+   .carousel .container {
+     position: relative;
+     z-index: 9;
+   }
+
+   .carousel-control {
+     font-size: 120px;
+   }
+
+   .carousel .item {
+     height: 50rem;
+   }
+
+   .carousel img {
+      position: fixed;
+      height:auto;
+      display: block;
+   }
+
+   .carousel-caption {
+     position: static;
+     min-width: auto;
+     max-width: 50rem;
+     padding: 0 0px;
+     margin-top: 200px;
+     padding-bottom: 10px;
+     border-radius: 5px;
+     background-color: rgba(0,0,0,.5);
+   }
+   
+   .carousel-caption h1,
+   .carousel-caption .lead {
+     margin: 0;
+     line-height: 1.25;
+     font-family: sans-serif, Helvetica;
+     font-weight: bold;
+     color: #fff;
+   }
+   
+   
+   .carousel-caption .btn {
+     margin-top: 2.5rem;
+   }
+
+ .account-img {
+   margin-top: 65px;
+   display: flex;
+   justify-content: center;
+ }
+
+/*css for featured project*/
+
+.featured {
+  color: grey;
+   width: 55%;
+   text-align: center;
+   border-bottom: 1px solid grey;
+   line-height: 0.1em;
+   margin: 10px 0 20px;
+}
+
+
+.featured span {
+    background:#fff;
+    padding:0 10px;
+    padding-bottom: 10px;
+
+}
+
+.img-center {
+	margin: 0 auto;
+}
+
+.no-padding {
+  margin: 0;
+
+}
+
+
+/*for login/sign up*/
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+     margin: 0;
+ 	padding: 0;
+ 	-webkit-box-sizing: border-box;
+ 	-moz-box-sizing: border-box;
+ 	box-sizing: border-box;
+ }
+
+ a {
+ 	color: #03658c;
+ 	text-decoration: none;
+ }
+
+ul {
+	list-style-type: none;
+}
+
+body {
+	font-family: 'Roboto', Arial, Helvetica, Sans-serif, Verdana;
+
+}
+
+/** ====================
+ * Lista de Comentarios
+ =======================*/
+.comments-container {
+	margin: 60px auto 15px;
+	width: 768px;
+}
+
+.comments-container h1 {
+	font-size: 36px;
+	color: #283035;
+	font-weight: 400;
+
+}
+
+.comments-container h1 a {
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.comments-list {
+	margin-top: 30px;
+	position: relative;
+}
+
+/**
+ * Lineas / Detalles
+ -----------------------*/
+.comments-list:before {
+	content: '';
+	width: 2px;
+	height: 100%;
+	background: #c7cacb;
+	position: absolute;
+	left: 32px;
+	top: 0;
+}
+
+
+.reply-list:before, .reply-list:after {display: none;}
+.reply-list li:before {
+	content: '';
+	width: 60px;
+	height: 2px;
+	background: #c7cacb;
+	position: absolute;
+	top: 25px;
+	left: -55px;
+}
+
+
+.comments-list li {
+	margin-bottom: 15px;
+	display: block;
+	position: relative;
+}
+
+.comments-list li:after {
+	content: '';
+	display: block;
+	clear: both;
+	height: 0;
+	width: 0;
+}
+
+.reply-list {
+	padding-left: 88px;
+	clear: both;
+	margin-top: 15px;
+}
+/**
+ * Avatar
+ ---------------------------*/
+.comments-list .comment-avatar {
+	width: 65px;
+	height: 65px;
+	position: relative;
+	z-index: 99;
+	float: left;
+	border: 3px solid #FFF;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	overflow: hidden;
+}
+
+.comments-list .comment-avatar img {
+	width: 100%;
+	height: 100%;
+}
+
+.reply-list .comment-avatar {
+	width: 50px;
+	height: 50px;
+}
+
+.comment-main-level:after {
+	content: '';
+	width: 0;
+	height: 0;
+	display: block;
+	clear: both;
+}
+/**
+comments ---------------------------*/
+.comments-list .comment-box {
+	width: 680px;
+	float: right;
+	position: relative;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+	-moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+	box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+  margin-bottom: 20px;
+}
+
+.comments-list .comment-box:before, .comments-list .comment-box:after {
+	content: '';
+	height: 0;
+	width: 0;
+	position: absolute;
+	display: block;
+	border-width: 10px 12px 10px 0;
+	border-style: solid;
+	border-color: transparent #FCFCFC;
+	top: 8px;
+	left: -11px;
+}
+
+.comments-list .comment-box:before {
+	border-width: 11px 13px 11px 0;
+	border-color: transparent rgba(0,0,0,0.05);
+	left: -12px;
+}
+
+.reply-list .comment-box {
+	width: 610px;
+}
+.comment-box .comment-head {
+	background: #efefef;
+	padding: 10px 12px;
+	border-bottom: 1px solid #E5E5E5;
+	overflow: hidden;
+	-webkit-border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+}
+
+.comment-box .comment-head i {
+	float: right;
+	margin-left: 14px;
+	position: relative;
+	top: 2px;
+	color: #A6A6A6;
+	cursor: pointer;
+	-webkit-transition: color 0.3s ease;
+	-o-transition: color 0.3s ease;
+	transition: color 0.3s ease;
+}
+
+.comment-box .comment-head i:hover {
+	color: #03658c;
+}
+
+.comment-box .comment-name {
+	color: #283035;
+	font-size: 14px;
+	font-weight: 700;
+	float: left;
+	margin-right: 10px;
+}
+
+.comment-box .comment-name a {
+	color: #283035;
+}
+
+.comment-box .comment-head span {
+	float: left;
+	color: #999;
+	font-size: 13px;
+	position: relative;
+	top: 1px;
+}
+
+.comment-box .comment-content {
+	background: #efefef;
+	padding: 12px;
+	font-size: 15px;
+	color: #595959;
+	-webkit-border-radius: 0 0 4px 4px;
+	-moz-border-radius: 0 0 4px 4px;
+	border-radius: 0 0 4px 4px;
+}
+
+.comment-box .comment-name.by-author, .comment-box .comment-name.by-author a {color: #03658c;}
+.comment-box .comment-name.by-author:after {
+	background: #03658c;
+	color: #FFF;
+	font-size: 12px;
+	padding: 3px 5px;
+	font-weight: 700;
+	margin-left: 10px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.time-ago {
+  font-weight: 400;
+}
+
+/** =====================
+ * Responsive
+ ========================*/
+@media only screen and (max-width: 766px) {
+	.comments-container {
+		width: 480px;
+	}
+
+	.comments-list .comment-box {
+		width: 390px;
+	}
+
+	.reply-list .comment-box {
+		width: 320px;
+	}
+}
+
+/*testing testing one two pink*/
+.pink {
+  color: pink;
+}
+
+.thumbnail {
+  border: 0px;
+  margin-bottom: 0px;
+}
+
+/*for categories index page */
+
+
+.container-fluid.project {
+    height: 450px;
+    background-image: url("http://cdn.playbuzz.com/cdn/db4c11e6-8227-4eda-8755-2bf1b071f0ad/1d3bf27f-7b4a-4a69-8697-b80d321e8689.jpg");
+    position: relative;
+}
+
+.apple {
+  position: absolute;
+      bottom: 0;
+      left: 0;
+}
+
+.project-img {
+  height: 10%;
+  width: 50%;
+}
+
+#category-title {
+  color: white;
+}
+#category-list{
+    display: inline-block;
+    padding-top: 330px;
+ }
+
+.category-row {
+  text-align: center;
+}
+
+.project-description {
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-top: 40px;
+}
+
+.category-stats {
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.category-count {
+  font-size: 50px;
+  font-family: fantasy;
+  color: blue;
+}
+
+.cat-description {
+  padding-bottom: 20px;
+}
+
+/*for testimonial */
+.testimonial{
+    margin-bottom: 10px;
+}
+
+    .testimonial-section {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        position: relative;
+        border: 1px solid #fff;
+    }
+    .testimonial-section:after {
+        top: 100%;
+        left: 50px;
+        border: solid transparent;
+        content: " ";
+        position: absolute;
+        border-top-color: #fff;
+        border-width: 15px;
+        margin-left: -15px;
+    }
+
+    .testimonial-desc {
+        margin-top: 20px;
+        text-align:left;
+        padding-left: 15px;
+    }
+        .testimonial-desc img {
+            border: 1px solid #f5f5f5;
+            border-radius: 150px;
+            height: 70px;
+            padding: 3px;
+            width: 70px;
+            display:inline-block;
+            vertical-align: top;
+        }
+
+        .testimonial-writer{
+            display: inline-block;
+            vertical-align: top;
+            padding-left: 10px;
+        }
+
+            .testimonial-writer-name{
+                font-weight: bold;
+            }
+
+            .testimonial-writer-designation{
+                font-size: 85%;
+            }
+
+            .testimonial-writer-company{
+                font-size: 85%;
+            }
+    /*---- Outlined Styles ----*/
+    .testimonial.testimonial-default{
+
+    }
+        .testimonial.testimonial-default .testimonial-section{
+            border-color: #777;
+        }
+
+            .testimonial.testimonial-default .testimonial-section:after{
+                border-top-color: #777;
+            }
+
+        .testimonial.testimonial-default .testimonial-desc{
+
+        }
+
+            .testimonial.testimonial-default .testimonial-desc img{
+                border-color: #777;
+            }
+
+            .testimonial.testimonial-default .testimonial-writer-name{
+                color: #777;
+            }
+
+    .testimonial.testimonial-primary{
+
+    }
+        .testimonial.testimonial-primary .testimonial-section{
+            border-color: #337AB7;
+            color: #286090;
+            background-color: rgba(51, 122, 183, 0.1);
+        }
+
+            .testimonial.testimonial-primary .testimonial-section:after{
+                border-top-color: #337AB7;
+            }
+
+        .testimonial.testimonial-primary .testimonial-desc{
+
+        }
+
+            .testimonial.testimonial-primary .testimonial-desc img{
+                border-color: #337AB7;
+            }
+
+            .testimonial.testimonial-primary .testimonial-writer-name{
+                color: #337AB7;
+            }
+
+    .testimonial.testimonial-info{
+
+    }
+        .testimonial.testimonial-info .testimonial-section{
+            border-color: #5BC0DE;
+            color: #31b0d5;
+            background-color: rgba(91, 192, 222, 0.1);
+        }
+
+            .testimonial.testimonial-info .testimonial-section:after{
+                border-top-color: #5BC0DE;
+            }
+
+        .testimonial.testimonial-info .testimonial-desc{
+
+        }
+
+            .testimonial.testimonial-info .testimonial-desc img{
+                border-color: #5BC0DE;
+            }
+
+            .testimonial.testimonial-info .testimonial-writer-name{
+                color: #5BC0DE;
+            }
+
+
+    .testimonial.testimonial-success{
+
+    }
+        .testimonial.testimonial-success .testimonial-section{
+            border-color: #5CB85C;
+            color: #449d44;
+            background-color: rgba(92, 184, 92, 0.1);
+        }
+
+            .testimonial.testimonial-success .testimonial-section:after{
+                border-top-color: #5CB85C;
+            }
+
+        .testimonial.testimonial-success .testimonial-desc{
+
+        }
+
+            .testimonial.testimonial-success .testimonial-desc img{
+                border-color: #5CB85C;
+            }
+
+            .testimonial.testimonial-success .testimonial-writer-name{
+                color: #5CB85C;
+            }
+
+    .testimonial.testimonial-warning{
+
+    }
+        .testimonial.testimonial-warning .testimonial-section{
+            border-color: #F0AD4E;
+            color: #d58512;
+            background-color: rgba(240, 173, 78, 0.1);
+        }
+
+            .testimonial.testimonial-warning .testimonial-section:after{
+                border-top-color: #F0AD4E;
+            }
+
+        .testimonial.testimonial-warning .testimonial-desc{
+
+        }
+
+            .testimonial.testimonial-warning .testimonial-desc img{
+                border-color: #F0AD4E;
+            }
+
+            .testimonial.testimonial-warning .testimonial-writer-name{
+                color: #F0AD4E;
+            }
+
+    .testimonial.testimonial-danger{
+
+    }
+        .testimonial.testimonial-danger .testimonial-section{
+            border-color: #D9534F;
+            color: #c9302c;
+            background-color: rgba(217, 83, 79, 0.1);
+        }
+
+            .testimonial.testimonial-danger .testimonial-section:after{
+                border-top-color: #D9534F;
+            }
+
+        .testimonial.testimonial-danger .testimonial-desc{
+
+        }
+
+            .testimonial.testimonial-danger .testimonial-desc img{
+                border-color: #D9534F;
+            }
+
+            .testimonial.testimonial-danger .testimonial-writer-name{
+                color: #D9534F;
+            }
+
+    /*---- Filled Styles ----*/
+    .testimonial.testimonial-default-filled{
+
+    }
+        .testimonial.testimonial-default-filled .testimonial-section{
+            color: #fff;
+            border-color: #777;
+            background-color: #777;
+        }
+
+            .testimonial.testimonial-default-filled .testimonial-section:after{
+                border-top-color: #777;
+            }
+
+        .testimonial.testimonial-default-filled .testimonial-desc{
+
+        }
+
+            .testimonial.testimonial-default-filled .testimonial-desc img{
+                border-color: #777;
+                background-color: #777;
+            }
+
+            .testimonial.testimonial-default-filled .testimonial-writer-name{
+                color: #777;
+            }
+
+    .testimonial.testimonial-primary-filled{
+
+    }
+        .testimonial.testimonial-primary-filled .testimonial-section{
+            color: #fff;
+            background-color: #337ab7;
+            border-color: #2e6da4;
+        }
+
+            .testimonial.testimonial-primary-filled .testimonial-section:after{
+                border-top-color: #337AB7;
+            }
+
+        .testimonial.testimonial-primary-filled .testimonial-desc{
+
+        }
+
+            .testimonial.testimonial-primary-filled .testimonial-desc img{
+                border-color: #2e6da4;
+                background-color: #337ab7;
+            }
+
+            .testimonial.testimonial-primary-filled .testimonial-writer-name{
+                color: #337AB7;
+            }
+
+    .testimonial.testimonial-info-filled{
+
+    }
+        .testimonial.testimonial-info-filled .testimonial-section{
+            color: #fff;
+            background-color: #5bc0de;
+            border-color: #46b8da;
+        }
+
+            .testimonial.testimonial-info-filled .testimonial-section:after{
+                border-top-color: #5BC0DE;
+            }
+
+        .testimonial.testimonial-info-filled .testimonial-desc{
+
+        }
+
+            .testimonial.testimonial-info-filled .testimonial-desc img{
+                border-color: #46b8da;
+                background-color: #5bc0de;
+            }
+
+            .testimonial.testimonial-info-filled .testimonial-writer-name{
+                color: #5BC0DE;
+            }
+
+
+    .testimonial.testimonial-success-filled{
+
+    }
+        .testimonial.testimonial-success-filled .testimonial-section{
+            color: #fff;
+            background-color: #5cb85c;
+            border-color: #4cae4c;
+        }
+
+            .testimonial.testimonial-success-filled .testimonial-section:after{
+                border-top-color: #5CB85C;
+            }
+
+        .testimonial.testimonial-success-filled .testimonial-desc{
+
+        }
+
+            .testimonial.testimonial-success-filled .testimonial-desc img{
+                border-color: #4cae4c;
+                background-color: #5cb85c;
+            }
+
+            .testimonial.testimonial-success-filled .testimonial-writer-name{
+                color: #5CB85C;
+            }
+
+    .testimonial.testimonial-warning-filled{
+
+    }
+        .testimonial.testimonial-warning-filled .testimonial-section{
+            color: #fff;
+            background-color: #f0ad4e;
+            border-color: #eea236;
+        }
+
+            .testimonial.testimonial-warning-filled .testimonial-section:after{
+                border-top-color: #F0AD4E;
+            }
+
+        .testimonial.testimonial-warning-filled .testimonial-desc{
+
+        }
+
+            .testimonial.testimonial-warning-filled .testimonial-desc img{
+                border-color: #eea236;
+                background-color: #f0ad4e;
+            }
+
+            .testimonial.testimonial-warning-filled .testimonial-writer-name{
+                color: #F0AD4E;
+            }
+
+    .testimonial.testimonial-danger-filled{
+
+    }
+        .testimonial.testimonial-danger-filled .testimonial-section{
+                color: #fff;
+                background-color: #d9534f;
+                border-color: #d43f3a;
+        }
+
+            .testimonial.testimonial-danger-filled .testimonial-section:after{
+                border-top-color: #D9534F;
+            }
+
+        .testimonial.testimonial-danger-filled .testimonial-desc{
+
+        }
+
+            .testimonial.testimonial-danger-filled .testimonial-desc img{
+                border-color: #d43f3a;
+                background-color: #D9534F;
+            }
+
+            .testimonial.testimonial-danger-filled .testimonial-writer-name{
+                color: #D9534F;
+            }
+
+.text-center {
+  padding-bottom: 30px;
+}
+
+
+/*for new project*/
