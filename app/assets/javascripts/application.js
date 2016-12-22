@@ -24,10 +24,11 @@ $(document).ready(function(){
 
   jQuery("time.timeago").timeago();
 
+  $(".comment-button").submit(function() {
+  return false;
+  });
 
   $('.comment-button').on('click', function(){
-    $('.comment-button').addClass('pink');
-
     var slug = $('.var').data('url');
     var api_key = $('.var').data('key');
     var dataParams = { comment: $('#comment-body').val(),
@@ -37,10 +38,11 @@ $(document).ready(function(){
     $.ajax({
       type: "POST",
       url: "http://localhost:3000/api/v1/projects/" + slug + "/comments",
+      // ***** url: "https://vicarious.li/api/v1/projects/" + slug + "/comments",
       data: dataParams,
       success: function(comment){
         $('#comment-body').val('');
-        $('.comments-list').prepend("<li class='blah'><div class='comment-main-level'><div class='comment-avatar'><img src='/assets/lee.png-0f3fd6046ca3c50463ffef9685514744d33dc12c74dc8a974427ed63faf27c10.jpg'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'>" + comment.user.name + " | " + jQuery.timeago(comment.created_at) + "</h6></div><div class='comment-content'>" + comment.comment_body + "</div></div></div></li>")
+        $('.comments-list').prepend("<li class='blah'><div class='comment-main-level'><div class='comment-avatar'><img src='" + comment.user.avatar_url + "'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'>" + comment.user.name + " | " + jQuery.timeago(comment.created_at) + "</h6></div><div class='comment-content'>" + comment.comment_body + "</div></div></div></li>")
       }
       });
     });

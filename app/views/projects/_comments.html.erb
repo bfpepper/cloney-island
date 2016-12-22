@@ -15,12 +15,12 @@
               <h6 class="comment-name by-author"><%= comment.user.name %> | posted <%= time_ago_in_words(comment.created_at) %> ago </h6>
             </div>
 						<div class="comment-content", id=<%= "#{index}"%> >
-							<% if current_user.admin? %>			
+							<% if current_user.admin? %>
 								<%= comment.comment_body %>
 								<%= link_to "Delete Comment", admin_delete_comment_path(comment), method: :delete %>
 							<% else %>
 								<%= comment.comment_body %>
-							<% end %> 	
+							<% end %>
 						</div>
           </div>
         </div>
@@ -28,7 +28,7 @@
     <% end %>
       <li>
         <div class="comment-main-level">
-          <form class="" action="index.html" method="post">
+          <form class="" action="#" method="post">
             <input type="text-area" id="comment-body" name="comment-body" placeholder="put your comment here">
             <% if @project.backers.include?(current_user) %>
               <input type="button" class="comment-button" value="Post Your Comment">
