@@ -1,6 +1,6 @@
 # Vicarious.li
 
-Vicarious.li is a delightful little web-app designed to do one thing and one thing only: make your dreams a reality via the magic of crowdsourcing.
+Vicarious.li is a delightful little web-app designed to do one thing and one thing only: make your dreams a reality via the magic of crowdfunding.
 
 ![An image of the homepage](https://github.com/bermannoah/repo-images/blob/master/ci_homepage.jpg)
 
