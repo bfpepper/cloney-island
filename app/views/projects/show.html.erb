@@ -23,15 +23,14 @@
             <% end %>
 
             <div class="progress">
-                <div class="progress-bar progress-bar-striped" role="successbar" aria-valuenow="<%= @project.funding_received %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= number_to_currency(@project.funding_received) %>%">
-                    <%= @project.funding_received %>%
+                <div class="progress-bar progress-bar-striped" role="successbar" aria-valuenow="<%= @project.funding_received %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= @project.funding_received %>%">
+                  <%= @project.funding_received %>%
                 </div>
             </div>
             <p>Project created on:
                 <%= @project.created_at.to_date.strftime("%B %d, %Y") %>
             </p>
-            <p>Backers: 0</p>
-            <p>Days to go: 0</p>
+            <p>Backers: <%= @project.backers.count %></p>
         </div>
         <% if current_user.nil? %>
         <%= button_to "Back project!", guest_login_path, class: "btn btn-primary btn-block", method: :get %>
@@ -103,9 +102,7 @@
                                 <% end %>
                                 <div class="caption">
                                     <h4><%= link_to project.title, project_path(project.slug) %></h4>
-                                    <h4>Amount Raised:
-                                        <%= number_to_currency(project.funding_received) %>
-                                    </h4>
+                                    <h4>Amount Raised: <%= number_to_currency(project.funding_received) %></h4>
                                 </div>
                             </div>
                         </div>

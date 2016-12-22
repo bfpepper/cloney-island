@@ -1,12 +1,27 @@
-Vicarious.li's API documentation
+<h3 class="header-text">Vicarious.li's API documentation<h3>
 
-
-GET to /api/v1/projects/:project_name/comments?api_key=:your_api_key_here
-gives back this "In assets/images/comments_response.png"
-
-
-POST to /api/v1/projects/:project_name/comments?api_key=:your_api_key_here
-gives back this "In assets/images/not_a_backer" if you are not a back of that project.
-
-POST to /api/v1/projects/:project_name/comments?api_key=:your_api_key_here
-gives back this "In assets/images/successful_comment" if you are a back of that project.
+<table class="table table-striped table-bordered table-responsive">
+  
+  <tr><td></tr></td>
+  <tr><td class="danger">Where the following queries say "project-name", insert the name of the project with spaces replaced by dashes.</tr></td>
+  <tr><td class="danger">For example, "Underwater Seahorse Nativity" would become "underwater-seahorse-nativity".</tr></td>
+  <tr><td></tr></td>
+  <tr><td></tr></td>
+  <tr><td>To return the comments for a particular project, you can send the following:</tr></td>
+  <tr><td></tr></td>
+  <tr><td class="request-color">GET to /api/v1/projects/project-name/comments?api_key=:your_api_key_here</tr></td>
+  <tr><td></tr></td>
+  <tr><td>...this will return the comment text, the time it was posted, and the user who posted the comment along with their name and avatar URL.</tr></td>
+  <tr><td></tr></td>
+  <tr><td>To post a comment on a project, you can send the following:</tr></td>
+  <tr><td></tr></td>
+  <tr><td class="request-color">POST to /api/v1/projects/project-name/comments?api_key=:your_api_key_here</tr></td>
+  <tr><td></tr></td>
+  <tr><td>You will need to be a backer of the project to do this!</tr></td>
+  <tr><td></tr></td>
+  <tr><td>If you're successful you will receive a response with the comment text and your user details.</tr></td>
+  <tr><td></tr></td>
+  <tr><td>If you try to post a comment on a project you are not a backer of...</tr></td>
+  <tr><td class="request-color">POST to /api/v1/projects/project-name/comments?api_key=:your_api_key_here</tr></td>
+  <tr><td>...this will return an error informing you that you are not a backer of the project!</tr></td>
+</table>

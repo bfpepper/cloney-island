@@ -20,6 +20,7 @@ class PermissionsService
   private
     attr_reader :user, :controller, :action
 
+
     def admin_permissions
       return true if controller == "admin/categories" && action.in?(%w(new edit index create update))
 			return true if controller == "admin/comments" && action == "destroy"

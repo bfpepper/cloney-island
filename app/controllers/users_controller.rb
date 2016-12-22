@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def update
@@ -41,6 +41,8 @@ class UsersController < ApplicationController
                                  :email_confirmation,
                                  :password,
                                  :password_confirmation,
-                                 :avatar)
+                                 :avatar,
+                                 :status,
+                                 :reason_for_status_change)
   end
 end

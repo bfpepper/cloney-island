@@ -33,13 +33,14 @@ class Seed
       slug = title.parameterize
       project = Project.create!(title: title,
                              description: Faker::Hipster.paragraph,
-                             goal: Faker::Number.decimal(6),
+                             goal: Faker::Number.number(4),
                              slug: slug,
                              category_id: category.id,
                              )
       add_user(project)
+      create_pledge_and_comment(project)
       puts "project #{i}: Project #{project.title} created, with Category #{project.category.name}
-            with a creator of #{project.users.first.name}."
+            with a creator of #{project.users.first.name}, a pledge of #{project.funding_received}."
     end
   end
 
@@ -69,7 +70,7 @@ class Seed
 
   def create_platform_admin
     clancey = User.create!(name: 'Clancey', email: 'clancey007@example.com', phone: '12345678987', password: 'password')
-    clancey.roles << Role.find_by(name: 'platform admin')
+    clancey.roles << Role.find_by(name: 'admin')
     puts "Created #{clancey.name} as platform admin"
   end
 
@@ -81,7 +82,26 @@ class Seed
     user = User.find(number)
     project.users << user
   end
-
+  
+  def create_pledge_and_comment(project)
+    available_users = Role.find_by(name: "registered").users
+    number = rand(1..User.count)
+    pledge_amount = Faker::Number.number(3) 
+    user = User.find(number)
+    if user.id == project.users.first.id
+      user = User.find(number)
+    else
+      user
+    end
+    Pledge.create!(user_id: user.id, project_id: project.id, amount_given: pledge_amount)
+    user.roles << Role.find_by(name: "backer")
+    create_comment(user, project)
+  end
+  
+  def create_comment(user, project)
+    Comment.create!(comment_body: Faker::Hacker.say_something_smart, project_id: project.id, user_id: user.id)
+  end
+  
 end
 
 Seed.start
