@@ -70,7 +70,7 @@ class Seed
 
   def create_platform_admin
     clancey = User.create!(name: 'Clancey', email: 'clancey007@example.com', phone: '12345678987', password: 'password')
-    clancey.roles << Role.find_by(name: 'platform admin')
+    clancey.roles << Role.find_by(name: 'admin')
     puts "Created #{clancey.name} as platform admin"
   end
 
