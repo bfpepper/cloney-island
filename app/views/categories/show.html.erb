@@ -13,13 +13,9 @@
         <div class="caption">
           <h4><a href="#"> <%= link_to project.title, project_path(slug: project.title.parameterize) %> </a>
           </h4>
+          <h4>Amount Raised: <%= number_to_currency(project.funding_received) %></h4>
         </div>
       </div>
-      <div class="progress">
-  <div class="progress-bar progress-bar-striped" role="successbar" aria-valuenow="<%= project.funding_received %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= project.funding_received %>%">
-    <%= project.funding_received %>%
-  </div>
-</div>
     </div>
     <% end %>
   </div>
