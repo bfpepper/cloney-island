@@ -1,7 +1,12 @@
-Enter your email for your account below
-
-<%= form_for :password, url: confirm_id_path do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.submit "Request confirmation code" %>
-<% end %>
+<div class="login-page">
+  
+  <h3 class="text-center">Enter your email for your account below</h3>
+    <div class="form">
+      <%= form_for :password, url: confirm_id_path do |f| %>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+        <%= f.submit "Request confirmation code" %>
+      <% end %>
+    </div>
+    
+</div>

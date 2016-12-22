@@ -27,17 +27,36 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label" for="textinput">Projects</label>
+                        <label class="col-sm-2 control-label" for="textinput">Projects created:</label>
                         <div class="col-sm-10">
                             <label class="col-sm-2 control-label" for="textinput"><%= @user.projects.count %></label>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label" for="textinput">Backed</label>
+                        <label class="col-sm-2 control-label" for="textinput">API Key</label>
                         <div class="col-sm-10">
-                            <label class="col-sm-2 control-label" for="textinput">Not yet working</label>
+                            <label class="col-sm-2 control-label api_key" for="textinput"><%= @user.api_key %></label>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="textinput">You have backed:</label>
+                        <div class="col-sm-10">
+                            <label class="col-sm-2 control-label" for="textinput"><%= @user.pledges.count %> Projects!</label>
+                        </div>
+                    </div>
+                    
+                    <% if @user.admin? %>
+                      <div class="form-group">
+                          <label class="col-sm-2 control-label" for="textinput">Admin Links:</label>
+                          <div class="col-sm-10">
+                              <label class="col-sm-2 control-label" for="textinput"><%= link_to "All Users", admin_users_path %></label>
+                              <label class="col-sm-2 control-label" for="textinput"><%= link_to "All Categories", admin_categories_path %></label>
+                          </div>
+                          <div class="col-sm-10">
+                          </div>
+                      </div>
+                    <% end %>
+
 
 
                 </fieldset>

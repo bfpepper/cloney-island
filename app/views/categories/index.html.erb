@@ -12,13 +12,15 @@
 <div class="container category-stats">
   <div class="row">
     <div class="col-sm-8">
-      <h3 class="cat-description">Viciarious.li has given the opporunity to millions of people to raise money and awaress for products they are passionate about</h3>
-      <h3>Viciarious.li project backers have funded thounds of projects</h3>
+      <h3 class="cat-description">Vicarious.li is:</h3>
+      <h3 class="cat-description">...a world-wide community, passionate about making amazing things.</h3>
+      <h3 class="cat-description">...revolutionizing the way you make your dreams a reality.</h3>
+      <h3 class="cat-description">...helping you find the next big thing.</h3>
     </div>
     <div class="col-sm-4">
+      <center><h3 class="category-count">Projects Created:<br> </h3></center>
       <center><h3 class="category-count"><%=@categories.joins(:projects).count %><br> </h3></center>
-      <center><p>Projects Created</p></center>
-      <center><h3 class="category-count"><%=number_to_currency(@pledges)%> </h3></center>
+      <center><h3 class="category-count">Funds raised: <%= number_to_currency(@pledges) %> </h3></center>
     </div>
   </div>
 </div>
@@ -30,13 +32,13 @@
 		<div class="col-sm-6">
             <div id="tb-testimonial" class="testimonial testimonial-success">
                 <div class="testimonial-section">
-                    Denim you probably haven't heard of. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.
+                    I always struggled getting creative projects off the ground but thanks to my beautiful backers here on VeeLee (as we call it) I'm finally ready to shoot my first short film!
             	</div>
                 <div class="testimonial-desc">
-                    <img src="https://placeholdit.imgix.net/~text?txtsize=9&txt=100%C3%97100&w=100&h=100" alt="" />
+                    <img src="https://source.unsplash.com/100x100/?people" alt="" />
                     <div class="testimonial-writer">
-                    	<div class="testimonial-writer-name">User name</div>
-                    	<div class="testimonial-writer-designation">Backer</div>
+                    	<div class="testimonial-writer-name">Annabelle Thunk</div>
+                    	<div class="testimonial-writer-designation">Filmmaker</div>
                     </div>
                 </div>
             </div>
@@ -44,13 +46,13 @@
         <div class="col-sm-6">
             <div id="tb-testimonial" class="testimonial testimonial-primary">
                 <div class="testimonial-section">
-                    Denim you probably haven't heard of. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.
+                    After just three days on Vicarious.li, my wallet startup had enough money to IPO! I'm never going back to the competitors.
                 </div>
                 <div class="testimonial-desc">
-                    <img src="https://placeholdit.imgix.net/~text?txtsize=9&txt=100%C3%97100&w=100&h=100" alt="" />
+                  <img src="https://source.unsplash.com/100x100/?man" alt="" />
                     <div class="testimonial-writer">
-                    	<div class="testimonial-writer-name">username</div>
-                    	<div class="testimonial-writer-designation">backer</div>
+                    	<div class="testimonial-writer-name">Alistair Nightengale III</div>
+                    	<div class="testimonial-writer-designation">Thought Leader</div>
                     </div>
                 </div>
             </div>
@@ -58,13 +60,13 @@
         <div class="col-sm-6">
             <div id="tb-testimonial" class="testimonial testimonial-info">
                 <div class="testimonial-section">
-                    Denim you probably haven't heard of. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.
+                    You're telling me all I have to do is post a title, a picture and a description on here and my dream of a trip to CERN could become reality? Sign me up! Oh wait, you already did!
                 </div>
                 <div class="testimonial-desc">
-                    <img src="https://placeholdit.imgix.net/~text?txtsize=9&txt=100%C3%97100&w=100&h=100" alt="" />
+                  <img src="https://source.unsplash.com/100x100/?city" alt="" />
                     <div class="testimonial-writer">
-                    	<div class="testimonial-writer-name">username</div>
-                    	<div class="testimonial-writer-designation">backer</div>
+                    	<div class="testimonial-writer-name">Melissa Gorgon</div>
+                    	<div class="testimonial-writer-designation">Scientist</div>
                     </div>
                 </div>
             </div>
@@ -72,13 +74,13 @@
         <div class="col-sm-6">
             <div id="tb-testimonial" class="testimonial testimonial-warning">
                 <div class="testimonial-section">
-                    Denim you probably haven't heard of. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.
+                    This is the new hotness. I love giving money to products I support, and being able to really engage with the creators. I can't believe nobody thought of this before. I've been able to directly support people making the things I love, which coincidentally is a thing I also love!
                 </div>
                 <div class="testimonial-desc">
-                    <img src="https://placeholdit.imgix.net/~text?txtsize=9&txt=100%C3%97100&w=100&h=100" alt="" />
+                  <img src="https://source.unsplash.com/100x100/?woman" alt="" />
                     <div class="testimonial-writer">
-                    	<div class="testimonial-writer-name">username</div>
-                    	<div class="testimonial-writer-designation">backer</div>
+                    	<div class="testimonial-writer-name">Rachel McGranderson</div>
+                    	<div class="testimonial-writer-designation">Backer</div>
                     </div>
                 </div>
             </div>

@@ -34,6 +34,7 @@ group :test do
   gem 'simplecov'
   gem 'vcr'
   gem 'shoulda-matchers'
+  gem 'selenium-webdriver'
 end
 
 group :development do

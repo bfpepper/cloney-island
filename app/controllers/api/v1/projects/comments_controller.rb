@@ -1,6 +1,5 @@
-class Api::V1::Projects::CommentsController < ApplicationController
-  protect_from_forgery with: :null_session
-  before_filter :restrict_access
+class Api::V1::Projects::CommentsController < ActionController::API
+  before_action :restrict_access
 
   def index
     project = Project.find_by_slug(params[:project])

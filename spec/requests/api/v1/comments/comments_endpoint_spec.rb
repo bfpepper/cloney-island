@@ -29,7 +29,10 @@ describe "comments endpoint" do
 
       get "/api/v1/projects/#{project.slug}/comments"
 
+      result = JSON.parse(response.body)
+
       expect(response).to have_http_status(401)
+      expect(result).to eq({'error' => 'unauthorized'})
     end
   end
 
@@ -65,6 +68,9 @@ describe "comments endpoint" do
 
       post_result = JSON.parse(response.body)
 
+      expect(post_result['comment_body']).to eq("What a great day!!!")
+      expect(post_result['user']['name']).to eq(user.name)
+      expect(post_result['user']['avatar_url']).to eq("https://s3-us-west-2.amazonaws.com/vicarious-cloney-bucket/default/missing.png")
       expect(response).to have_http_status(201)
 
       get "/api/v1/projects/#{project.slug}/comments?api_key=#{user.api_key}"
@@ -89,9 +95,8 @@ describe "comments endpoint" do
     end
   end
 
-  context "POST /api/v1/projects/:project/comments with user not a backer" do
+  context "POST /api/v1/projects/:project/comments as user who is not a backer" do
     it 'returns unauthorized' do
-      not_a_key = '357893754nfds74'
       user = create(:user)
       project = create(:project, title: 'How to Find a Job')
 
