@@ -14,29 +14,11 @@ RSpec.describe Project, type: :model do
   end
 
   context "relationships" do
-    it 'has many pledges' do
-      project = build(:project)
+    it { should have_many(:pledges)}
+    it { should have_many(:comments)}
 
-      expect(project).to respond_to(:pledges)
-    end
-
-    it 'has many backers' do
-      project = build(:project)
-
-      expect(project).to respond_to(:backers)
-    end
-    
-    it 'has many comments' do
-      project = build(:project)
-
-      expect(project).to respond_to(:comments)
-    end
-
-    it 'has many commenters' do
-      project = build(:project)
-
-      expect(project).to respond_to(:commenters)
-    end
+    it { should have_many(:backers).through(:pledges)}
+    it { should have_many(:commenters).through(:comments)}
   end
 
   context "#funding_received" do

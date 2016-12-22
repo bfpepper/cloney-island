@@ -1,6 +1,6 @@
 <div class="comments-container">
   <ul id="comments-list" class="comments-list">
-    <% @project.comments_reverse_chronological.each do |comment| %>
+    <% @project.comments_reverse_chronological.each_with_index do |comment, index| %>
       <li class='blah'>
         <div class="comment-main-level">
             <div class="comment-avatar">
@@ -14,9 +14,14 @@
             <div class="comment-head">
               <h6 class="comment-name by-author"><%= comment.user.name %> | posted <%= time_ago_in_words(comment.created_at) %> ago </h6>
             </div>
-            <div class="comment-content">
-              <%= comment.comment_body %>
-            </div>
+						<div class="comment-content", id=<%= "#{index}"%> >
+							<% if current_user.admin? %>
+								<%= comment.comment_body %>
+								<%= link_to "Delete Comment", admin_delete_comment_path(comment), method: :delete %>
+							<% else %>
+								<%= comment.comment_body %>
+							<% end %>
+						</div>
           </div>
         </div>
       </li>

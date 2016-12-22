@@ -138,6 +138,8 @@ body {
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
+  display: block;
+  margin-top: auto;
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
   background-color: #f5f5f5;
@@ -208,6 +210,20 @@ body {
  }
 
 /* css for new project page */
+ 
+/* css for user page */
+.project-cards {
+  margin: 10px;
+  display: inline-block;
+}
+
+.project-cards-page {
+  display: flex;
+  justify-content: center;
+}
+
+/* css for new project page */
+>>>>>>> .merge_file_afldMa
 
 .header-new-project {
   text-align: center;
@@ -240,7 +256,6 @@ body {
   margin: 0;
 
 }
-
 
 /*for login/sign up*/
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);

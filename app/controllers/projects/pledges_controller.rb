@@ -11,7 +11,7 @@ class Projects::PledgesController < ApplicationController
       flash[:success] = "You've successfully backed #{@pledge.project.title}!"
       redirect_to project_path(@pledge.project.slug)
     else
-      flash[:failure] = "Must fill out all fields"
+      flash[:danger] = "Must fill out all fields"
       redirect_to projects_new_pledge_path(@pledge.project.slug)
     end
   end

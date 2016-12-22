@@ -1,37 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Pledge, type: :model do
+
   context "Relationships" do
-    it 'belongs to a user' do
-      pledge = build(:pledge)
-
-      expect(pledge).to respond_to(:user)
-    end
-
-    it 'belongs to a project' do
-      pledge = build(:pledge)
-
-      expect(pledge).to respond_to(:project)
-    end
+    it { should belong_to(:user) }
+    it { should belong_to(:project) }
   end
 
   context 'validations' do
-    it 'needs an amount' do
-      pledge = build(:pledge, amount_given: nil)
-
-      expect(pledge).to_not be_valid
-    end
-
-    it 'needs a user' do
-      pledge = build(:pledge, user: nil)
-
-      expect(pledge).to_not be_valid
-    end
-
-    it 'needs a project' do
-      pledge = build(:pledge, project: nil)
-
-      expect(pledge).to_not be_valid
-    end
+    it { should validate_presence_of(:amount_given) }
+    it { should validate_presence_of(:user) }
+    it { should validate_presence_of(:project) }
   end
+  
 end
