@@ -49,4 +49,6 @@ Rails.application.routes.draw do
     put "/users/:id", to: 'users#update', as: :user
 		delete "/comments/:id", to: 'comments#destroy', as: :delete_comment
 	end
+
+  get '/api_info', to: 'api#index', as: :api
 end
