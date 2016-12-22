@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   get '/projects/:slug/edit', to: 'projects#edit', as: :edit_project
   put '/projects/:slug', to: 'projects#update'
   patch '/projects/:slug', to: 'projects#update'
+  get '/projects/:slug/add_user', to: 'users/add_user#update', as: :add_user_owner
+  put '/projects/:slug/add_user', to: 'users/add_user#update'
 
 
   get '/login', to: 'sessions#new'
@@ -43,5 +45,10 @@ Rails.application.routes.draw do
     resources :categories, only: [:new, :index, :create, :update]
     get "/categories/:category/edit", to: 'categories#edit', as: :edit_category
     resources :users, only: [:index]
-  end
+    get "/users/:id/edit", to: 'users#edit', as: :edit_user
+    put "/users/:id", to: 'users#update', as: :user
+		delete "/comments/:id", to: 'comments#destroy', as: :delete_comment
+	end
+
+  get '/api_info', to: 'api#index', as: :api
 end

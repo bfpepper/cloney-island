@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-4 account-img">
+    <% if @user.avatar_file_name.nil? %>
+      <td><%= image_tag 'missing.png', size: 200 %></td>
+    <% else %>
+      <td><%= image_tag @user.avatar.url(:medium) %></td>
+    <% end %>
+  </div>
+  <div class="col-md-8">
+    <form class="form-horizontal" role="form">
+      <fieldset>
+        <legend>
+          <%= @user.name %>
+        </legend>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="textinput">Email</label>
+          <div class="col-sm-10">
+            <label class="col-sm-2 control-label" for="textinput"><%= @user.email %></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="textinput">Phone</label>
+          <div class="col-sm-10">
+            <label class="col-sm-2 control-label" for="textinput"><%= @user.phone %></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="textinput">Projects</label>
+          <div class="col-sm-10">
+            <label class="col-sm-2 control-label" for="textinput"><%= @user.projects.count %></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="textinput">Backed</label>
+          <div class="col-sm-10">
+            <label class="col-sm-2 control-label" for="textinput">Not yet working</label>
+          </div>
+        </div>
+          <!-- <label class="col-sm-2 control-label" for="textinput">Status</label> -->
+      </fieldset>
+    </form>
+  </div>
+  <div class="col-sm-10">
+    <%= form_for :user, url: admin_user_path(@user.id), method: :put do |f| %>
+    <%= f.label :reason_for_status_change %>
+    <%= f.text_area :reason_for_status_change  %>
+    <%= f.submit "Change Status" %>
+    <% end %>
+  </div>
+</div>

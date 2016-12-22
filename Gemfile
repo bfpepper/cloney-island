@@ -16,6 +16,8 @@ gem 'figaro'
 gem 'faker'
 gem 'unicorn'
 gem 'twilio-ruby'
+gem "paperclip", "~> 5.0.0"
+gem 'aws-sdk', '~> 2.3'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -32,6 +34,7 @@ group :test do
   gem 'simplecov'
   gem 'vcr'
   gem 'shoulda-matchers'
+  gem 'selenium-webdriver'
 end
 
 group :development do

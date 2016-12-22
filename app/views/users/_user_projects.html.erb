@@ -1,13 +1,17 @@
+<br>
 <div class="container-fluid">
   <div class="row">
     <% @user.projects.each do |project| %>
-  <div class="col-sm-4 col-lg-4 col-md-4">
+  <div class="col-sm-4 col-lg-4 col-md-4 font-size-fix project-cards">
     <div class="thumbnail">
-        <img src="http://placehold.it/320x150" alt="">
-        <div class="caption">
-            <h4 class="pull-right">Amount Raised!</h4>
-            <h4><a href="#"> <%= link_to project.title, project_path(project.slug) %>  </a>
-            </h4>
+      <% if project.banner_image_file_name.nil? %>
+        <%= image_tag 'https://source.unsplash.com/collection/410325/400' %>
+      <% else %>
+        <%= image_tag project.banner_image.url(:small), size: 400 %>
+      <% end %>        
+      <div class="caption">
+            <h4><%= link_to project.title, project_path(project.slug) %></h4>
+            <h4>Amount Raised: <%= number_to_currency(project.funding_received) %> </h4>
             <p><%= link_to "Edit", edit_project_path(project.slug) %></p>
         </div>
       </div>

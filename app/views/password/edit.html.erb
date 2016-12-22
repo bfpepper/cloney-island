@@ -1,11 +1,15 @@
-Enter the code that we just sent to yout phone.
-
-<%= form_for :password, url: update_password_path do |f|%>
-<%= f.label :twilio_response_code %>
-<%= f.text_field :twilio_response_code %>
-<%= f.label :new_password %>
-<%= f.password_field :password %>
-<%= f.label :password_confirmation %>
-<%= f.password_field :password_confirmation %>
-<%= f.submit "Update Password"%>
-<% end %>
+<div class="login-page">
+  
+  <h3>Enter the code that we just sent to your phone.</h3>
+  <div class="form">
+    <%= form_for :password, url: update_password_path do |f|%>
+      <%= f.label :twilio_response_code %>
+      <%= f.text_field :twilio_response_code %>
+      <%= f.label :new_password %>
+      <%= f.password_field :password %>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+      <%= f.submit "Update Password"%>
+    <% end %>
+  </div>
+</div>

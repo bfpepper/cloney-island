@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JumpStart</title>
+    <title>Vicarious.li</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag 'jumpstart', media: 'all' %>
+    <%= stylesheet_link_tag 'vicariousli', media: 'all' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </head>
@@ -24,8 +24,8 @@
       </div>
       </div>
 
-    <%= render partial: 'shared/footer' %>
     <%= yield %>
 
+    <%= render partial: 'shared/footer' %>
   </body>
 </html>

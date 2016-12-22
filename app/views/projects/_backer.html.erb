@@ -5,7 +5,11 @@
     <% @project.backers.each do |backer| %>
   <div class="col-sm-4 col-lg-4 col-md-4">
     <div class="thumbnail">
-        <img src="http://placehold.it/320x150" alt="">
+      <% if backer.avatar_file_name.nil? %>
+        <td><%= image_tag 'missing.png', size: 200 %></td>
+      <% else %>
+        <td><%= image_tag backer.avatar.url(:medium) %></td>
+      <% end %>
         <div class="caption">
             <h4> <%= backer.name %>
             </h4>
