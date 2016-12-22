@@ -6,7 +6,7 @@ describe "As a visitor" do
 
       visit root_path
 
-      click_on "API Documentation"
+      click_on "API Info"
 
       expect(current_path).to eq(api_path)
       expect(page).to have_content("Vicarious.li's API documentation")
