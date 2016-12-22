@@ -29,7 +29,7 @@
       <li>
         <div class="comment-main-level">
           <form class="" action="#" method="post">
-            <input type="text-area" id="comment-body" name="comment-body" placeholder="put your comment here">
+            <input type="text-area" id="comment-body" name="comment-body" placeholder="put your comment here" onkeydown="if (event.keyCode == 13) { return false; }">
             <% if @project.backers.include?(current_user) %>
               <input type="button" class="comment-button" value="Post Your Comment">
             <% else %>
