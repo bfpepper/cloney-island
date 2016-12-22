@@ -219,7 +219,14 @@ body {
   display: flex;
   justify-content: center;
 }
- 
+/* css for API docs */
+.request-color {
+  color: #456dad;
+}
+
+.header-text {
+  text-align: center;
+}
 /* css for new project page */ 
 
 .header-new-project {
