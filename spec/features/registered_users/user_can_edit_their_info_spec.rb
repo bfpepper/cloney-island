@@ -11,7 +11,7 @@ describe "User edit info" do
 
     visit edit_user_path(user)
 
-    fill_in :Email, with: "Test@test.com"
+    fill_in "user[email]", with: "Test@test.com"
     fill_in "user[email_confirmation]", with: "Test@test.com"
 
     click_on "Update"
