@@ -4,7 +4,7 @@ Vicarious.li is a delightful little web-app designed to do one thing and one thi
 
 ![An image of the homepage](https://github.com/bermannoah/repo-images/blob/master/ci_homepage.jpg)
 
-## How to use:
+## How to use
 
 The easiest way to go about it is to just go to [https://vicarious.li](https://vicarious.li) and check it out for yourself. You could also clone it down and install it on your own machine, but be aware that you'll need a range of Amazon (AWS) and Twilio keys to make it work.
 
