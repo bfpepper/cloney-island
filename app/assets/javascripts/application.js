@@ -38,8 +38,7 @@ $(document).ready(function(){
 
     $.ajax({
       type: "POST",
-      url: "http://localhost:3000/api/v1/projects/" + slug + "/comments",
-      // ***** url: "https://vicarious.li/api/v1/projects/" + slug + "/comments",
+      url: "https://vicarious.li/api/v1/projects/" + slug + "/comments",
       data: dataParams,
       success: function(comment){
         $('#comment-body').val('');
