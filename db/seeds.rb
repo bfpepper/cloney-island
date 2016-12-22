@@ -81,6 +81,11 @@ class Seed
     user = User.find(number)
     project.users << user
   end
+  
+  def create_pledges(project)
+    available_users = Role.find_by(name: "registered").users
+            
+  end
 
 end
 
