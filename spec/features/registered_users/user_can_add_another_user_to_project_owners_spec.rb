@@ -21,6 +21,6 @@ describe "User adding user to project owner" do
     click_on "Add This Person"
 
     expect(current_path).to eq(project_path(project.slug))
-    expect(page).to have_content("#{user2.name} Owns this project!")
+    expect(page).to have_content("#{user2.name} owns this project!")
   end
 end

@@ -1,6 +1,7 @@
 class Project < ApplicationRecord
   
   has_attached_file :banner_image,
+                    :s3_protocol => :https,
                     :styles => {
                                  card: '320x150>',
                                  small: '640x300>',
