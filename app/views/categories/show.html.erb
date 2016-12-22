@@ -10,7 +10,7 @@
         <% else %>
           <%= image_tag project.banner_image.url(:small) %>
         <% end %>        
-        <div class="caption">
+        <div class="caption text-center">
           <h4><a href="#"> <%= link_to project.title, project_path(slug: project.title.parameterize) %> </a>
           </h4>
           <h4>Amount Raised: <%= number_to_currency(project.funding_received) %></h4>
